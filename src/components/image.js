@@ -13,29 +13,58 @@ import Img from 'gatsby-image'
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = ({ queryKey }) => {
+export const query = graphql`
+  fragment ImageFragment on File {
+    publicURL
+    name
+    extension
+    childImageSharp {
+      fluid(maxWidth: 300) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+`
+
+const Image = ({ queryKey, imgStyle }) => {
   const data = useStaticQuery(graphql`
     query {
       astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...ImageFragment
       }
       octocat: file(relativePath: { eq: "git-logo.svg" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, maxHeight: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...ImageFragment
+      }
+      computer: file(relativePath: { eq: "computer-icon-2.png" }) {
+        ...ImageFragment
       }
     }
   `)
 
-  console.log(data)
+  const image = data[queryKey]
 
-  return <Img fluid={data[queryKey].childImageSharp.fluid} />
+  const sharedProps = {
+    alt: image.name,
+    title: image.name
+  }
+
+  if (!image.childImageSharp && image.extension === 'svg') {
+    return (
+      <img
+        src={image.publicURL}
+        {...imgStyle}
+        {...sharedProps}
+      />
+    )
+  }
+
+  return (
+    <Img
+      fluid={image.childImageSharp.fluid}
+      imgStyle={{ margin: 0 }}
+      {...sharedProps}
+    />
+  )
 }
 
 export default Image

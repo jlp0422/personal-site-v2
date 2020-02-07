@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import GithubLink from './shared/GithubLink'
+import LiveLink from './shared/LiveLink'
 
 const Container = styled.div`
   background-color: white;
@@ -27,8 +28,9 @@ const ProjectCard = ({ project }) => {
       <p>Maybe what stack was used, or how many people worked on it</p>
       <p>Possible even more than that!</p>
       {/* link to github repo */}
-      <GithubLink />
+      <GithubLink url="https://github.com/jlp0422" linkText="my github profile" />
       {/* if live, link to live site */}
+      <LiveLink url="https://hot-tub-2019.herokuapp.com/" linkText="Hot Tub 2019" />
     </Container>
   )
 }
