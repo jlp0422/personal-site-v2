@@ -17,6 +17,22 @@ export default [
     }
   },
   {
+    title: 'Dear Carolyn Fine',
+    description: 'Interactive letter',
+    details: [
+      'Used when I proposed to my then-girlfriend in July 2019',
+      'Showed it to her right after proposing'
+    ],
+    github: {
+      link: 'https://github.com/jlp0422/july_5',
+      text: 'Dear Carolyn Fine'
+    },
+    website: {
+      link: 'https://dearcarolynfine.com/',
+      text: 'Live site'
+    }
+  },
+  {
     title: 'Stackjack',
     description: 'Fullstack Hackathon Project',
     details: [

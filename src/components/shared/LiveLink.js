@@ -5,7 +5,7 @@ import { GridWrapper, OutboundLink } from './Styled'
 const Link = ({ url, linkText }) => {
   return (
     <GridWrapper>
-      <Image queryKey="computer" imgStyle={{ margin: 0 }} />
+      <Image queryKey="computer" style={{ width: '2rem' }} imgStyle={{ margin: 0 }} />
       <OutboundLink href={url}>{linkText}</OutboundLink>
     </GridWrapper>
   )

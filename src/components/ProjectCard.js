@@ -12,19 +12,19 @@ const Container = styled.div`
   transition: all 0.2s linear;
   --webkit-transition: all 0.2s linear;
   :hover {
-    box-shadow: 8px 8px #888888;
+    box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
     transform: translate(-8px, -8px);
     --webkit-transform: translate(-8px, -8px);
   }
-  @media only screen and (max-width: 400px) {
-    box-shadow: 8px 8px #888888;
+  @media only screen and (max-width: 480px) {
+    box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
     :hover {
       transform: none;
     }
   }
 `
 
-const wrapWithPTag = (string, index) => <p key={index}>{string}</p>
+const wrapWithPTag = (string, index) => <p key={index}>{string}.</p>
 
 const ProjectCard = ({ project }) => {
   const hasGithub = linkExists(project.github)

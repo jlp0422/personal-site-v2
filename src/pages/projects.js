@@ -8,12 +8,13 @@ import styled from '@emotion/styled'
 
 const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 33%);
-  grid-column-gap: 5%;
-  @media only screen and (max-width: 640px) {
+  grid-template-columns: repeat(auto-fill, 32%);
+  grid-column-gap: 2%;
+  @media only screen and (max-width: 740px) {
     grid-template-columns: repeat(auto-fill, 47.5%);
+    grid-column-gap: 5%;
   }
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 480px) {
     grid-template-columns: 1fr;
   }
 `

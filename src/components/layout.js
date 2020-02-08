@@ -6,11 +6,12 @@ import { ThemeProvider } from 'emotion-theming'
 import Footer from './Footer'
 import GlobalStyle from './GlobalStyle'
 import Header from './Header'
+import { theme } from '../helpers'
 
 const ContainerDiv = styled.div`
   margin: 0 auto;
   max-width: 1200px;
-  padding: 0 1.2rem 1.4rem;
+  padding: 0 1.5rem 1.5rem;
 `
 
 const Layout = ({ children }) => {
@@ -25,7 +26,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <ContainerDiv>
@@ -37,7 +38,7 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

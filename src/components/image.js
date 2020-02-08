@@ -26,7 +26,7 @@ export const query = graphql`
   }
 `
 
-const Image = ({ queryKey, imgStyle }) => {
+const Image = ({ queryKey, imgStyle, style }) => {
   const data = useStaticQuery(graphql`
     query {
       astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
@@ -43,17 +43,13 @@ const Image = ({ queryKey, imgStyle }) => {
 
   const image = data[queryKey]
 
-  const sharedProps = {
-    alt: image.name,
-    title: image.name
-  }
-
   if (!image.childImageSharp && image.extension === 'svg') {
     return (
       <img
         src={image.publicURL}
         {...imgStyle}
-        {...sharedProps}
+        alt={image.name}
+        title={image.name}
       />
     )
   }
@@ -62,7 +58,9 @@ const Image = ({ queryKey, imgStyle }) => {
     <Img
       fluid={image.childImageSharp.fluid}
       imgStyle={{ margin: 0 }}
-      {...sharedProps}
+      style={style}
+      alt={image.name}
+      title={image.name}
     />
   )
 }
