@@ -19,7 +19,6 @@ const IndexPage = () => (
     <Div>
       <Image queryKey="astronaut" />
     </Div>
-    <Link to="/projects">See Projects</Link>
   </Layout>
 )
 

@@ -6,7 +6,9 @@ const Link = ({ url, linkText }) => {
   return (
     <GridWrapper>
       <Image queryKey="octocat" imgStyle={{ height: 20, width: 20 }} />
-      <OutboundLink href={url}>{linkText}</OutboundLink>
+      <OutboundLink target="_blank" href={url}>
+        {linkText}
+      </OutboundLink>
     </GridWrapper>
   )
 }

@@ -51,7 +51,9 @@ export default () => {
         }
 
         h1 {
-          font-size: 3.2rem;
+          font-size: 4rem;
+          font-family: Bangers;
+          letter-spacing: 0.2rem;
         }
 
         h2 {
@@ -74,11 +76,13 @@ export default () => {
         a,
         footer {
           font-size: 1.6rem;
-          font-family: ${theme.fonts.copy}
+          font-family: ${theme.fonts.copy};
         }
 
-        strong {
-          color: #222;
+        footer {
+          position: absolute;
+          bottom: 2rem;
+          left: calc((100% - 163px) / 2);
         }
 
         li {

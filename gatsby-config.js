@@ -33,7 +33,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Oswald', 'Roboto+Mono:400,700', 'Bangers']
+          families: ['Oswald:400,600', 'Roboto+Mono:400,700', 'Bangers']
         }
       }
     }

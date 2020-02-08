@@ -1,18 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, useStaticQuery } from 'gatsby'
-import styled from '@emotion/styled'
 import { ThemeProvider } from 'emotion-theming'
-import Footer from './Footer'
-import GlobalStyle from './GlobalStyle'
-import Header from './Header'
-import { theme } from '../helpers'
-
-const ContainerDiv = styled.div`
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 1.5rem 1.5rem;
-`
+import { graphql, useStaticQuery } from 'gatsby'
+import { theme } from '../../helpers'
+import Footer from '../Footer'
+import GlobalStyle from '../GlobalStyle'
+import Header from '../Header'
+import { ContainerDiv } from './styles'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

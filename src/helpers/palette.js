@@ -6,10 +6,10 @@ export default {
   text: {
     primary: '#36393b'
   },
-  button: {
+  link: {
     primary: '#d44500',
     secondary: '#13315c',
-    tertiary: '#3da35d'
+    tertiary: '#0F6DBF'
   },
   shadow: {
     primary: '#888888'
