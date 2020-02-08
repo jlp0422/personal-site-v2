@@ -20,11 +20,11 @@ export default () => (
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
           Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
           'Segoe UI Symbol';
-        font-size: 14px;
+        font-size: 62.5%;
         line-height: 1.4;
 
         @media (min-width: calc(550px + 10vw)) {
-          font-size: 18px;
+          /* font-size: 18px; */
         }
 
         /* remove margin for the main div that Gatsby mounts into */
@@ -41,10 +41,33 @@ export default () => (
       h6 {
         color: #222;
         line-height: 1.1;
-
         + * {
-          margin-top: 0.5rem;
+          margin-top: 1rem;
         }
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      h2 {
+        font-size: 2.8rem;
+      }
+
+      h3 {
+        font-size: 2.4rem;
+      }
+
+      h4 {
+        font-size: 2rem;
+      }
+
+      h5 {
+        font-size: 1.8rem;
+      }
+
+      p, a, footer {
+        font-size: 1.6rem
       }
 
       strong {
@@ -52,7 +75,7 @@ export default () => (
       }
 
       li {
-        margin-top: 0.25rem;
+        margin-top: 0.8rem;
       }
     `}
   />

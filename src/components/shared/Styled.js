@@ -3,7 +3,7 @@ import { shade } from 'polished'
 
 export const OutboundLink = styled.a`
   text-decoration: none;
-  margin: 0 0 0 6px;
+  margin: 0 0 0 .6rem;
   font-weight: bold;
   color: #1493ff; /* change to theme?? */
   :hover {
@@ -13,5 +13,5 @@ export const OutboundLink = styled.a`
 
 export const GridWrapper = styled.div`
   display: grid;
-  grid-template-columns: 20px 1fr;
+  grid-template-columns: 2rem 1fr;
 `

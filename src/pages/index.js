@@ -7,7 +7,7 @@ import SEO from '../components/Seo'
 
 const Div = styled.div`
   max-width: 300px;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.5rem;
 `
 
 const IndexPage = () => (
@@ -19,7 +19,7 @@ const IndexPage = () => (
     <Div>
       <Image queryKey="astronaut" />
     </Div>
-    <Link to="/page-2">Go to page 2</Link>
+    <Link to="/projects">See Projects</Link>
   </Layout>
 )
 

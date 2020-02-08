@@ -5,13 +5,13 @@ import styled from '@emotion/styled'
 
 const StyledHeader = styled.header`
   background: rebeccapurple;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.5rem;
 `
 
 const Div = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  padding: 1.45rem 1.0875rem;
+  max-width: 1200px;
+  padding: 1.4rem 1.2rem;
 `
 
 const H1 = styled.h1`
@@ -21,6 +21,7 @@ const H1 = styled.h1`
 const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
+  font-size: 3.2rem;
 `
 
 const Header = ({ siteTitle }) => (

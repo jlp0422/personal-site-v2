@@ -2,13 +2,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 import GithubLink from './shared/GithubLink'
 import LiveLink from './shared/LiveLink'
+import { linkExists } from '../helpers'
 
 const Container = styled.div`
   background-color: white;
-  height: 300px;
-  width: 300px;
-  margin: 0;
-  padding: 10px;
+  margin: 1rem 0;
+  padding: 1.5rem 1rem;
   border: 1px solid black;
   transition: all 0.2s linear;
   --webkit-transition: all 0.2s linear;
@@ -17,20 +16,30 @@ const Container = styled.div`
     transform: translate(-8px, -8px);
     --webkit-transform: translate(-8px, -8px);
   }
+  @media only screen and (max-width: 400px) {
+    box-shadow: 8px 8px #888888;
+    :hover {
+      transform: none;
+    }
+  }
 `
 
+const wrapWithPTag = (string, index) => <p key={index}>{string}</p>
+
 const ProjectCard = ({ project }) => {
+  const hasGithub = linkExists(project.github)
+  const hasWebsite = linkExists(project.website)
   return (
     <Container>
-      <h2>this is a project title</h2>
-      <h5>project description is a bit longer than the title</h5>
-      <p>More about the project</p>
-      <p>Maybe what stack was used, or how many people worked on it</p>
-      <p>Possible even more than that!</p>
-      {/* link to github repo */}
-      <GithubLink url="https://github.com/jlp0422" linkText="my github profile" />
-      {/* if live, link to live site */}
-      <LiveLink url="https://hot-tub-2019.herokuapp.com/" linkText="Hot Tub 2019" />
+      <h3>{project.title}</h3>
+      <h5>{project.description}</h5>
+      {project.details.map(wrapWithPTag)}
+      {hasGithub && (
+        <GithubLink url={project.github.link} linkText={project.github.text} />
+      )}
+      {hasWebsite && (
+        <LiveLink url={project.website.link} linkText={project.website.text} />
+      )}
     </Container>
   )
 }
