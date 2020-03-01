@@ -1,9 +1,8 @@
-import React from 'react'
 import { css } from '@emotion/core'
-import GithubLink from '../shared/GithubLink'
-import LiveLink from '../shared/LiveLink'
-import { linkExists } from '../../helpers'
 import { useTheme } from 'emotion-theming'
+import React from 'react'
+import { linkExists } from '../../helpers'
+import { GithubLink, LiveLink } from '../shared'
 import { Container, LinkContainer } from './styles'
 
 const wrapWithPTag = (string, index) => <p key={index}>{string}.</p>

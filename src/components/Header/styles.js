@@ -46,7 +46,7 @@ export const LogoLink = styled(Link)`
   margin: 0;
   visibility: hidden;
   display: none;
-  @media only screen and (min-width: 640px) and (max-width: 800px) {
+  @media only screen and (min-width: 641px) and (max-width: 800px) {
     visibility: visible;
     display: block;
   }
@@ -63,7 +63,7 @@ export const MobileLogo = styled.button`
   margin: 0;
   visibility: hidden;
   display: none;
-  @media only screen and (max-width: 639px) {
+  @media only screen and (max-width: 640px) {
     visibility: visible;
     display: block;
   }

@@ -1,18 +1,9 @@
+import { css } from '@emotion/core'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { css } from '@emotion/core'
 import { ActiveLink } from '../../components/shared/Styled'
 import Image from '../Image'
-import {
-  Div,
-  H1,
-  HeaderLink,
-  List,
-  LogoLink,
-  MobileLogo,
-  NavLink,
-  StyledHeader
-} from './styles'
+import { Div, H1, HeaderLink, List, LogoLink, MobileLogo, NavLink, StyledHeader } from './styles'
 
 const aboutLink = <NavLink to="/about">About</NavLink>
 const expLink = <NavLink to="/experience">Experience</NavLink>

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { css } from '@emotion/core'
 import styled from '@emotion/styled'
+import React, { useState } from 'react'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
-import { css } from '@emotion/core'
 
 const contactInfo = [
   { type: 'email', value: 'jeremyphilipson@gmail.com' },

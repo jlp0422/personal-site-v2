@@ -1,6 +1,6 @@
-import React from 'react'
-import { Global, css } from '@emotion/core'
+import { css, Global } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
+import React from 'react'
 
 export default () => {
   const theme = useTheme()

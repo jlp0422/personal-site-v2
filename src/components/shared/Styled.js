@@ -1,8 +1,8 @@
-import React from 'react'
 import styled from '@emotion/styled'
-import { shade, padding } from 'polished'
-import { Link } from 'gatsby'
 import { useTheme } from 'emotion-theming'
+import { Link } from 'gatsby'
+import { padding, shade } from 'polished'
+import React from 'react'
 
 export const OutboundLink = styled.a`
   text-decoration: none;

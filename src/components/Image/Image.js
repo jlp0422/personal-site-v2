@@ -1,6 +1,6 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import React from 'react'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -39,6 +39,12 @@ const Image = ({ queryKey, imgStyle, style }) => {
         ...ImageFragment
       }
       logo: file(relativePath: { eq: "logo_black.svg" }) {
+        ...ImageFragment
+      }
+      fanduelLogo: file(relativePath: { eq: "fanduel-vertical-logo.png" }) {
+        ...ImageFragment
+      }
+      wakeforestuniversityLogo: file(relativePath: { eq: "wf-athletics-logo.png" }) {
         ...ImageFragment
       }
     }
