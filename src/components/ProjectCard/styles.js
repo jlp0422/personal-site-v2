@@ -15,7 +15,7 @@ export const Container = styled.div`
     transform: translate(-8px, -8px);
     --webkit-transform: translate(-8px, -8px);
   }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 640px) {
     box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
     :hover {
       transform: none;

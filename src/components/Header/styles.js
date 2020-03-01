@@ -1,5 +1,6 @@
-import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
+import { ActiveLink } from '../../components/shared/Styled'
 
 export const StyledHeader = styled.header`
   background: ${({ theme }) => theme.palette.link.secondary};
@@ -15,6 +16,12 @@ export const Div = styled.div`
   justify-items: center;
   align-items: center;
   grid-column-gap: 2rem;
+  @media only screen and (max-width: 640px) {
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const H1 = styled.h1`
@@ -29,4 +36,47 @@ export const HeaderLink = styled(Link)`
   color: white;
   text-decoration: none;
   font-size: 4.5rem;
+  @media only screen and (max-width: 800px) {
+    visibility: hidden;
+    display: none;
+  }
+`
+
+export const LogoLink = styled(Link)`
+  margin: 0;
+  visibility: hidden;
+  display: none;
+  @media only screen and (min-width: 640px) and (max-width: 800px) {
+    visibility: visible;
+    display: block;
+  }
+`
+
+export const NavLink = styled(ActiveLink)`
+  @media only screen and (max-width: 640px) {
+    display: none;
+    visibility: hidden;
+  }
+`
+
+export const MobileLogo = styled.button`
+  margin: 0;
+  visibility: hidden;
+  display: none;
+  @media only screen and (max-width: 639px) {
+    visibility: visible;
+    display: block;
+  }
+`
+
+export const List = styled.ul`
+  padding: 0 0 1rem;
+  list-style: none;
+  margin-top: 0;
+  visibility: hidden;
+  display: none;
+  @media only screen and (max-width: 640px) {
+    visibility: visible;
+    display: block;
+  }
 `

@@ -16,5 +16,6 @@ export default {
   },
   boxShadow: {
     primary: '.8rem .8rem #888888'
-  }
+  },
+  white: '#ffffff'
 }

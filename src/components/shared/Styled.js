@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { shade, tint, padding } from 'polished'
+import { shade, padding } from 'polished'
 import { Link } from 'gatsby'
 import { useTheme } from 'emotion-theming'
 
@@ -52,7 +52,11 @@ export const ActiveLink = ({ children, ...props }) => {
   return (
     <NavLink
       {...props}
-      activeStyle={{ color: tint(0.3, palette.link.primary) }}
+      // activeStyle={{ color: tint(0.3, palette.link.primary) }}
+      activeStyle={{
+        textDecoration: 'line-through',
+        textDecorationColor: palette.white
+      }}
     >
       {children}
     </NavLink>

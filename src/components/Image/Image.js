@@ -38,6 +38,9 @@ const Image = ({ queryKey, imgStyle, style }) => {
       computer: file(relativePath: { eq: "computer-icon-2.png" }) {
         ...ImageFragment
       }
+      logo: file(relativePath: { eq: "logo_black.svg" }) {
+        ...ImageFragment
+      }
     }
   `)
 

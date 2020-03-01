@@ -21,7 +21,7 @@ export default () => {
           background: ${theme.palette.background.primary};
           margin: 0;
           color: ${theme.palette.text.primary};
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          font-family: ${theme.fonts.copy}, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
             Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
             'Segoe UI Symbol';
           font-size: 62.5%;
@@ -52,7 +52,7 @@ export default () => {
 
         h1 {
           font-size: 4rem;
-          font-family: Bangers;
+          font-family: ${theme.fonts.header};
           letter-spacing: 0.2rem;
         }
 
@@ -76,13 +76,12 @@ export default () => {
         a,
         footer {
           font-size: 1.6rem;
-          font-family: ${theme.fonts.copy};
         }
 
         footer {
-          position: absolute;
           bottom: 2rem;
-          left: calc((100% - 163px) / 2);
+          margin: 1rem auto 0;
+          text-align: center;
         }
 
         li {
