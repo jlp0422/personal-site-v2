@@ -55,7 +55,7 @@ export const ActiveLink = ({ children, ...props }) => {
       // activeStyle={{ color: tint(0.3, palette.link.primary) }}
       activeStyle={{
         textDecoration: 'line-through',
-        textDecorationColor: palette.white
+        textDecorationColor: palette.white.true
       }}
     >
       {children}

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 export const Container = styled.div`
-  border: 2px solid green;
+  background-color: #000000;
   display: grid;
   grid-template-rows: repeat(auto-fill, 30px);
   text-align: center;
@@ -33,6 +33,6 @@ export const Info = styled.div`
 `
 
 export const LogoContainer = styled.div`
-  width: 100px;
+  width: 60px;
   margin: 1rem auto 0;
 `

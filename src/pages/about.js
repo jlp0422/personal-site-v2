@@ -12,7 +12,7 @@ const contactInfo = [
 
 const Copy = styled.p`
   font-size: 2rem;
-  padding: 0.5rem 0
+  padding: 0.5rem 0;
 `
 
 const ContactList = styled.div`
@@ -68,11 +68,18 @@ const About = () => {
   return (
     <Layout>
       <SEO title="About" />
-      <button css={css`padding: 0`} onClick={() => toggleEmojiOnly(!emojiOnly)}><h1>About Me</h1></button>
+      <button
+        css={css`
+          padding: 0;
+        `}
+        onClick={() => toggleEmojiOnly(!emojiOnly)}
+      >
+        <h1>About Me</h1>
+      </button>
 
       {/* add photo ??? */}
       <Copy>
-        I'm a 27-year-old Software Engineer working at FanDuel. I enjoy
+        Hello! I'm a 27-year-old Software Engineer working at FanDuel. I enjoy
         {emojiOnly ? renderEmoji(emojis.cooking) : ' cooking'}, playing
         {emojiOnly ? renderEmoji(emojis.trumpet) : ' trumpet'},
         {emojiOnly ? renderEmoji(emojis.workOut) : ' working out'}, and

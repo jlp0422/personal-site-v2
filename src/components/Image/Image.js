@@ -41,7 +41,7 @@ const Image = ({ queryKey, imgStyle, style }) => {
       logo: file(relativePath: { eq: "logo_black.svg" }) {
         ...ImageFragment
       }
-      fanduelLogo: file(relativePath: { eq: "fanduel-vertical-logo.png" }) {
+      fanduelLogo: file(relativePath: { eq: "fanduel-shield-logo.png" }) {
         ...ImageFragment
       }
       wakeforestuniversityLogo: file(relativePath: { eq: "wf-athletics-logo.png" }) {

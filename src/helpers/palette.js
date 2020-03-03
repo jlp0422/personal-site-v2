@@ -4,7 +4,7 @@ export default {
     secondary: '#13315C'
   },
   text: {
-    primary: '#36393b',
+    primary: '#36393b'
   },
   link: {
     primary: '#d44500',
@@ -17,6 +17,10 @@ export default {
   boxShadow: {
     primary: '.8rem .8rem #888888'
   },
-  white: '#ffffff',
+  white: {
+    true: '#ffffff',
+    lightest: '#f5f5f5',
+    lighter: '#dedede'
+  },
   gray: '#686868'
 }

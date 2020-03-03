@@ -32,19 +32,25 @@ const DataWrapper = styled.div`
   }
   > p:first-of-type {
     font-size: ${({ size }) => SIZES[size].value};
-    color: ${({ theme }) => theme.palette.text.primary};
+    color: ${({ theme, background }) =>
+      background === 'dark'
+        ? theme.palette.white.lightest
+        : theme.palette.text.primary};
   }
   > p:last-of-type {
-    font-size: ${({ size }) => SIZES[size].label};
-    color: ${({ theme }) => theme.palette.gray};
     text-transform: uppercase;
     font-weight: 300;
+    font-size: ${({ size }) => SIZES[size].label};
+    color: ${({ theme, background }) =>
+      background === 'dark'
+        ? theme.palette.white.lighter
+        : theme.palette.text.gray};
   }
 `
 
-const DataItem = ({ value, label, size, align }) => {
+const DataItem = ({ value, label, size, align, background }) => {
   return (
-    <DataWrapper size={size} align={align}>
+    <DataWrapper size={size} align={align} background={background}>
       <p>{value}</p>
       <p>{label}</p>
     </DataWrapper>
