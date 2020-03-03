@@ -9,8 +9,22 @@ export const OutboundLink = styled.a`
   margin: 0 0 0 0.6rem;
   font-weight: bold;
   color: ${({ theme }) => theme.palette.link.tertiary};
+  --initialBgColor: #d44500;
+  --slideBgColor: #fff;
+
+  background-image: linear-gradient(
+    90deg,
+    var(--slideBgColor) 0%,
+    var(--slideBgColor) 50%,
+    var(--initialBgColor) 50%,
+    var(--initialBgColor) 100%
+  );
+  background-size: 200%;
+  transition: background-position 0.3s cubic-bezier(0.47, 0.1, 1, 0.63),
+    color 0.2s linear;
+  transition-delay: 0s, 0.15s;
   :hover {
-    color: ${({ theme }) => shade(0.4, theme.palette.link.tertiary)};
+    background-position: -100% 100%;
   }
 `
 

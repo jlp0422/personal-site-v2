@@ -13,6 +13,9 @@ export const Container = styled.div`
   :first-of-type {
     margin-top: 1rem;
   }
+  > p {
+    margin-top: 0.5rem;
+  }
   :hover {
     box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
     transform: translate(-8px, -8px);
@@ -31,25 +34,21 @@ export const Title = styled.h3`
   color: ${({ theme }) => theme.palette.white.lightest};
 `
 
-export const Info = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 1rem 0 0;
-  @media only screen and (max-width: 640px) {
-    grid-template-columns: 1fr;
-    > div {
-      margin: 0.6rem auto 0;
-    }
-  }
+export const Subtitle = styled.p`
+  color: ${({ theme }) => theme.palette.white.lightest};
+  font-size: 2rem;
 `
 
-export const LogoContainer = styled.div`
-  display: block;
-  visibility: visible;
-  width: 60px;
-  margin: 1rem auto 0;
+export const Info = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
+  justify-items: center;
+  margin: 1rem 0 0;
   @media only screen and (max-width: 640px) {
-    display: none;
-    visibility: hidden;
+    justify-items: stretch;
+    > div {
+      margin: 0.6rem 0 0;
+    }
   }
 `

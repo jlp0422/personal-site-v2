@@ -22,5 +22,10 @@ export default {
     lightest: '#f5f5f5',
     lighter: '#dedede'
   },
-  gray: '#686868'
+  gray: '#686868',
+  black: {
+    true: '#000000',
+    darkest: '#0f0f0f',
+    darker: '#212121'
+  }
 }

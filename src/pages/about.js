@@ -79,7 +79,7 @@ const About = () => {
 
       {/* add photo ??? */}
       <Copy>
-        Hello! I'm a 27-year-old Software Engineer working at FanDuel. I enjoy
+        What up! I'm a 27-year-old Software Engineer working at FanDuel. I enjoy
         {emojiOnly ? renderEmoji(emojis.cooking) : ' cooking'}, playing
         {emojiOnly ? renderEmoji(emojis.trumpet) : ' trumpet'},
         {emojiOnly ? renderEmoji(emojis.workOut) : ' working out'}, and

@@ -1,14 +1,11 @@
-import { css } from '@emotion/core'
-import { useTheme } from 'emotion-theming'
 import React from 'react'
-import Image from '../Image'
 import { DataItem } from '../../components/shared'
-import { Container, Info, LogoContainer } from './styles'
 import { joinString } from '../../helpers'
+import Image from '../Image'
+import { Container, Info, LogoContainer, Title } from './styles'
 
 const ExperienceCard = ({ experience }) => {
   const { title, location, company, startDate, endDate } = experience
-  const { fonts } = useTheme()
   const normalizedCompany = joinString(company)
   const dataProps = {
     size: 'medium',
@@ -17,14 +14,7 @@ const ExperienceCard = ({ experience }) => {
   }
   return (
     <Container>
-      <h3
-        css={css`
-          font-family: ${fonts.nav};
-          color: #f5f5f5;
-        `}
-      >
-        {title}
-      </h3>
+      <Title>{title}</Title>
       <Info>
         <DataItem value={location} label="Location" {...dataProps} />
         <DataItem value={company} label="Company" {...dataProps} />
