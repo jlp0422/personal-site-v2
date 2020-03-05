@@ -7,12 +7,8 @@ import { projects } from '../data'
 
 const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 32%);
-  grid-column-gap: 2%;
-  @media only screen and (max-width: 800px) {
-    grid-template-columns: repeat(auto-fill, 48.5%);
-    grid-column-gap: 3%;
-  }
+  grid-template-columns: repeat(auto-fill, 48.5%);
+  grid-column-gap: 3%;
   @media only screen and (max-width: 640px) {
     grid-template-columns: 1fr;
   }

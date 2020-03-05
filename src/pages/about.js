@@ -71,6 +71,7 @@ const About = () => {
       <button
         css={css`
           padding: 0;
+          border: none;
         `}
         onClick={() => toggleEmojiOnly(!emojiOnly)}
       >

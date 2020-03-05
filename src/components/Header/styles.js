@@ -63,6 +63,8 @@ export const MobileLogo = styled.button`
   margin: 0;
   visibility: hidden;
   display: none;
+  background-color: transparent;
+  border: none;
   @media only screen and (max-width: 640px) {
     visibility: visible;
     display: block;
