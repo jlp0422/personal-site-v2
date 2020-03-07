@@ -29,9 +29,6 @@ export const query = graphql`
 const Image = ({ queryKey, imgStyle, style }) => {
   const data = useStaticQuery(graphql`
     query {
-      astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        ...ImageFragment
-      }
       octocat: file(relativePath: { eq: "git-logo.svg" }) {
         ...ImageFragment
       }
