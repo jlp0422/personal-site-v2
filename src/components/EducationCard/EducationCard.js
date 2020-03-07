@@ -1,4 +1,3 @@
-import { useTheme } from 'emotion-theming'
 import React from 'react'
 import { DataItem } from '../../components/shared'
 import { Container, Info, Subtitle, Title } from './styles'

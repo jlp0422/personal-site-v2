@@ -39,6 +39,19 @@ const snowboarding = { label: 'Snowboarding', icon: '🏂' }
 //   snowboarding
 // ]
 
+/* {emojiArray.map(({ label, icon }) => (
+        <span
+          css={css`
+            font-size: 5rem;
+          `}
+          key={label}
+          role="img"
+          aria-label={label}
+        >
+          {icon}
+        </span>
+      ))} */
+
 const emojis = {
   cooking,
   trumpet,
@@ -92,18 +105,6 @@ const About = () => {
         {emojiOnly ? renderEmoji(emojis.programming) : ' programming'} skills,
         or{emojiOnly ? renderEmoji(emojis.snowboarding) : ' on the slopes'}.
       </Copy>
-      {/* {emojiArray.map(({ label, icon }) => (
-        <span
-          css={css`
-            font-size: 5rem;
-          `}
-          key={label}
-          role="img"
-          aria-label={label}
-        >
-          {icon}
-        </span>
-      ))} */}
       {/* <h3>Vitals</h3>
       <p>Height: 5'9"</p>
       <p>Blood Type: 🍊</p> */}

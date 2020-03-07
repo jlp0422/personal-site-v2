@@ -20,8 +20,8 @@ export const OutboundLink = styled.a`
     var(--initialBgColor) 100%
   );
   background-size: 200%;
-  transition: background-position 0.25s cubic-bezier(0.47, 0.1, 1, 0.63),
-    color 0.25s cubic-bezier(0.47, 0.1, 1, 0.63);
+  transition: background-position 0.2s ease-out,
+    color 0.2s ease-out;
   transition-delay: 0s, 0.15s;
   :hover {
     color: #fff;
@@ -83,7 +83,7 @@ export const ExpContainer = styled.div`
   transition: all 0.2s linear;
   --webkit-transition: all 0.2s linear;
   :first-of-type {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   :hover {
     box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
