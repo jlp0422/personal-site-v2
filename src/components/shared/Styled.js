@@ -9,8 +9,8 @@ export const OutboundLink = styled.a`
   margin: 0 0 0 0.6rem;
   font-weight: bold;
   color: ${({ theme }) => theme.palette.link.secondary};
-  --initialBgColor: ${({ theme }) => theme.palette.link.secondary};/* 000; */
-  --slideBgColor: #fff;
+  --initialBgColor: ${({ theme }) => theme.palette.link.secondary};
+  --slideBgColor: ${({ theme }) => theme.palette.white.true};
 
   background-image: linear-gradient(
     90deg,
@@ -20,11 +20,10 @@ export const OutboundLink = styled.a`
     var(--initialBgColor) 100%
   );
   background-size: 200%;
-  transition: background-position 0.2s ease-out,
-    color 0.2s ease-out;
+  transition: background-position 0.2s ease-out, color 0.2s ease-out;
   transition-delay: 0s, 0.15s;
   :hover {
-    color: #fff;
+    color: ${({ theme }) => theme.palette.white.true};
     background-position: -100% 100%;
   }
 `
