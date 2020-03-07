@@ -6,6 +6,7 @@ import SEO from '../components/Seo'
 import { projects } from '../data'
 
 const ProjectGrid = styled.div`
+  margin-top: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, 48.5%);
   grid-column-gap: 3%;

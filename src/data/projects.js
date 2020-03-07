@@ -21,7 +21,8 @@ export default [
     description: 'Built for live standings of football pool',
     details: [
       'Created to keep track of all wins per person for the 2019 NFL season',
-      'Live updates at conclusion of each NFL game'
+      'Live updates at conclusion of each NFL game',
+      'Kept track of overall standings, as well as each game per week'
     ],
     github: {
       link: 'https://github.com/jlp0422/wins_pool_2019/',

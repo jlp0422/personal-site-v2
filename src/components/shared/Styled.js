@@ -83,7 +83,7 @@ export const ExpContainer = styled.div`
   transition: all 0.2s linear;
   --webkit-transition: all 0.2s linear;
   :first-of-type {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   :hover {
     box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};

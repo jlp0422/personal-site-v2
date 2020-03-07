@@ -13,6 +13,9 @@ const contactInfo = [
 const Copy = styled.p`
   font-size: 2rem;
   padding: 0.5rem 0;
+  :first-of-type {
+    padding-top: 0;
+  }
 `
 
 const ContactList = styled.div`
