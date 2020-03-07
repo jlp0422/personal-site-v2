@@ -11,25 +11,27 @@ const projectsLink = <NavLink to="/projects">Projects</NavLink>
 const resumeLink = <NavLink to="/resume">Resume</NavLink>
 const logoImage = <Image queryKey="logo" imgStyle={{ height: 60, width: 60 }} />
 
-const navLinks = ['About', 'Experience', 'Projects', 'Resume']
+const navLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Experience', path: '/experience' },
+  { label: 'Projects', path: '/projects' },
+  { label: 'Resume', path: '/resume' }
+]
 
 const Dropdown = ({ toggleDropdown, isDropdownOpen }) => {
   const toggle = () => toggleDropdown(!isDropdownOpen)
   return (
     <List>
-      {navLinks.map(link => (
+      {navLinks.map(({ label, path }) => (
         <li
           css={css`
             text-align: center;
           `}
-          key={link}
+          key={path}
         >
-          <ActiveLink
-            onKeyDown={toggle}
-            onClick={toggle}
-            to={`/${link.toLowerCase()}`}
-          >
-            {link}
+          <ActiveLink onKeyDown={toggle} onClick={toggle} to={path}>
+            {label}
           </ActiveLink>
         </li>
       ))}
@@ -39,7 +41,6 @@ const Dropdown = ({ toggleDropdown, isDropdownOpen }) => {
 
 const Header = ({ siteTitle }) => {
   const [isDropdownOpen, toggleDropdown] = useState(false)
-
   return (
     <StyledHeader>
       <Div>
