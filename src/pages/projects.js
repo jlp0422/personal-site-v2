@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
+import { FadeSection } from '../components/shared'
 import SEO from '../components/Seo'
 import { projects } from '../data'
 
@@ -22,7 +23,9 @@ const Projects = () => {
       <h1>Things I've worked on</h1>
       <ProjectGrid>
         {projects.map(project => (
-          <ProjectCard key={project.title} project={project} />
+          <FadeSection key={project.title}>
+            <ProjectCard project={project} />
+          </FadeSection>
         ))}
       </ProjectGrid>
     </Layout>
