@@ -1,7 +1,7 @@
 import { css } from '@emotion/core'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { ActiveLink } from '../../components/shared/Styled'
+import { ActiveLink } from '../../components/shared'
 import Image from '../Image'
 import {
   Div,

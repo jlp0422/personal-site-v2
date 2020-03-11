@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import { ActiveLink } from '../../components/shared/Styled'
+import { ActiveLink } from '../../components/shared'
 
 export const StyledHeader = styled.header`
   background: ${({ theme }) => theme.palette.link.secondary};

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { ExpContainer, ExpTitle, ExpInfo } from '../shared/Styled'
+import { ExpContainer, ExpInfo, ExpTitle } from '../shared'
 
 export const Container = ExpContainer
 
