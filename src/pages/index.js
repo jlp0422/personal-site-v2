@@ -3,8 +3,8 @@ import React from 'react'
 import { GridContainer, LinkBox } from '../components/HomePage/styles'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
-import { pages } from '../data'
 import { FadeSection } from '../components/shared'
+import { pages } from '../data'
 
 const renderEmoji = ({ title, icon }) => (
   <div

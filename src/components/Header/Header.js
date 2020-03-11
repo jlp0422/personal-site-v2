@@ -3,16 +3,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { ActiveLink } from '../../components/shared'
 import Image from '../Image'
-import {
-  Div,
-  H1,
-  HeaderLink,
-  List,
-  LogoLink,
-  MobileLogo,
-  NavLink,
-  StyledHeader
-} from './styles'
+import { Div, H1, HeaderLink, List, LogoLink, MobileLogo, NavLink, StyledHeader } from './styles'
 
 const aboutLink = <NavLink to="/about">About</NavLink>
 const expLink = <NavLink to="/experience">Experience</NavLink>

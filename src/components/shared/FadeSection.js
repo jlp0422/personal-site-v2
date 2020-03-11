@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
 import styled from '@emotion/styled'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Container = styled.div`
   display: inherit;
@@ -22,9 +22,10 @@ const FadeSection = ({ children }) => {
         }
       })
     })
-    observer.observe(domRef.current)
+    const { current } = domRef
+    observer.observe(current)
     return () => {
-      observer.unobserve(domRef.current)
+      observer.unobserve(current)
     }
   }, [])
 

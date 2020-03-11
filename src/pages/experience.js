@@ -3,8 +3,7 @@ import EducationCard from '../components/EducationCard'
 import ExperienceCard from '../components/ExperienceCard'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
-import { FadeSection } from '../components/shared'
-import { ExpHeader } from '../components/shared'
+import { ExpHeader, FadeSection } from '../components/shared'
 import { education, experience } from '../data'
 
 const Experience = () => (

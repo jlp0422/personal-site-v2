@@ -2,8 +2,8 @@ import styled from '@emotion/styled'
 import React from 'react'
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
-import { FadeSection } from '../components/shared'
 import SEO from '../components/Seo'
+import { FadeSection } from '../components/shared'
 import { projects } from '../data'
 
 const ProjectGrid = styled.div`

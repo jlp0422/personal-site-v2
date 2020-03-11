@@ -26,7 +26,7 @@ export const GridContainer = styled.div`
   @media only screen and (max-width: 800px) {
     grid-template: repeat(4, 1fr) / 1fr;
     > a:nth-of-type(2) {
-      grid-row: 3 / span 1
+      grid-row: 3 / span 1;
     }
   }
 `

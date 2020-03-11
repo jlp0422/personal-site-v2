@@ -1,9 +1,9 @@
 import { css } from '@emotion/core'
 import React, { useState } from 'react'
-import { FadeSection } from '../components/shared'
+import { ContactList, Copy } from '../components/About/styles'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
-import { Copy, ContactList } from '../components/About/styles'
+import { FadeSection } from '../components/shared'
 import { contactInfo, emojiObject } from '../data'
 
 const renderEmoji = ({ label, icon }) => (
