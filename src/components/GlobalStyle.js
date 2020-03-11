@@ -21,9 +21,9 @@ export default () => {
           background: ${theme.palette.background.primary};
           margin: 0;
           color: ${theme.palette.text.primary};
-          font-family: ${theme.fonts.copy}, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-            Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-            'Segoe UI Symbol';
+          font-family: ${theme.fonts.copy}, -apple-system, BlinkMacSystemFont,
+            'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
           font-size: 62.5%;
           line-height: 1.4;
 
