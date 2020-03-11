@@ -5,6 +5,12 @@ import { ActiveLink } from '../../components/shared'
 export const StyledHeader = styled.header`
   background: ${({ theme }) => theme.palette.link.secondary};
   margin-bottom: 1.5rem;
+  @media only screen and (max-width: 640px) {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+  }
 `
 
 export const Div = styled.div`
