@@ -41,7 +41,9 @@ const Image = ({ queryKey, imgStyle, style }) => {
       fanduelLogo: file(relativePath: { eq: "fanduel-shield-logo.png" }) {
         ...ImageFragment
       }
-      wakeforestuniversityLogo: file(relativePath: { eq: "wf-athletics-logo.png" }) {
+      wakeforestuniversityLogo: file(
+        relativePath: { eq: "wf-athletics-logo.png" }
+      ) {
         ...ImageFragment
       }
     }

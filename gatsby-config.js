@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `jeremy-philipson-website`,
-        short_name: `jeremy-philipson`,
+        name: `Jeremy Philipson | Website`,
+        short_name: `Jeremy Philipson`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#000000`,
@@ -28,6 +28,7 @@ module.exports = {
         icon: `src/images/logo_black.svg` // This path is relative to the root of the site.
       }
     },
+    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
@@ -36,8 +37,5 @@ module.exports = {
         }
       }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ]
 }

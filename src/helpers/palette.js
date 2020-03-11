@@ -15,7 +15,7 @@ export default {
     primary: '#888888'
   },
   boxShadow: {
-    primary: '.8rem .8rem #888888',
+    primary: '.8rem .8rem #888888'
   },
   white: {
     true: '#ffffff',
