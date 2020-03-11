@@ -59,8 +59,8 @@ export default [
       'Worked on project with 3 other developers in my class'
     ],
     github: {
-      link: 'https://github.com/jlp0422/stackjack',
-      text: 'StackJack'
+      link: 'https://github.com/jlp0422/capstone',
+      text: 'UnTapped Trivia'
     },
     website: {
       link: 'https://www.youtube.com/watch?v=cvqqW-UEuMk',
