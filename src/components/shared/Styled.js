@@ -48,12 +48,16 @@ export const NavLink = styled(Link)`
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
+  border-bottom: 2px solid transparent;
   :hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     color: ${({ theme }) => shade(0.2, theme.palette.link.primary)};
   }
   :active {
-    transform: scale(0.95);
+    transform: scale(0.97);
+  }
+  @media only screen and (max-width: 640px) {
+    padding: 0.5rem;
   }
 `
 
@@ -62,10 +66,11 @@ export const ActiveLink = ({ children, ...props }) => {
   return (
     <NavLink
       {...props}
-      activeStyle={{
-        textDecoration: 'line-through',
-        textDecorationColor: palette.white.true
-      }}
+      getProps={({ isCurrent }) => ({
+        style: {
+          backgroundColor: isCurrent ? `${palette.white.true}` : 'inherit'
+        }
+      })}
     >
       {children}
     </NavLink>
@@ -111,10 +116,50 @@ export const ExpTitle = styled.h3`
 export const ExpInfo = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1%;
   margin: 1rem 0 0;
   @media only screen and (max-width: 640px) {
     > div {
       margin: 0.6rem 0 0;
     }
   }
+`
+
+export const CardFlipContainer = styled.div`
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  perspective: 1000px;
+  :first-of-type {
+    margin-top: 1rem;
+  }
+  :hover > div {
+    transform: rotateY(180deg);
+  }
+`
+
+export const CardFlipInner = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+`
+
+export const CardShared = styled.div`
+  margin-top: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+`
+
+export const CardFlipBack = styled(CardShared)`
+  transform: rotateY(180deg);
 `

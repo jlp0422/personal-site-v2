@@ -15,18 +15,18 @@ export const Subtitle = styled.p`
 `
 
 export const Info = styled(ExpInfo)`
-  justify-items: center;
+  /* justify-items: center;
   > div:first-of-type {
     grid-column-start: 1;
   }
   > div:last-of-type {
     grid-column-start: 3;
   }
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 640px) { */
     grid-template-columns: repeat(2, 1fr);
     justify-items: stretch;
     > div:last-of-type {
       grid-column-start: 2;
     }
-  }
+  /* } */
 `
