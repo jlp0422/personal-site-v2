@@ -1,10 +1,17 @@
 export default [
   {
+    title: 'Software Engineer',
+    company: 'FanDuel',
+    location: 'New York, NY',
+    startDate: 'March 2020',
+    endDate: 'Present'
+  },
+  {
     title: 'Junior Software Engineer',
     company: 'FanDuel',
     location: 'New York, NY',
     startDate: 'Oct 2018',
-    endDate: 'Present'
+    endDate: 'March 2020'
   },
   {
     title: 'Email Marketing Associate',
