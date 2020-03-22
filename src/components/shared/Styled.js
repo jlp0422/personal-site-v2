@@ -1,30 +1,17 @@
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
 import { Link } from 'gatsby'
-import { shade } from 'polished'
+import { shade, tint } from 'polished'
 import React from 'react'
 
 export const OutboundLink = styled.a`
   text-decoration: none;
   margin: 0 0 0 0.6rem;
   font-weight: bold;
-  color: ${({ theme }) => theme.palette.link.secondary};
-  --initialBgColor: ${({ theme }) => theme.palette.link.secondary};
-  --slideBgColor: ${({ theme }) => theme.palette.white.true};
-
-  background-image: linear-gradient(
-    90deg,
-    var(--slideBgColor) 0%,
-    var(--slideBgColor) 50%,
-    var(--initialBgColor) 50%,
-    var(--initialBgColor) 100%
-  );
-  background-size: 200%;
-  transition: background-position 0.2s ease-out, color 0.2s ease-out;
-  transition-delay: 0s, 0.15s;
+  color: ${({ theme }) => tint(0.25, theme.palette.link.secondary)};
+  transition: all 0.2s ease-out;
   :hover {
-    color: ${({ theme }) => theme.palette.white.true};
-    background-position: -100% 100%;
+    color: ${({ theme }) => shade(0.25, theme.palette.link.secondary)};
   }
 `
 
@@ -48,10 +35,21 @@ export const NavLink = styled(Link)`
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  border-bottom: 2px solid transparent;
+  --initialBgColor: ${({ theme }) => theme.palette.white.true};
+  --slideBgColor: ${({ theme }) => theme.palette.link.secondary};
+
+  background-image: linear-gradient(
+    90deg,
+    var(--slideBgColor) 0%,
+    var(--slideBgColor) 50%,
+    var(--initialBgColor) 50%,
+    var(--initialBgColor) 100%
+  );
+  background-size: 200%;
+  transition: background-position 0.2s ease-out, color 0.2s ease-out;
+  transition-delay: 0s, 0.15s;
   :hover {
-    transform: scale(1.03);
-    color: ${({ theme }) => shade(0.2, theme.palette.link.primary)};
+    background-position: -100% 100%;
   }
   :active {
     transform: scale(0.97);
@@ -68,7 +66,12 @@ export const ActiveLink = ({ children, ...props }) => {
       {...props}
       getProps={({ isCurrent }) => ({
         style: {
-          backgroundColor: isCurrent ? `${palette.white.true}` : 'inherit'
+          ...(isCurrent
+            ? {
+                backgroundColor: palette.white.true,
+                backgroundImage: 'none'
+              }
+            : {})
         }
       })}
     >
@@ -90,12 +93,12 @@ export const ExpContainer = styled.div`
     margin-top: 1rem;
   }
   :hover {
-    box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
+    box-shadow: ${({ theme }) => theme.palette.boxShadow.dark};
     transform: translate(-8px, -8px);
     --webkit-transform: translate(-8px, -8px);
   }
   @media only screen and (max-width: 640px) {
-    box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
+    box-shadow: ${({ theme }) => theme.palette.boxShadow.dark};
     :hover {
       transform: none;
     }
@@ -128,7 +131,7 @@ export const ExpInfo = styled.div`
 export const CardFlipContainer = styled.div`
   background-color: transparent;
   width: 100%;
-  height: 200px;
+  height: 210px;
   perspective: 1000px;
   :first-of-type {
     margin-top: 1rem;

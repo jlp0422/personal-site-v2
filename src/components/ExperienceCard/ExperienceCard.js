@@ -13,7 +13,7 @@ import {
 } from './styles'
 
 const ExperienceCard = ({ experience }) => {
-  const { title, location, company, startDate, endDate } = experience
+  const { title, location, company, startDate, endDate, details } = experience
   const normalizedCompany = joinString(company)
   const dataProps = {
     size: 'medium',
@@ -42,7 +42,9 @@ const ExperienceCard = ({ experience }) => {
           </LogoContainer> */}
         </CardFront>
         <CardBack>
-          <h3>this is the back of the card</h3>
+          {details.map(detail => (
+            <p key={detail}>{detail}</p>
+          ))}
         </CardBack>
       </InnerContainer>
     </Container>

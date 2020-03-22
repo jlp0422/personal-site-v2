@@ -11,12 +11,12 @@ export const Container = styled.div`
   transition: all 0.2s linear;
   --webkit-transition: all 0.2s linear;
   :hover {
-    box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
+    box-shadow: ${({ theme }) => theme.palette.boxShadow.dark};
     transform: translate(-8px, -8px);
     --webkit-transform: translate(-8px, -8px);
   }
   @media only screen and (max-width: 640px) {
-    box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
+    box-shadow: ${({ theme }) => theme.palette.boxShadow.dark};
     :hover {
       transform: none;
     }
