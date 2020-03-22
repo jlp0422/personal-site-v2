@@ -80,9 +80,9 @@ export const ActiveLink = ({ children, ...props }) => {
   return (
     <NavLink
       {...props}
-      getProps={({ isCurrent }) => ({
+      getProps={({ isPartiallyCurrent }) => ({
         style: {
-          ...(isCurrent
+          ...(isPartiallyCurrent
             ? {
                 backgroundColor: palette.white.true,
                 backgroundImage: 'none'
@@ -95,31 +95,6 @@ export const ActiveLink = ({ children, ...props }) => {
     </NavLink>
   )
 }
-
-export const ExpContainer = styled.div`
-  background-color: ${({ theme }) => theme.palette.black.darkest};
-  display: grid;
-  text-align: center;
-  padding: 1.5rem;
-  margin: 2.5rem auto;
-  border: 1px solid black;
-  transition: all 0.2s linear;
-  --webkit-transition: all 0.2s linear;
-  :first-of-type {
-    margin-top: 1rem;
-  }
-  :hover {
-    box-shadow: ${({ theme }) => theme.palette.boxShadow.dark};
-    transform: translate(-8px, -8px);
-    --webkit-transform: translate(-8px, -8px);
-  }
-  @media only screen and (max-width: 640px) {
-    box-shadow: ${({ theme }) => theme.palette.boxShadow.dark};
-    :hover {
-      transform: none;
-    }
-  }
-`
 
 export const ExpHeader = styled.h1`
   + div {

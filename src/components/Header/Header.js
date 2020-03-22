@@ -38,6 +38,7 @@ const Dropdown = ({ toggleDropdown, isDropdownOpen }) => {
         <li
           css={css`
             text-align: center;
+            border-bottom: none;
           `}
           key={path}
         >
