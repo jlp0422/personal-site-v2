@@ -22,18 +22,20 @@ const Experience = () => (
     <SEO title="Experience" />
     <ExpHeader>Work History</ExpHeader>
     <Grid>
-    {experience.map(experience => (
-      <FadeSection key={experience.title}>
-        <ExperienceCard experience={experience} />
-      </FadeSection>
-    ))}
+      {experience.map(experience => (
+        <FadeSection key={experience.title}>
+          <ExperienceCard experience={experience} />
+        </FadeSection>
+      ))}
     </Grid>
     <ExpHeader>Education</ExpHeader>
-    {education.map(edu => (
-      <FadeSection key={edu.school}>
-        <EducationCard education={edu} />
-      </FadeSection>
-    ))}
+    <Grid>
+      {education.map(edu => (
+        <FadeSection key={edu.school}>
+          <EducationCard education={edu} />
+        </FadeSection>
+      ))}
+    </Grid>
   </Layout>
 )
 
