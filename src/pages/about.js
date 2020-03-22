@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { ContactList, Copy } from '../components/About/styles'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
-import { FadeSection } from '../components/shared'
+import { FadeSection, OutboundLink } from '../components/shared'
 import { contactInfo, emojiObject } from '../data'
 
 const renderEmoji = ({ label, icon }) => (
@@ -64,9 +64,17 @@ const About = () => {
       <p>Blood Type: 🍊</p> */}
         <Copy>Shoot me an email, slide into my DMs, or send a raven:</Copy>
         <ContactList>
-          {contactInfo.map(({ type, value }) => (
-            <p key={type}>{`${type}: ${value}`}</p>
-          ))}
+          {contactInfo.map(({ type, props, display, element }) => {
+            const Element = element === 'a' ? OutboundLink : element
+            return (
+              <div>
+                  {`${type}: `}
+                <Element {...props} key={type}>
+                  {display}
+                </Element>
+              </div>
+            )
+          })}
         </ContactList>
       </FadeSection>
     </Layout>

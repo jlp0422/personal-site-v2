@@ -6,7 +6,14 @@ export const Copy = styled.p`
 `
 
 export const ContactList = styled.div`
-  > p {
-    font-family: ${({ theme }) => theme.fonts.nav};
+  > div {
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-size: 1.8rem;
+  }
+  span, a {
+    font-size: 1.8rem;
+  }
+  a {
+    cursor: pointer;
   }
 `

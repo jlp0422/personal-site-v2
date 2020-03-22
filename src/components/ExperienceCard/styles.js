@@ -18,7 +18,7 @@ export const Container = styled(CardFlipContainer)`
 `
 
 export const InnerContainer = styled(CardFlipInner)`
-  box-shadow: ${({ theme }) => theme.palette.boxShadow.primary}
+  box-shadow: ${({ theme }) => theme.palette.boxShadow.light}
 `
 
 export const CardFront = styled(CardShared)`
@@ -28,8 +28,7 @@ export const CardFront = styled(CardShared)`
 
 export const CardBack = styled(CardFlipBack)`
   padding: 1.5rem;
-  background-color: dodgerblue;
-  color: white;
+  background-color: ${({ theme }) => theme.palette.white.lighter}
 `
 
 export const Title = ExpTitle

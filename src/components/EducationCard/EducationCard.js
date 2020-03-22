@@ -11,7 +11,7 @@ import {
 } from './styles'
 
 const EducationCard = ({ education }) => {
-  const { school, location, year, about } = education
+  const { school, location, year, about, details } = education
   const dataProps = { size: 'medium', background: 'dark' }
   return (
     <Container>
@@ -30,7 +30,7 @@ const EducationCard = ({ education }) => {
           </Info>
         </CardFront>
         <CardBack>
-          <h3>this is the back of the card</h3>
+          {details.map(detail => <p key={detail}>{detail}</p>)}
         </CardBack>
       </InnerContainer>
     </Container>
