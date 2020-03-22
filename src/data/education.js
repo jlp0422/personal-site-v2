@@ -9,7 +9,6 @@ export default [
     school: 'Syracuse University',
     location: 'Syracuse, NY',
     year: 'Class of 2014',
-    about:
-      'B.S. Sport Management, David B. Falk College of Sport and Human Dynamics'
+    about: 'David B. Falk College of Sport and Human Dynamics'
   }
 ]
