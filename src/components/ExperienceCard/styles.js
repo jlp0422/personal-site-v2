@@ -17,7 +17,9 @@ export const Container = styled(CardFlipContainer)`
   }
 `
 
-export const InnerContainer = CardFlipInner
+export const InnerContainer = styled(CardFlipInner)`
+  box-shadow: ${({ theme }) => theme.palette.boxShadow.primary}
+`
 
 export const CardFront = styled(CardShared)`
   padding: 1.5rem;
