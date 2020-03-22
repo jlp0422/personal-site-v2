@@ -59,19 +59,14 @@ const About = () => {
           {emojiOnly ? renderEmoji(emojiObject.snowboarding) : ' on the slopes'}
           .
         </Copy>
-        {/* <h3>Vitals</h3>
-      <p>Height: 5'9"</p>
-      <p>Blood Type: 🍊</p> */}
         <Copy>Shoot me an email, slide into my DMs, or send a raven:</Copy>
         <ContactList>
           {contactInfo.map(({ type, props, display, element }) => {
             const Element = element === 'a' ? OutboundLink : element
             return (
-              <div>
-                  {`${type}: `}
-                <Element {...props} key={type}>
-                  {display}
-                </Element>
+              <div key={type}>
+                {`${type}: `}
+                <Element {...props}>{display}</Element>
               </div>
             )
           })}

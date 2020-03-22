@@ -1,17 +1,33 @@
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
 import { Link } from 'gatsby'
-import { shade, tint } from 'polished'
 import React from 'react'
 
 export const OutboundLink = styled.a`
+  display: inline;
+  position: relative;
+  overflow: hidden;
   text-decoration: none;
   margin: 0 0 0 0.6rem;
   font-weight: bold;
-  color: ${({ theme }) => tint(0.25, theme.palette.link.secondary)};
-  transition: all 0.2s ease-out;
-  :hover {
-    color: ${({ theme }) => shade(0.25, theme.palette.link.secondary)};
+  color: ${({ theme }) => theme.palette.link.secondary};
+  :after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    width: 0;
+    bottom: -2px;
+    background: ${({ theme }) => theme.palette.link.secondary};
+    height: 2px;
+    transition: width 0.3s ease-out;
+  }
+  :hover:after,
+  :focus:after,
+  :active:after {
+    left: 0;
+    right: auto;
+    width: 100%;
   }
 `
 
