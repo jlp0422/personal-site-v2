@@ -1,6 +1,6 @@
 import React from 'react'
 import { DataItem } from '../../components/shared'
-import { joinString } from '../../helpers'
+import { joinString, upper } from '../../helpers'
 import Image from '../Image'
 import {
   Container,
@@ -24,7 +24,7 @@ const ExperienceCard = ({ experience }) => {
     <Container>
       <InnerContainer>
         <CardFront>
-          <Title>{title}</Title>
+          <Title>{upper(title)}</Title>
           <Info>
             <DataItem value={location} label="Location" {...dataProps} />
             <DataItem value={company} label="Company" {...dataProps} />

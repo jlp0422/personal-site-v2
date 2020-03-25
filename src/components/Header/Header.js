@@ -6,12 +6,12 @@ import Image from '../Image'
 import {
   Div,
   H1,
-  HeaderLink,
   List,
   LogoLink,
   MobileLogo,
   NavLink,
-  StyledHeader
+  StyledHeader,
+  Title
 } from './styles'
 
 const aboutLink = <NavLink to="/about">About</NavLink>
@@ -59,8 +59,8 @@ const Header = ({ siteTitle }) => {
         {aboutLink}
         {expLink}
         <H1>
-          <HeaderLink to="/">{siteTitle}</HeaderLink>
-          <LogoLink to="/">{logoImage}</LogoLink>
+          <Title>{siteTitle}</Title>
+          <LogoLink>{logoImage}</LogoLink>
           <MobileLogo onClick={() => toggleDropdown(!isDropdownOpen)}>
             {logoImage}
           </MobileLogo>

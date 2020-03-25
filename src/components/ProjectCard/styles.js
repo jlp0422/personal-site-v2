@@ -23,6 +23,15 @@ export const Container = styled.div`
   }
 `
 
+export const Title = styled.h3`
+  font-family: ${({ theme }) => theme.fonts.nav};
+`
+
+export const Description = styled.h5`
+  font-family: ${({ theme }) => theme.fonts.copy};
+  font-weight: 600;
+`
+
 export const LinkContainer = styled.div`
   display: flex;
   justify-content: space-between;

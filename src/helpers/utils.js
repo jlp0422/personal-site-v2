@@ -5,3 +5,5 @@ export const joinString = str =>
     .split(' ')
     .join('')
     .toLowerCase()
+
+export const upper = str => str.toUpperCase()
