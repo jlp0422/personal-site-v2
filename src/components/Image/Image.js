@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import { isSvg, isGif } from '../../helpers'
 import React from 'react'
 
 /*
@@ -53,6 +54,9 @@ const Image = ({ queryKey, imgStyle, style }) => {
       logo: file(relativePath: { eq: "logo_black.svg" }) {
         ...ImageFragment
       }
+      spongebob: file(relativePath: { eq: "404page.gif"}) {
+        ...ImageFragment
+      }
       # fanduelLogo: file(relativePath: { eq: "fanduel-shield-logo.png" }) {
       #   ...ImageFragment
       # }
@@ -66,7 +70,7 @@ const Image = ({ queryKey, imgStyle, style }) => {
 
   const image = data[queryKey]
 
-  if (!image.childImageSharp && image.extension === 'svg') {
+  if (!image.childImageSharp && (isSvg(image.extension) || isGif(image.extension))) {
     return (
       <img
         src={image.publicURL}
