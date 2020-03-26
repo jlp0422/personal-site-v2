@@ -7,3 +7,7 @@ export const joinString = str =>
     .toLowerCase()
 
 export const upper = str => str.toUpperCase()
+
+export const lower = str => str.toLowerCase()
+
+export const joinAndLower = str => lower(str.split(' ').join(''))
