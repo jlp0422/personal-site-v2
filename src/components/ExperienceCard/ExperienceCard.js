@@ -1,6 +1,6 @@
 import React from 'react'
 import { DataItem } from '../../components/shared'
-import { joinString, upper } from '../../helpers'
+import { joinAndLower, upper } from '../../helpers'
 import Image from '../Image'
 import {
   Container,
@@ -14,7 +14,7 @@ import {
 
 const ExperienceCard = ({ experience }) => {
   const { title, location, company, startDate, endDate, details } = experience
-  const normalizedCompany = joinString(company)
+  const normalizedCompany = joinAndLower(company)
   const dataProps = {
     size: 'medium',
     align: 'center',
@@ -43,7 +43,12 @@ const ExperienceCard = ({ experience }) => {
         </CardFront>
         <CardBack>
           {details.map(detail => (
-            <p key={detail}>{detail}</p>
+            <p
+              key={detail}
+              dangerouslySetInnerHTML={{
+                __html: detail
+              }}
+            ></p>
           ))}
         </CardBack>
       </InnerContainer>

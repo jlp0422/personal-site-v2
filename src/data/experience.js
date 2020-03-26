@@ -5,7 +5,11 @@ export default [
     location: 'New York, NY',
     startDate: 'March 2020',
     endDate: 'Present',
-    details: ['Detail Line 1', 'Detail Line 2', 'Detail Line 3']
+    details: [
+      'Integral part of new <em>Upcoming</em> experience replatform, concluding in March 2020&nbsp;release',
+      'Expanded unit and integration test coverage with over 2,000 lines of additional testing using Jest, Enzyme and Cypress&nbsp;libraries',
+      'Mentor new hires, including assisting with codebase&nbsp;acclimation'
+    ]
   },
   {
     title: 'Junior Software Engineer',
@@ -14,9 +18,9 @@ export default [
     startDate: 'Oct 2018',
     endDate: 'March 2020',
     details: [
-      'Create, develop, and test new front-end features for FanDuel website.',
-      'Update and maintain two primary codebases in React and Angular.',
-      'Majorly invovled in complete revamp of Live Scoring experience, including building new components, testing new page, and release.'
+      'Create, develop, and test new front-end features for FanDuel&nbsp;website',
+      'Update and maintain two primary codebases in React and&nbsp;Angular',
+      'Majorly involved in complete revamp of Live Scoring experience, including building new components, testing new page, and&nbsp;release'
     ]
   },
   {
@@ -25,7 +29,11 @@ export default [
     location: 'New York, NY',
     startDate: 'Feb 2017',
     endDate: 'Oct 2018',
-    details: ['Detail Line 1', 'Detail Line 2', 'Detail Line 3']
+    details: [
+      'Maintained master CRM calendar, which included all email and mobile&nbsp;campaigns',
+      'Oversaw exeuction of all outgoing campaigns, reaching upwards of two million users per&nbsp;day',
+      'Coordinated creation and launch of multi-asset campaign hyping new product&nbsp;release'
+    ]
   },
   {
     title: 'Email Marketing Coordinator',
@@ -34,9 +42,9 @@ export default [
     startDate: 'June 2016',
     endDate: 'Feb 2017',
     details: [
-      'Built, tested, and deployed email and mobile campaigns, while ensuring all messaging maintained consistent brand integrity.',
-      'Collaborated with internal teams to develop emails for promotional use.',
-      'Executed email and mobile campaigns to increase user retention and reactivation.'
+      'Built, tested, and deployed email and mobile campaigns, while ensuring all messaging maintained consistent brand&nbsp;integrity',
+      'Collaborated with internal teams to develop emails for promotional&nbsp;use',
+      'Executed email and mobile campaigns to increase user retention and&nbsp;reactivation'
     ]
   },
   {
@@ -46,9 +54,9 @@ export default [
     startDate: 'June 2015',
     endDate: 'June 2016',
     details: [
-      'Answered incoming user questions, concerns, and issues in a timely manner.',
-      'Maintained a top-10 ranking in volume and satisfaction rating.',
-      'Monitored for site issues and escalated to proper channels to ensure speedy resolution.'
+      'Answered incoming user questions, concerns, and issues in a timely&nbsp;manner',
+      'Maintained a top-10 ranking in volume and satisfaction&nbsp;rating',
+      'Monitored for site issues and escalated to proper channels to ensure speedy&nbsp;resolution'
     ]
   },
   {
@@ -58,9 +66,9 @@ export default [
     startDate: 'Sept 2014',
     endDate: 'May 2015',
     details: [
-      'Supported marketing efforts during all Wake Forest athletic events.',
-      `Developed, and executed marketing plans for Men's and Women's tennis, including increasing Men's tennis attendance by 22% for the season.`,
-      'Managed student worker program, and acted as liaison to full-time staff.'
+      'Supported marketing efforts during all Wake Forest athletic&nbsp;events',
+      "Developed, and executed marketing plans for Men's and Women's tennis, including increasing Men's tennis attendance by 22% for the&nbsp;season",
+      'Managed student worker program, and acted as liaison to full-time&nbsp;staff'
     ]
   }
 ]

@@ -137,7 +137,7 @@ export const CardFlipInner = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.6s cubic-bezier(0.17, 0.88, 0.44, 1.13);
+  transition: transform 0.8s cubic-bezier(0.17, 0.88, 0.44, 1.13);
   transform-style: preserve-3d;
 `
 

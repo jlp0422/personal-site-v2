@@ -4,7 +4,7 @@ import { GithubLink, LiveLink } from '../shared'
 import { Container, Description, LinkContainer, Title } from './styles'
 import Image from '../Image'
 
-const wrapWithPTag = (string, index) => <p key={index}>{string}.</p>
+// const wrapWithPTag = (string, index) => <p key={index}>{string}.</p>
 
 const isStackjack = imageKey => imageKey === 'stackjack'
 
@@ -18,7 +18,14 @@ const ProjectCard = ({ project }) => {
       <Title>{upper(project.title)}</Title>
       <Description>{project.description}</Description>
       <div>
-        {project.details.map(wrapWithPTag)}
+        {project.details.map(detail => (
+          <p
+            key={detail}
+            dangerouslySetInnerHTML={{
+              __html: detail
+            }}
+          ></p>
+        ))}
         <Image
           queryKey={imageKey}
           style={{ maxHeight: '250px' }}
