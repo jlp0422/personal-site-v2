@@ -35,17 +35,32 @@ const Image = ({ queryKey, imgStyle, style }) => {
       computer: file(relativePath: { eq: "computer-icon-2.png" }) {
         ...ImageFragment
       }
+      dearcarolynfine: file(relativePath: { eq: "dear-carolyn-fine.png" }) {
+        ...ImageFragment
+      }
+      hottub2019: file(relativePath: { eq: "hot-tub-2019.png" }) {
+        ...ImageFragment
+      }
+      stackjack: file(relativePath: { eq: "stackjack.png" }) {
+        ...ImageFragment
+      }
+      untappedtrivia: file(relativePath: { eq: "untapped-trivia.png" }) {
+        ...ImageFragment
+      }
+      winspool2019: file(relativePath: { eq: "wins-pool-2019.png" }) {
+        ...ImageFragment
+      }
       logo: file(relativePath: { eq: "logo_black.svg" }) {
         ...ImageFragment
       }
-      fanduelLogo: file(relativePath: { eq: "fanduel-shield-logo.png" }) {
-        ...ImageFragment
-      }
-      wakeforestuniversityLogo: file(
-        relativePath: { eq: "wf-athletics-logo.png" }
-      ) {
-        ...ImageFragment
-      }
+      # fanduelLogo: file(relativePath: { eq: "fanduel-shield-logo.png" }) {
+      #   ...ImageFragment
+      # }
+      # wakeforestuniversityLogo: file(
+      #   relativePath: { eq: "wf-athletics-logo.png" }
+      # ) {
+      #   ...ImageFragment
+      # }
     }
   `)
 
@@ -65,7 +80,7 @@ const Image = ({ queryKey, imgStyle, style }) => {
   return (
     <Img
       fluid={image.childImageSharp.fluid}
-      imgStyle={{ margin: 0 }}
+      imgStyle={{ margin: 0, ...imgStyle }}
       style={style}
       alt={image.name}
       title={image.name}

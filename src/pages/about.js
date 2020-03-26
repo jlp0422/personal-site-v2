@@ -14,6 +14,7 @@ const renderEmoji = ({ label, icon }) => (
     `}
     key={label}
     role="img"
+    title={label}
     aria-label={label}
   >
     {icon}
