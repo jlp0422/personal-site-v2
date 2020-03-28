@@ -1,7 +1,7 @@
 import React from 'react'
 import { linkExists, upper, joinAndLower } from '../../helpers'
 import { GithubLink, LiveLink } from '../shared'
-import { Container, Description, LinkContainer, Title } from './styles'
+import { Container, LinkContainer, Title } from './styles'
 import Image from '../Image'
 
 const isStackjack = imageKey => imageKey === 'stackjack'
@@ -13,7 +13,6 @@ const ProjectCard = ({ project }) => {
   return (
     <Container>
       <Title>{upper(project.title)}</Title>
-      <Description>{project.description}</Description>
       <div>
         {project.details.map(detail => (
           <p key={detail}>{detail}</p>

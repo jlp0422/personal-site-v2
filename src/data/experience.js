@@ -67,7 +67,7 @@ export default [
     endDate: 'May 2015',
     details: [
       'Supported marketing efforts during all Wake Forest athletic&nbsp;events',
-      "Developed, and executed marketing plans for Men's and Women's tennis, including increasing Men's tennis attendance by 22% for the&nbsp;season",
+      "Developed and executed marketing plans for Men's and Women's tennis, including increasing Men's tennis attendance by 22% for the 2015&nbsp;season",
       'Managed student worker program, and acted as liaison to full-time&nbsp;staff'
     ]
   }
