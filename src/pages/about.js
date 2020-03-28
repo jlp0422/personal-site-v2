@@ -1,11 +1,16 @@
 import { css } from '@emotion/core'
 import React, { useState } from 'react'
-import { ContactList, ContentWrapper, Copy, ImageWrapper } from '../components/About/styles'
+import {
+  ContactList,
+  ContentWrapper,
+  Copy,
+  ImageWrapper
+} from '../components/About/styles'
 import Image from '../components/Image'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import { FadeSection, OutboundLink } from '../components/shared'
-import { contactInfo, emojiObject } from '../data'
+import { contactInfo, emojiObject as emj } from '../data'
 
 const renderEmoji = ({ label, icon }) => (
   <span
@@ -22,8 +27,12 @@ const renderEmoji = ({ label, icon }) => (
   </span>
 )
 
+const chooseEmojiOrText = showEmoji => (emoji, text) =>
+  showEmoji ? renderEmoji(emoji) : text
+
 const About = () => {
   const [emojiOnly, toggleEmojiOnly] = useState(false)
+  const switchEmoji = chooseEmojiOrText(emojiOnly)
   return (
     <Layout>
       <SEO title="About" />
@@ -40,30 +49,18 @@ const About = () => {
         <ContentWrapper>
           <div>
             <Copy>
-              What up! I'm a 27-year-old Software Engineer working at FanDuel. I
-              enjoy
-              {emojiOnly ? renderEmoji(emojiObject.cooking) : ' cooking'},
-              playing
-              {emojiOnly ? renderEmoji(emojiObject.trumpet) : ' trumpet'},
-              {emojiOnly ? renderEmoji(emojiObject.workOut) : ' working out'},
-              and
-              {emojiOnly
-                ? renderEmoji(emojiObject.scotch)
-                : ' a nice glass of scotch'}
-              .
+              I'm a 27-year-old Software Engineer working at FanDuel from Utica,
+              NY. I enjoy&nbsp;{switchEmoji(emj.cooking, 'cooking')},
+              playing&nbsp;{switchEmoji(emj.trumpet, 'trumpet')},
+              {switchEmoji(emj.workOut, ' working out')}, and&nbsp;
+              {switchEmoji(emj.scotch, 'a nice glass of scotch')}.
             </Copy>
             <Copy>
-              Find me watching
-              {emojiOnly ? renderEmoji(emojiObject.orange) : ' Syracuse'} games,
-              improving my
-              {emojiOnly
-                ? renderEmoji(emojiObject.programming)
-                : ' programming'}{' '}
-              skills, or
-              {emojiOnly
-                ? renderEmoji(emojiObject.snowboarding)
-                : ' on the slopes'}
-              .
+              Find me watching&nbsp;{switchEmoji(emj.orange, 'Syracuse')}
+              &nbsp;games, improving my&nbsp;
+              {switchEmoji(emj.programming, 'programming')}
+              &nbsp;skills, or&nbsp;
+              {switchEmoji(emj.snowboarding, 'on the slopes')}.
             </Copy>
             <Copy>Shoot me an email, slide into my DMs, or send a raven:</Copy>
             <ContactList>

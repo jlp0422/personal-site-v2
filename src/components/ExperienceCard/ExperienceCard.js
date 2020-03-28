@@ -12,7 +12,7 @@ import {
   CardBack
 } from './styles'
 
-const addPeriod = (string) => `<p>${string}.</p>`
+const addPeriod = string => `<p>${string}.</p>`
 
 const ExperienceCard = ({ experience }) => {
   const { title, location, company, startDate, endDate, details } = experience

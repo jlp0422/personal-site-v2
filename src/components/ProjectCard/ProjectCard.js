@@ -4,13 +4,10 @@ import { GithubLink, LiveLink } from '../shared'
 import { Container, Description, LinkContainer, Title } from './styles'
 import Image from '../Image'
 
-// const wrapWithPTag = (string, index) => <p key={index}>{string}.</p>
-
 const isStackjack = imageKey => imageKey === 'stackjack'
 
 const ProjectCard = ({ project }) => {
   const imageKey = joinAndLower(project.title)
-
   const hasGithub = linkExists(project.github)
   const hasWebsite = linkExists(project.website)
   return (
@@ -19,12 +16,7 @@ const ProjectCard = ({ project }) => {
       <Description>{project.description}</Description>
       <div>
         {project.details.map(detail => (
-          <p
-            key={detail}
-            dangerouslySetInnerHTML={{
-              __html: detail
-            }}
-          ></p>
+          <p key={detail}>{detail}</p>
         ))}
         <Image
           queryKey={imageKey}

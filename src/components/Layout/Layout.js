@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'emotion-theming'
 import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { theme } from '../../helpers'
 import Footer from '../Footer'
 import GlobalStyle from '../GlobalStyle'
@@ -18,6 +18,12 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  // useEffect(() => {
+  //   window.addEventListener('keyup', ev => {
+  //     console.log(ev.keyCode)
+  //   })
+  // })
 
   return (
     <ThemeProvider theme={theme}>
