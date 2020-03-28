@@ -124,9 +124,6 @@ export const CardFlipContainer = styled.div`
   width: 100%;
   height: 210px;
   perspective: 1000px;
-  :first-of-type {
-    margin-top: 1rem;
-  }
   :hover > div {
     transform: rotateY(180deg);
   }

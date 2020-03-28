@@ -26,6 +26,12 @@ export const query = graphql`
     }
   }
 
+  fragment SvgOrGif on File {
+    publicURL
+    name
+    extension
+  }
+
   fragment PhotoFragment on File {
     publicURL
     name
@@ -42,7 +48,7 @@ const Image = ({ queryKey, imgStyle, style }) => {
   const data = useStaticQuery(graphql`
     query {
       octocat: file(relativePath: { eq: "git-logo.svg" }) {
-        ...ImageFragment
+        ...SvgOrGif
       }
       computer: file(relativePath: { eq: "computer-icon-2.png" }) {
         ...ImageFragment
@@ -63,10 +69,10 @@ const Image = ({ queryKey, imgStyle, style }) => {
         ...ImageFragment
       }
       logo: file(relativePath: { eq: "logo_black.svg" }) {
-        ...ImageFragment
+        ...SvgOrGif
       }
       spongebob: file(relativePath: { eq: "404page.gif" }) {
-        ...ImageFragment
+        ...SvgOrGif
       }
       jeremysitting: file(relativePath: { eq: "jeremy_sitting.jpg" }) {
         ...PhotoFragment
@@ -84,10 +90,7 @@ const Image = ({ queryKey, imgStyle, style }) => {
 
   const image = data[queryKey]
 
-  if (
-    !image.childImageSharp &&
-    (isSvg(image.extension) || isGif(image.extension))
-  ) {
+  if (isSvg(image.extension) || isGif(image.extension)) {
     return (
       <img
         src={image.publicURL}

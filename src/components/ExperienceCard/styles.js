@@ -10,7 +10,7 @@ import {
 
 export const Container = styled(CardFlipContainer)`
   display: grid;
-  margin: 2.5rem auto;
+  margin: 0 auto 3rem;
   @media only screen and (max-width: 640px) {
     height: 250px;
   }
