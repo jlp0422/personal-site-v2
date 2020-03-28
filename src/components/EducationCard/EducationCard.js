@@ -11,6 +11,8 @@ import {
 } from './styles'
 import { upper } from '../../helpers'
 
+const wrapWithPTag = (string, index) => <p key={index}>{string}.</p>
+
 const EducationCard = ({ education }) => {
   const { school, location, year, about, details } = education
   const dataProps = { size: 'medium', background: 'dark' }
@@ -31,9 +33,7 @@ const EducationCard = ({ education }) => {
           </Info>
         </CardFront>
         <CardBack>
-          {details.map(detail => (
-            <p key={detail}>{detail}</p>
-          ))}
+          {details.map(wrapWithPTag)}
         </CardBack>
       </InnerContainer>
     </Container>

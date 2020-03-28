@@ -12,6 +12,8 @@ import {
   CardBack
 } from './styles'
 
+const addPeriod = (string) => `<p>${string}.</p>`
+
 const ExperienceCard = ({ experience }) => {
   const { title, location, company, startDate, endDate, details } = experience
   const normalizedCompany = joinAndLower(company)
@@ -46,7 +48,7 @@ const ExperienceCard = ({ experience }) => {
             <p
               key={detail}
               dangerouslySetInnerHTML={{
-                __html: detail
+                __html: addPeriod(detail)
               }}
             ></p>
           ))}

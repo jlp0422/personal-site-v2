@@ -13,7 +13,7 @@ export default {
   },
   shadow: {
     dark: '#888888',
-    light: 'b4b4b4'
+    light: '#b4b4b4'
   },
   boxShadow: {
     dark: '.8rem .8rem #888888',

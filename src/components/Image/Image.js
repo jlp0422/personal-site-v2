@@ -20,7 +20,18 @@ export const query = graphql`
     name
     extension
     childImageSharp {
-      fluid(maxWidth: 300) {
+      fluid(maxWidth: 800) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+
+  fragment PhotoFragment on File {
+    publicURL
+    name
+    extension
+    childImageSharp {
+      fluid(maxWidth: 800, grayscale: true) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
@@ -54,8 +65,11 @@ const Image = ({ queryKey, imgStyle, style }) => {
       logo: file(relativePath: { eq: "logo_black.svg" }) {
         ...ImageFragment
       }
-      spongebob: file(relativePath: { eq: "404page.gif"}) {
+      spongebob: file(relativePath: { eq: "404page.gif" }) {
         ...ImageFragment
+      }
+      jeremysitting: file(relativePath: { eq: "jeremy_sitting.jpg" }) {
+        ...PhotoFragment
       }
       # fanduelLogo: file(relativePath: { eq: "fanduel-shield-logo.png" }) {
       #   ...ImageFragment
@@ -70,7 +84,10 @@ const Image = ({ queryKey, imgStyle, style }) => {
 
   const image = data[queryKey]
 
-  if (!image.childImageSharp && (isSvg(image.extension) || isGif(image.extension))) {
+  if (
+    !image.childImageSharp &&
+    (isSvg(image.extension) || isGif(image.extension))
+  ) {
     return (
       <img
         src={image.publicURL}

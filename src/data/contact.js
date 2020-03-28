@@ -22,7 +22,7 @@ export default [
       href: 'https://www.linkedin.com/in/jeremyphilipson',
       target: '_blank'
     },
-    display: '/jeremyphilipson',
+    display: '/in/jeremyphilipson',
     element: 'a'
   }
 ]
