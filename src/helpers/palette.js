@@ -17,7 +17,7 @@ export default {
   },
   boxShadow: {
     dark: '.8rem .8rem #888888',
-    light: '.8rem .8rem #b4b4b4',
+    light: '.8rem .8rem #b4b4b4'
   },
   white: {
     true: '#ffffff',
