@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer'
 import ProjectCard from './ProjectCard'
 import { ThemeWrapper, GithubLink, LiveLink } from '../shared'
 import { Title } from './styles'
+import Image from '../Image'
 
 const DEFAULT_PROJECT = {
   title: 'Hot Tub 2019',
@@ -45,13 +46,26 @@ describe('ProjectCard', () => {
     expect(getChildAtIndex(1)).toBe('all by myself')
   })
 
+  it('Passes the correct Image props based on the project title', () => {
+    const instance = getOutput().root
+    expect(instance.findAllByType(Image)[0].props.imgStyle).toEqual({
+      objectPosition: 'top'
+    })
+
+    const stackjack = getOutput({
+      project: { ...DEFAULT_PROJECT, title: 'StackJack' }
+    }).root
+    expect(stackjack.findAllByType(Image)[0].props.imgStyle).toEqual({
+      objectPosition: '10% 10%'
+    })
+  })
+
   describe('GithubLink', () => {
     it('Displays the link if it exists', () => {
       const instance = getOutput().root
       const link = instance.findByType(GithubLink)
       expect(link).toBeTruthy()
-      expect(link.props).toHaveProperty('url')
-      expect(link.props).toHaveProperty('linkText')
+      expect(link.props).toEqual({ url: '/to/my/github', linkText: 'github' })
     })
 
     it('Does not display if no link exists', () => {
@@ -68,8 +82,7 @@ describe('ProjectCard', () => {
       const instance = getOutput().root
       const link = instance.findByType(LiveLink)
       expect(link).toBeTruthy()
-      expect(link.props).toHaveProperty('url')
-      expect(link.props).toHaveProperty('linkText')
+      expect(link.props).toEqual({ url: '/to/my/website', linkText: 'website' })
     })
 
     it('Does not display if no link exists', () => {
