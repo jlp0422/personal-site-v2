@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GithubLink Renders correctly 1`] = `
+<div
+  className="css-88m2o9"
+>
+  <img
+    alt="git-logo"
+    height={20}
+    src="/static/76d344f08412543c74ccd1fb2493d607/git-logo.svg"
+    title="git-logo"
+    width={20}
+  />
+  <div>
+    <a
+      className="css-e0yupj"
+      href="/path/to/my/file"
+      target="_blank"
+    >
+      Show me the money
+    </a>
+  </div>
+</div>
+`;

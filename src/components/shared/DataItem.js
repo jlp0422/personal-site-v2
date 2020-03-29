@@ -22,7 +22,9 @@ const alignToFlex = {
   right: 'flex-end'
 }
 
-const DataWrapper = styled.div`
+const isDark = background => background === 'dark'
+
+export const DataWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: ${({ align }) => alignToFlex[align]};
@@ -33,7 +35,7 @@ const DataWrapper = styled.div`
   > p:first-of-type {
     font-size: ${({ size }) => SIZES[size].value};
     color: ${({ theme, background }) =>
-      background === 'dark'
+      isDark(background)
         ? theme.palette.white.lightest
         : theme.palette.text.primary};
   }
@@ -42,7 +44,7 @@ const DataWrapper = styled.div`
     font-weight: 300;
     font-size: ${({ size }) => SIZES[size].label};
     color: ${({ theme, background }) =>
-      background === 'dark'
+      isDark(background)
         ? theme.palette.white.lighter
         : theme.palette.text.gray};
   }
