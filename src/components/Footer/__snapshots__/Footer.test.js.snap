@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Renders correctly 1`] = `
+<footer>
+  © 
+  2020
+   Jeremy L. Philipson
+</footer>
+`;
