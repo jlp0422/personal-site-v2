@@ -6,20 +6,18 @@ import {
   Container,
   Info,
   InnerContainer,
-  Subtitle,
   Title
 } from './styles'
 import { upper } from '../../helpers'
 
 const EducationCard = ({ education }) => {
-  const { school, location, year, about, details } = education
+  const { school, location, year, details } = education
   const dataProps = { size: 'medium', background: 'dark' }
   return (
     <Container>
       <InnerContainer>
         <CardFront>
           <Title>{upper(school)}</Title>
-          <Subtitle>{about}</Subtitle>
           <Info>
             <DataItem
               value={location}

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EducationCard Renders correctly 1`] = `
+<div
+  className="css-1j6k8sl"
+>
+  <div
+    className="css-fsocmv"
+  >
+    <div
+      className="css-h5v37p"
+    >
+      <h3
+        className="css-1b8m15i"
+      >
+        SYRACUSE
+      </h3>
+      <div
+        className="css-sr1g99"
+      >
+        <div
+          className="css-1pgmgdr"
+          size="medium"
+        >
+          <p>
+            Syracuse, NY
+          </p>
+          <p>
+            Location
+          </p>
+        </div>
+        <div
+          className="css-1bajddq"
+          size="medium"
+        >
+          <p>
+            2014
+          </p>
+          <p>
+            Years
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-1loivni"
+    >
+      <p>
+        i went
+      </p>
+      <p>
+        to college here
+      </p>
+    </div>
+  </div>
+</div>
+`;

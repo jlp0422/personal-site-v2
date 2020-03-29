@@ -29,11 +29,6 @@ export const CardBack = styled(CardFlipBack)`
 
 export const Title = ExpTitle
 
-export const Subtitle = styled.p`
-  color: ${({ theme }) => theme.palette.white.lightest};
-  font-size: 2rem;
-`
-
 export const Info = styled(ExpInfo)`
   width: 90%;
   grid-template-columns: repeat(2, 1fr);

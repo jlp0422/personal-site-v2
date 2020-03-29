@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Renders correctly 1`] = `
+<header
+  className="css-1t9b64j"
+>
+  <div
+    className="css-wnxrhc"
+  >
+    <a
+      className="css-1fu3yhm"
+      href="/about"
+    >
+      About
+    </a>
+    <a
+      className="css-1fu3yhm"
+      href="/experience"
+    >
+      Experience
+    </a>
+    <h1
+      className="css-11z6ppj"
+    >
+      <div
+        className="css-1axmddg"
+      >
+        
+      </div>
+      <div
+        className="css-1n7cfic"
+      >
+        <img
+          alt="logo_black"
+          height={60}
+          src="/static/1f842f35d1f3b3fede85860b885408c2/logo_black.svg"
+          title="logo_black"
+          width={60}
+        />
+      </div>
+      <button
+        className="css-1uq4jnp"
+        onClick={[Function]}
+      >
+        <img
+          alt="logo_black"
+          height={60}
+          src="/static/1f842f35d1f3b3fede85860b885408c2/logo_black.svg"
+          title="logo_black"
+          width={60}
+        />
+      </button>
+    </h1>
+    <a
+      className="css-1fu3yhm"
+      href="/projects"
+    >
+      Projects
+    </a>
+    <a
+      className="css-1fu3yhm"
+      href="/resume"
+    >
+      Resume
+    </a>
+  </div>
+</header>
+`;
