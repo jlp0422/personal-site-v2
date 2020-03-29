@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import EducationCard from './EducationCard'
-import { ThemeWrapper, DataItem } from '../shared'
+import { ThemeWrapper } from '../shared'
 import { Title, Info, CardBack } from './styles'
 
 describe('EducationCard', () => {
@@ -41,12 +41,12 @@ describe('EducationCard', () => {
 
   it('Displays the Years value and label', () => {
     const instance = getOutput().root
-    const location = instance.findByType(Info).props.children[1]
-    expect(location.props.value).toBe('2014')
-    expect(location.props.label).toBe('Years')
-    expect(location.props.align).toBe('right')
-    expect(location.props.size).toBe('medium')
-    expect(location.props.background).toBe('dark')
+    const years = instance.findByType(Info).props.children[1]
+    expect(years.props.value).toBe('2014')
+    expect(years.props.label).toBe('Years')
+    expect(years.props.align).toBe('right')
+    expect(years.props.size).toBe('medium')
+    expect(years.props.background).toBe('dark')
   })
 
   it('Displays the array of details', () => {
