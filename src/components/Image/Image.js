@@ -82,6 +82,10 @@ const Image = ({ queryKey, imgStyle, style }) => {
 
   const image = data[queryKey]
 
+  if (!image) {
+    return null
+  }
+
   if (isSvg(image.extension) || isGif(image.extension)) {
     return (
       <img

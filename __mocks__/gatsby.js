@@ -24,6 +24,10 @@ module.exports = {
   ),
   StaticQuery: jest.fn(),
   useStaticQuery: () => ({
-    logo: require('./queries/logo.json')
+    logo: require('./queries/logo.json'),
+    hottub2019: require('./queries/hottub2019.json'),
+    stackjack: require('./queries/stackjack.json'),
+    octocat: require('./queries/octocat.json'),
+    computer: require('./queries/computer.json')
   })
 }
