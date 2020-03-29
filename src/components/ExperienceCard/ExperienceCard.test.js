@@ -33,41 +33,44 @@ describe('ExperienceCard', () => {
 
   it('Displays the Location value and label', () => {
     const instance = getOutput().root
-    const locationProps = instance.findAllByType(DataItem)[0].props
-    expect(locationProps.value).toBe('Los Angeles, CA')
-    expect(locationProps.label).toBe('Location')
-    expect(locationProps.align).toBe('center')
-    expect(locationProps.size).toBe('medium')
-    expect(locationProps.background).toBe('dark')
+    const location = instance.findAllByType(DataItem)[0]
+    const getProp = key => location.props[key]
+    expect(getProp('value')).toBe('Los Angeles, CA')
+    expect(getProp('label')).toBe('Location')
+    expect(getProp('align')).toBe('center')
+    expect(getProp('size')).toBe('medium')
+    expect(getProp('background')).toBe('dark')
   })
 
   it('Displays the Company value and label', () => {
     const instance = getOutput().root
-    const companyProps = instance.findAllByType(DataItem)[1].props
-    expect(companyProps.value).toBe('ABC')
-    expect(companyProps.label).toBe('Company')
-    expect(companyProps.align).toBe('center')
-    expect(companyProps.size).toBe('medium')
-    expect(companyProps.background).toBe('dark')
+    const company = instance.findAllByType(DataItem)[1]
+    const getProp = key => company.props[key]
+    expect(getProp('value')).toBe('ABC')
+    expect(getProp('label')).toBe('Company')
+    expect(getProp('align')).toBe('center')
+    expect(getProp('size')).toBe('medium')
+    expect(getProp('background')).toBe('dark')
   })
 
   it('Displays the Dates value and label', () => {
     const instance = getOutput().root
-    const dateProps = instance.findAllByType(DataItem)[2].props
-    expect(dateProps.value).toBe('Jan 1900 - Jan 2000')
-    expect(dateProps.label).toBe('Dates')
-    expect(dateProps.align).toBe('center')
-    expect(dateProps.size).toBe('medium')
-    expect(dateProps.background).toBe('dark')
+    const date = instance.findAllByType(DataItem)[2]
+    const getProp = key => date.props[key]
+    expect(getProp('value')).toBe('Jan 1900 - Jan 2000')
+    expect(getProp('label')).toBe('Dates')
+    expect(getProp('align')).toBe('center')
+    expect(getProp('size')).toBe('medium')
+    expect(getProp('background')).toBe('dark')
   })
 
   it('Displays the array of details', () => {
     const instance = getOutput().root
+    const children = instance.findByType(CardBack).props.children
     const getChildAtIndex = index =>
-      instance.findByType(CardBack).props.children[index].props
-        .dangerouslySetInnerHTML.__html
+      children[index].props.dangerouslySetInnerHTML.__html
 
-    expect(instance.findByType(CardBack).props.children.length).toBe(3)
+    expect(children).toHaveLength(3)
     expect(getChildAtIndex(0)).toBe('<p>it was fun.</p>')
     expect(getChildAtIndex(1)).toBe('<p>it was great.</p>')
     expect(getChildAtIndex(2)).toBe('<p>it was awesome.</p>')

@@ -32,29 +32,31 @@ describe('EducationCard', () => {
   it('Displays the Location value and label', () => {
     const instance = getOutput().root
     const location = instance.findByType(Info).props.children[0]
-    expect(location.props.value).toBe('Syracuse, NY')
-    expect(location.props.label).toBe('Location')
-    expect(location.props.align).toBe('left')
-    expect(location.props.size).toBe('medium')
-    expect(location.props.background).toBe('dark')
+    const getProp = key => location.props[key]
+    expect(getProp('value')).toBe('Syracuse, NY')
+    expect(getProp('label')).toBe('Location')
+    expect(getProp('align')).toBe('left')
+    expect(getProp('size')).toBe('medium')
+    expect(getProp('background')).toBe('dark')
   })
 
   it('Displays the Years value and label', () => {
     const instance = getOutput().root
     const years = instance.findByType(Info).props.children[1]
-    expect(years.props.value).toBe('2014')
-    expect(years.props.label).toBe('Years')
-    expect(years.props.align).toBe('right')
-    expect(years.props.size).toBe('medium')
-    expect(years.props.background).toBe('dark')
+    const getProp = key => years.props[key]
+    expect(getProp('value')).toBe('2014')
+    expect(getProp('label')).toBe('Years')
+    expect(getProp('align')).toBe('right')
+    expect(getProp('size')).toBe('medium')
+    expect(getProp('background')).toBe('dark')
   })
 
   it('Displays the array of details', () => {
     const instance = getOutput().root
-    expect(instance.findByType(CardBack).props.children.length).toBe(2)
-    expect(instance.findByType(CardBack).props.children[0].props.children).toBe('i went')
-    expect(instance.findByType(CardBack).props.children[1].props.children).toBe(
-      'to college here'
-    )
+    const children = instance.findByType(CardBack).props.children
+    const getChildAtIndex = index => children[index].props.children
+    expect(children).toHaveLength(2)
+    expect(getChildAtIndex(0)).toBe('i went')
+    expect(getChildAtIndex(1)).toBe('to college here')
   })
 })

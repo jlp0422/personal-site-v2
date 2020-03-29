@@ -39,9 +39,10 @@ describe('ProjectCard', () => {
   it('Displays the array of details', () => {
     const instance = getOutput().root
     const details = instance.findAllByType('p')
+    const getChildAtIndex = index => details[index].props.children
     expect(details).toHaveLength(2)
-    expect(details[0].props.children).toBe('i made this')
-    expect(details[1].props.children).toBe('all by myself')
+    expect(getChildAtIndex(0)).toBe('i made this')
+    expect(getChildAtIndex(1)).toBe('all by myself')
   })
 
   describe('GithubLink', () => {
