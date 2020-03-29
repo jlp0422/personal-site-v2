@@ -27,10 +27,6 @@ export default () => {
           font-size: 62.5%;
           line-height: 1.4;
 
-          @media (min-width: calc(550px + 10vw)) {
-            /* font-size: 18px; */
-          }
-
           /* remove margin for the main div that Gatsby mounts into */
           > div {
             margin-top: 0;

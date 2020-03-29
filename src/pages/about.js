@@ -1,10 +1,16 @@
 import { css } from '@emotion/core'
 import React, { useState } from 'react'
-import { ContactList, Copy } from '../components/About/styles'
+import {
+  ContactList,
+  ContentWrapper,
+  Copy,
+  ImageWrapper
+} from '../components/About/styles'
+import Image from '../components/Image'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
-import { FadeSection } from '../components/shared'
-import { contactInfo, emojiObject } from '../data'
+import { FadeSection, OutboundLink } from '../components/shared'
+import { contactInfo, emojiObject as emj } from '../data'
 
 const renderEmoji = ({ label, icon }) => (
   <span
@@ -14,14 +20,19 @@ const renderEmoji = ({ label, icon }) => (
     `}
     key={label}
     role="img"
+    title={label}
     aria-label={label}
   >
     {icon}
   </span>
 )
 
+const chooseEmojiOrText = showEmoji => (emoji, text) =>
+  showEmoji ? renderEmoji(emoji) : text
+
 const About = () => {
   const [emojiOnly, toggleEmojiOnly] = useState(false)
+  const switchEmoji = chooseEmojiOrText(emojiOnly)
   return (
     <Layout>
       <SEO title="About" />
@@ -34,40 +45,48 @@ const About = () => {
       >
         <h1>About Me</h1>
       </button>
-
-      {/* add photo ??? */}
       <FadeSection>
-        <Copy>
-          What up! I'm a 27-year-old Software Engineer working at FanDuel. I
-          enjoy
-          {emojiOnly ? renderEmoji(emojiObject.cooking) : ' cooking'}, playing
-          {emojiOnly ? renderEmoji(emojiObject.trumpet) : ' trumpet'},
-          {emojiOnly ? renderEmoji(emojiObject.workOut) : ' working out'}, and
-          {emojiOnly
-            ? renderEmoji(emojiObject.scotch)
-            : ' a nice glass of scotch'}
-          .
-        </Copy>
-        <Copy>
-          Find me watching
-          {emojiOnly ? renderEmoji(emojiObject.orange) : ' Syracuse'} games,
-          improving my
-          {emojiOnly
-            ? renderEmoji(emojiObject.programming)
-            : ' programming'}{' '}
-          skills, or
-          {emojiOnly ? renderEmoji(emojiObject.snowboarding) : ' on the slopes'}
-          .
-        </Copy>
-        {/* <h3>Vitals</h3>
-      <p>Height: 5'9"</p>
-      <p>Blood Type: 🍊</p> */}
-        <Copy>Shoot me an email, slide into my DMs, or send a raven:</Copy>
-        <ContactList>
-          {contactInfo.map(({ type, value }) => (
-            <p key={type}>{`${type}: ${value}`}</p>
-          ))}
-        </ContactList>
+        <ContentWrapper>
+          <div>
+            <Copy>
+              I'm a 27-year-old Software Engineer working at FanDuel in New York
+              City. Originally from Utica, NY, I enjoy&nbsp;
+              {switchEmoji(emj.cooking, 'cooking')}, playing&nbsp;
+              {switchEmoji(emj.trumpet, 'trumpet')},
+              {switchEmoji(emj.workOut, ' working out')}, and&nbsp;
+              {switchEmoji(emj.scotch, 'a nice glass of scotch')}.
+            </Copy>
+            <Copy>
+              Find me watching&nbsp;{switchEmoji(emj.orange, 'Syracuse')}
+              &nbsp;games, improving my&nbsp;
+              {switchEmoji(emj.programming, 'programming')}
+              &nbsp;skills, or&nbsp;
+              {switchEmoji(emj.snowboarding, 'hitting the slopes')}.
+            </Copy>
+            <Copy>Shoot me an email, slide into my DMs, or send a raven:</Copy>
+            <ContactList>
+              {contactInfo.map(({ type, props, display, element }) => {
+                const Element = element === 'a' ? OutboundLink : element
+                return (
+                  <div key={type}>
+                    {`${type}: `}
+                    <Element {...props}>{display}</Element>
+                  </div>
+                )
+              })}
+            </ContactList>
+          </div>
+          <ImageWrapper>
+            <Image
+              queryKey="jeremysitting"
+              style={{
+                maxWidth: 400,
+                borderRadius: '6px',
+                boxShadow: `3px 2px 10px 0px #888888`
+              }}
+            />
+          </ImageWrapper>
+        </ContentWrapper>
       </FadeSection>
     </Layout>
   )

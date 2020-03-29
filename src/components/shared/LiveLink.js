@@ -10,9 +10,11 @@ const Link = ({ url, linkText }) => {
         style={{ width: '2.2rem' }}
         imgStyle={{ margin: 0 }}
       />
-      <OutboundLink target="_blank" href={url}>
-        {linkText}
-      </OutboundLink>
+      <div>
+        <OutboundLink target="_blank" href={url}>
+          {linkText}
+        </OutboundLink>
+      </div>
     </GridWrapper>
   )
 }
