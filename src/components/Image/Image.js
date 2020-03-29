@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import { isSvg, isGif } from '../../helpers'
 import React from 'react'
 
 /*
@@ -19,7 +20,24 @@ export const query = graphql`
     name
     extension
     childImageSharp {
-      fluid(maxWidth: 300) {
+      fluid(maxWidth: 800) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+
+  fragment SvgOrGif on File {
+    publicURL
+    name
+    extension
+  }
+
+  fragment PhotoFragment on File {
+    publicURL
+    name
+    extension
+    childImageSharp {
+      fluid(maxWidth: 800, grayscale: true) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
@@ -30,26 +48,41 @@ const Image = ({ queryKey, imgStyle, style }) => {
   const data = useStaticQuery(graphql`
     query {
       octocat: file(relativePath: { eq: "git-logo.svg" }) {
-        ...ImageFragment
+        ...SvgOrGif
       }
       computer: file(relativePath: { eq: "computer-icon-2.png" }) {
         ...ImageFragment
       }
+      dearcarolynfine: file(relativePath: { eq: "dear-carolyn-fine.png" }) {
+        ...ImageFragment
+      }
+      hottub2019: file(relativePath: { eq: "hot-tub-2019.png" }) {
+        ...ImageFragment
+      }
+      stackjack: file(relativePath: { eq: "stackjack.png" }) {
+        ...ImageFragment
+      }
+      untappedtrivia: file(relativePath: { eq: "untapped-trivia.png" }) {
+        ...ImageFragment
+      }
+      winspool2019: file(relativePath: { eq: "wins-pool-2019.png" }) {
+        ...ImageFragment
+      }
       logo: file(relativePath: { eq: "logo_black.svg" }) {
-        ...ImageFragment
+        ...SvgOrGif
       }
-      fanduelLogo: file(relativePath: { eq: "fanduel-shield-logo.png" }) {
-        ...ImageFragment
+      spongebob: file(relativePath: { eq: "404page.gif" }) {
+        ...SvgOrGif
       }
-      wakeforestuniversityLogo: file(relativePath: { eq: "wf-athletics-logo.png" }) {
-        ...ImageFragment
+      jeremysitting: file(relativePath: { eq: "jeremy_sitting.jpg" }) {
+        ...PhotoFragment
       }
     }
   `)
 
   const image = data[queryKey]
 
-  if (!image.childImageSharp && image.extension === 'svg') {
+  if (isSvg(image.extension) || isGif(image.extension)) {
     return (
       <img
         src={image.publicURL}
@@ -63,7 +96,7 @@ const Image = ({ queryKey, imgStyle, style }) => {
   return (
     <Img
       fluid={image.childImageSharp.fluid}
-      imgStyle={{ margin: 0 }}
+      imgStyle={{ margin: 0, ...imgStyle }}
       style={style}
       alt={image.name}
       title={image.name}

@@ -1,22 +1,30 @@
 import React from 'react'
 import EducationCard from '../components/EducationCard'
 import ExperienceCard from '../components/ExperienceCard'
-import { ExpHeader } from '../components/shared/Styled'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
+import { ExpHeader, FadeSection, TwoColGrid } from '../components/shared'
 import { education, experience } from '../data'
 
 const Experience = () => (
   <Layout>
     <SEO title="Experience" />
     <ExpHeader>Work History</ExpHeader>
-    {experience.map(experience => (
-      <ExperienceCard key={experience.title} experience={experience} />
-    ))}
+    <TwoColGrid>
+      {experience.map(experience => (
+        <FadeSection key={experience.title}>
+          <ExperienceCard experience={experience} />
+        </FadeSection>
+      ))}
+    </TwoColGrid>
     <ExpHeader>Education</ExpHeader>
-    {education.map(edu => (
-      <EducationCard key={edu.school} education={edu} />
-    ))}
+    <TwoColGrid>
+      {education.map(edu => (
+        <FadeSection key={edu.school}>
+          <EducationCard education={edu} />
+        </FadeSection>
+      ))}
+    </TwoColGrid>
   </Layout>
 )
 

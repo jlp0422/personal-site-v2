@@ -1,11 +1,10 @@
 export default [
   {
     title: 'Hot Tub 2019',
-    description: 'Built for live standings of football pool',
     details: [
-      'Created to keep track of all entries and standings',
-      'Live updates at conclusion of each NFL game',
-      'Works for both regular season and post season'
+      'Kept track of all entries and standings for 60-person football pool',
+      'Used third party API to update at conclusion of each NFL game',
+      'Works for both 2019 NFL regular season and postseason'
     ],
     github: {
       link: 'https://github.com/jlp0422/hot_tub_2019',
@@ -18,10 +17,9 @@ export default [
   },
   {
     title: 'Wins Pool 2019',
-    description: 'Built for live standings of football pool',
     details: [
-      'Created to keep track of all wins per person for the 2019 NFL season',
-      'Live updates at conclusion of each NFL game',
+      'Aggregated all wins for 10-person Wins Pool during 2019 NFL season',
+      'Used third party API to update at conclusion of each NFL game',
       'Kept track of overall standings, as well as each game per week'
     ],
     github: {
@@ -35,11 +33,10 @@ export default [
   },
   {
     title: 'Dear Carolyn Fine',
-    description: 'Interactive love letter',
     details: [
-      'Used when I proposed to my then-girlfriend in July 2019',
-      'Showed it to her right after proposing',
-      'Wanted to do something unique using my programming skills'
+      'Interactive love letter used as part of the proposal to my then-girlfriend in July 2019',
+      'Showed it to her right after proposing (and tears obviously ensued)',
+      'Wanted to create something unique and shareable with friends and family'
     ],
     github: {
       link: 'https://github.com/jlp0422/july_5',
@@ -52,15 +49,14 @@ export default [
   },
   {
     title: 'UnTapped Trivia',
-    description: 'Fullstack Academy Senior Capstone',
     details: [
-      'Bar Trivia game built using React and React Native',
-      'Web dashboard for bar, and mobile app for players',
+      'Bar Trivia game built for Fullstack Academy Senior Capstone',
+      'Web dashboard (built in React) for bar, and mobile app (built in React Native) for players',
       'Worked on project with 3 other developers in my class'
     ],
     github: {
-      link: 'https://github.com/jlp0422/stackjack',
-      text: 'StackJack'
+      link: 'https://github.com/jlp0422/capstone',
+      text: 'UnTapped Trivia'
     },
     website: {
       link: 'https://www.youtube.com/watch?v=cvqqW-UEuMk',
@@ -69,10 +65,9 @@ export default [
   },
   {
     title: 'StackJack',
-    description: 'Fullstack Academy Hackathon Project',
     details: [
-      'Blackjack app built using React Native',
-      'Includes suggestions based on dealer card and player cards',
+      'Blackjack app built for Fullstack Academy Hackathon using React Native',
+      'Analyzes dealer card and player cards to provide accurate suggestions to hit, stand, or double down',
       'Sole developer for project, which took roughly 10 hours'
     ],
     github: {

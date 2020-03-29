@@ -1,10 +1,15 @@
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
-import { ActiveLink } from '../../components/shared/Styled'
+import { ActiveLink } from '../../components/shared'
 
 export const StyledHeader = styled.header`
   background: ${({ theme }) => theme.palette.link.secondary};
   margin-bottom: 1.5rem;
+  @media only screen and (max-width: 640px) {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+  }
 `
 
 export const Div = styled.div`
@@ -28,12 +33,14 @@ export const H1 = styled.h1`
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+  color: ${({ theme }) => theme.palette.white.true};
+  letter-spacing: 0.3rem;
 `
 
-export const HeaderLink = styled(Link)`
+export const Title = styled.div`
+  color: ${({ theme }) => theme.palette.white.true};
   letter-spacing: 0.3rem;
   font-family: ${({ theme }) => theme.fonts.header};
-  color: white;
   text-decoration: none;
   font-size: 4.5rem;
   @media only screen and (max-width: 800px) {
@@ -42,7 +49,7 @@ export const HeaderLink = styled(Link)`
   }
 `
 
-export const LogoLink = styled(Link)`
+export const LogoLink = styled.div`
   margin: 0;
   visibility: hidden;
   display: none;

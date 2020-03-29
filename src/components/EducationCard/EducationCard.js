@@ -1,23 +1,41 @@
 import React from 'react'
 import { DataItem } from '../../components/shared'
-import { Container, Info, Subtitle, Title } from './styles'
+import {
+  CardBack,
+  CardFront,
+  Container,
+  Info,
+  InnerContainer,
+  Subtitle,
+  Title
+} from './styles'
+import { upper } from '../../helpers'
 
 const EducationCard = ({ education }) => {
-  const { school, location, year, about } = education
+  const { school, location, year, about, details } = education
   const dataProps = { size: 'medium', background: 'dark' }
   return (
     <Container>
-      <Title>{school}</Title>
-      <Subtitle>{about}</Subtitle>
-      <Info>
-        <DataItem
-          value={location}
-          label="Location"
-          align="left"
-          {...dataProps}
-        />
-        <DataItem value={year} label="Years" align="right" {...dataProps} />
-      </Info>
+      <InnerContainer>
+        <CardFront>
+          <Title>{upper(school)}</Title>
+          <Subtitle>{about}</Subtitle>
+          <Info>
+            <DataItem
+              value={location}
+              label="Location"
+              align="left"
+              {...dataProps}
+            />
+            <DataItem value={year} label="Years" align="right" {...dataProps} />
+          </Info>
+        </CardFront>
+        <CardBack>
+          {details.map(detail => (
+            <p key={detail}>{detail}</p>
+          ))}
+        </CardBack>
+      </InnerContainer>
     </Container>
   )
 }

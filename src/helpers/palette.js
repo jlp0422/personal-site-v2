@@ -12,10 +12,12 @@ export default {
     tertiary: '#0F6DBF'
   },
   shadow: {
-    primary: '#888888'
+    dark: '#888888',
+    light: '#b4b4b4'
   },
   boxShadow: {
-    primary: '.8rem .8rem #888888',
+    dark: '.8rem .8rem #888888',
+    light: '.8rem .8rem #b4b4b4'
   },
   white: {
     true: '#ffffff',
