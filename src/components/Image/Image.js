@@ -46,7 +46,7 @@ export const query = graphql`
 
 const Image = ({ queryKey, imgStyle, style }) => {
   const data = useStaticQuery(graphql`
-    query ImageFilePath {
+    query {
       octocat: file(relativePath: { eq: "git-logo.svg" }) {
         ...SvgOrGif
       }

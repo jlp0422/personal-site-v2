@@ -1,23 +1,22 @@
-import { ThemeProvider } from 'emotion-theming'
 import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { theme } from '../../helpers'
 import Footer from '../Footer'
 import GlobalStyle from '../GlobalStyle'
 import Header from '../Header'
+import { ThemeWrapper } from '../shared'
 import { ContainerDiv } from './styles'
 
 export const PureLayout = ({ data, children }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeWrapper>
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <ContainerDiv>
         <main>{children}</main>
         <Footer />
       </ContainerDiv>
-    </ThemeProvider>
+    </ThemeWrapper>
   )
 }
 
