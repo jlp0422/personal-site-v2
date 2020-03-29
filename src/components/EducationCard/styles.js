@@ -9,9 +9,7 @@ import {
 } from '../shared'
 
 export const Container = styled(CardFlipContainer)`
-  display: grid;
   text-align: center;
-  margin: 0 auto 3rem;
   @media only screen and (max-width: 640px) {
     height: 250px;
   }
@@ -22,12 +20,10 @@ export const InnerContainer = styled(CardFlipInner)`
 `
 
 export const CardFront = styled(CardShared)`
-  padding: 1.5rem;
   background-color: ${({ theme }) => theme.palette.black.darkest};
 `
 
 export const CardBack = styled(CardFlipBack)`
-  padding: 1.5rem;
   background-color: ${({ theme }) => theme.palette.white.lighter};
 `
 

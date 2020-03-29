@@ -124,6 +124,8 @@ export const CardFlipContainer = styled.div`
   width: 100%;
   height: 210px;
   perspective: 1000px;
+  display: grid;
+  margin: 0 auto 3rem;
   :hover > div {
     transform: rotateY(180deg);
   }
@@ -134,12 +136,13 @@ export const CardFlipInner = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s cubic-bezier(0.17, 0.88, 0.44, 1.13);
+  transition: transform 0.6s cubic-bezier(0.17, 0.88, 0.44, 1.13);
   transform-style: preserve-3d;
 `
 
 export const CardShared = styled.div`
   margin-top: 0;
+  padding: 1.5rem;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -153,4 +156,15 @@ export const CardShared = styled.div`
 
 export const CardFlipBack = styled(CardShared)`
   transform: rotateY(180deg);
+  padding: 1.5rem;
+`
+
+export const TwoColGrid = styled.div`
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 48.5%);
+  grid-column-gap: 3%;
+  @media only screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 `

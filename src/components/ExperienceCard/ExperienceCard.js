@@ -1,11 +1,9 @@
 import React from 'react'
 import { DataItem } from '../../components/shared'
-import { joinAndLower, upper } from '../../helpers'
-import Image from '../Image'
+import { upper } from '../../helpers'
 import {
   Container,
   Info,
-  LogoContainer,
   Title,
   InnerContainer,
   CardFront,
@@ -16,12 +14,7 @@ const addPeriod = string => `<p>${string}.</p>`
 
 const ExperienceCard = ({ experience }) => {
   const { title, location, company, startDate, endDate, details } = experience
-  const normalizedCompany = joinAndLower(company)
-  const dataProps = {
-    size: 'medium',
-    align: 'center',
-    background: 'dark'
-  }
+  const dataProps = { size: 'medium', align: 'center', background: 'dark' }
   return (
     <Container>
       <InnerContainer>
@@ -36,12 +29,6 @@ const ExperienceCard = ({ experience }) => {
               {...dataProps}
             />
           </Info>
-          {/* <LogoContainer>
-            <Image
-              queryKey={`${normalizedCompany}Logo`}
-              style={{ width: '60px' }}
-            />
-          </LogoContainer> */}
         </CardFront>
         <CardBack>
           {details.map(detail => (

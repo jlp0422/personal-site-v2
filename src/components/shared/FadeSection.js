@@ -15,7 +15,7 @@ const FadeSection = ({ children }) => {
   const [isVisible, setVisible] = useState(false)
   const domRef = useRef()
   useEffect(() => {
-    const observer = new IntersectionObserver((entries, o) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setVisible(true)
