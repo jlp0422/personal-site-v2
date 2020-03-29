@@ -8,6 +8,19 @@ import GlobalStyle from '../GlobalStyle'
 import Header from '../Header'
 import { ContainerDiv } from './styles'
 
+export const PureLayout = ({ data, children }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <ContainerDiv>
+        <main>{children}</main>
+        <Footer />
+      </ContainerDiv>
+    </ThemeProvider>
+  )
+}
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -19,16 +32,7 @@ const Layout = ({ children }) => {
     }
   `)
 
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <ContainerDiv>
-        <main>{children}</main>
-        <Footer />
-      </ContainerDiv>
-    </ThemeProvider>
-  )
+  return <PureLayout data={data}>{children}</PureLayout>
 }
 
 Layout.propTypes = {
