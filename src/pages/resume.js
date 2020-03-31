@@ -5,7 +5,6 @@ import { FadeSection, OutboundLink } from '../components/shared'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container, IFrame } from '../components/Resume/styles'
 
-
 const Resume = () => {
   const data = useStaticQuery(graphql`
     {
@@ -27,9 +26,14 @@ const Resume = () => {
       <FadeSection>
         {data.allFile.edges.map(file => (
           <Container key={file.node.name}>
-            <OutboundLink href={file.node.publicURL} download>
-              Click to download
-            </OutboundLink>
+            <div>
+              <OutboundLink href={file.node.publicURL} download>
+                Download
+              </OutboundLink>
+              <OutboundLink href={file.node.publicURL} target="_blank">
+                Open in new tab
+              </OutboundLink>
+            </div>
             <div key={file.node.name}>
               <IFrame title={file.node.name} src={file.node.publicURL}></IFrame>
             </div>
