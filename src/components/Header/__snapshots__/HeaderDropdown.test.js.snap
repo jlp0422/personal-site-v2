@@ -19,7 +19,7 @@ exports[`HeaderDropdown Renders correctly when the isDropdownOpen prop is true 1
     }
   >
     <a
-      className="css-r2hn4p"
+      className="css-m9trjp"
       href="/about"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -42,7 +42,7 @@ exports[`HeaderDropdown Renders correctly when the isDropdownOpen prop is true 1
     }
   >
     <a
-      className="css-r2hn4p"
+      className="css-m9trjp"
       href="/experience"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -65,7 +65,7 @@ exports[`HeaderDropdown Renders correctly when the isDropdownOpen prop is true 1
     }
   >
     <a
-      className="css-r2hn4p"
+      className="css-m9trjp"
       href="/projects"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -93,7 +93,7 @@ exports[`HeaderDropdown Renders correctly when the isDropdownOpen prop is true 1
       target="_blank"
     >
       <span
-        className="css-r2hn4p"
+        className="css-m9trjp"
         onClick={[Function]}
         onKeyDown={[Function]}
         to="/resume"

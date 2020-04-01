@@ -62,7 +62,6 @@ export const NavLink = styled(NavLinkType)`
   text-decoration: none;
   text-transform: uppercase;
   --initialBgColor: ${({ theme }) => theme.palette.white.true};
-  --slideBgColor: ${({ theme }) => theme.palette.link.secondary};
 
   background-image: linear-gradient(
     90deg,
@@ -80,6 +79,11 @@ export const NavLink = styled(NavLinkType)`
   :active {
     transform: scale(0.97);
   }
+
+  @media only screen and (min-width: 641px) {
+    --slideBgColor: ${({ theme }) => theme.palette.link.secondary};
+  }
+
   @media only screen and (max-width: 640px) {
     padding: 0.5rem;
   }
