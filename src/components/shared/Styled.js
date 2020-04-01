@@ -10,6 +10,7 @@ export const OutboundLink = styled.a`
   text-decoration: none;
   margin: 0 0 0 0.6rem;
   font-weight: bold;
+  padding: ${({ padding }) => padding};
   color: ${({ theme }) => theme.palette.link.secondary};
   :after {
     content: '';
@@ -42,7 +43,16 @@ export const GridWrapper = styled.div`
   }
 `
 
-export const NavLink = styled(Link)`
+const NavLinkType = ({ element, children, getProps, ...props }) => {
+  const Wrapper = element || Link
+  const finalProps = {
+    ...props,
+    ...(element ? {} : { getProps })
+  }
+  return <Wrapper {...finalProps}>{children}</Wrapper>
+}
+
+export const NavLink = styled(NavLinkType)`
   color: ${({ theme }) => theme.palette.link.primary};
   margin: 0;
   padding: 1rem;
@@ -52,7 +62,6 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   --initialBgColor: ${({ theme }) => theme.palette.white.true};
-  --slideBgColor: ${({ theme }) => theme.palette.link.secondary};
 
   background-image: linear-gradient(
     90deg,
@@ -70,6 +79,11 @@ export const NavLink = styled(Link)`
   :active {
     transform: scale(0.97);
   }
+
+  @media only screen and (min-width: 641px) {
+    --slideBgColor: ${({ theme }) => theme.palette.link.secondary};
+  }
+
   @media only screen and (max-width: 640px) {
     padding: 0.5rem;
   }

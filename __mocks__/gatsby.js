@@ -24,6 +24,7 @@ module.exports = {
   ),
   StaticQuery: jest.fn(),
   useStaticQuery: () => ({
+    resume: require('./queries/resume.json'),
     logo: require('./queries/logo.json'),
     hottub2019: require('./queries/hottub2019.json'),
     stackjack: require('./queries/stackjack.json'),

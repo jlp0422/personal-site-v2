@@ -8,13 +8,13 @@ exports[`Header Renders correctly 1`] = `
     className="css-wnxrhc"
   >
     <a
-      className="css-1fu3yhm"
+      className="css-qn0k6y"
       href="/about"
     >
       About
     </a>
     <a
-      className="css-1fu3yhm"
+      className="css-qn0k6y"
       href="/experience"
     >
       Experience
@@ -52,16 +52,22 @@ exports[`Header Renders correctly 1`] = `
       </button>
     </h1>
     <a
-      className="css-1fu3yhm"
+      className="css-qn0k6y"
       href="/projects"
     >
       Projects
     </a>
     <a
-      className="css-1fu3yhm"
-      href="/resume"
+      className="css-1pgmt5s"
+      href="/static/f1ac7cc7de0bcb8ba3e02cc0d5662ddc/Philipson-Jeremy-Resume.pdf"
+      target="_blank"
     >
-      Resume
+      <span
+        className="css-qn0k6y"
+        to="/resume"
+      >
+        Resume
+      </span>
     </a>
   </div>
 </header>

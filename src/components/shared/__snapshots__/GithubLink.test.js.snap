@@ -13,7 +13,7 @@ exports[`GithubLink Renders correctly 1`] = `
   />
   <div>
     <a
-      className="css-e0yupj"
+      className="css-3wo2qn"
       href="/path/to/my/file"
       target="_blank"
     >
