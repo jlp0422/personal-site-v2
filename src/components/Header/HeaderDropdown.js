@@ -17,7 +17,7 @@ const mobileNavLinks = [
   }
 ]
 
-const Dropdown = ({ toggleDropdown, isDropdownOpen }) => {
+const HeaderDropdown = ({ toggleDropdown, isDropdownOpen }) => {
   const toggle = () => toggleDropdown(!isDropdownOpen)
   if (!isDropdownOpen) {
     return null
@@ -51,4 +51,4 @@ const Dropdown = ({ toggleDropdown, isDropdownOpen }) => {
   )
 }
 
-export default Dropdown
+export default HeaderDropdown

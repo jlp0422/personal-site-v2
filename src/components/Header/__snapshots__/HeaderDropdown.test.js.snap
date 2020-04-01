@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderDropdown Renders correctly when the isDropdownOpen prop is true 1`] = `
+<ul
+  className="css-1k3rwkt"
+>
+  <li
+    css={
+      Object {
+        "map": undefined,
+        "name": "1pwn70r",
+        "next": undefined,
+        "styles": "
+              text-align: center;
+              border-bottom: none;
+            ",
+        "toString": [Function],
+      }
+    }
+  >
+    <a
+      className="css-r2hn4p"
+      href="/about"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    >
+      About
+    </a>
+  </li>
+  <li
+    css={
+      Object {
+        "map": undefined,
+        "name": "1pwn70r",
+        "next": undefined,
+        "styles": "
+              text-align: center;
+              border-bottom: none;
+            ",
+        "toString": [Function],
+      }
+    }
+  >
+    <a
+      className="css-r2hn4p"
+      href="/experience"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    >
+      Experience
+    </a>
+  </li>
+  <li
+    css={
+      Object {
+        "map": undefined,
+        "name": "1pwn70r",
+        "next": undefined,
+        "styles": "
+              text-align: center;
+              border-bottom: none;
+            ",
+        "toString": [Function],
+      }
+    }
+  >
+    <a
+      className="css-r2hn4p"
+      href="/projects"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    >
+      Projects
+    </a>
+  </li>
+  <li
+    css={
+      Object {
+        "map": undefined,
+        "name": "1pwn70r",
+        "next": undefined,
+        "styles": "
+              text-align: center;
+              border-bottom: none;
+            ",
+        "toString": [Function],
+      }
+    }
+  >
+    <a
+      className="css-3wo2qn"
+      href="/static/f1ac7cc7de0bcb8ba3e02cc0d5662ddc/Philipson-Jeremy-Resume.pdf"
+      target="_blank"
+    >
+      <span
+        className="css-r2hn4p"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        to="/resume"
+      >
+        Resume
+      </span>
+    </a>
+  </li>
+</ul>
+`;

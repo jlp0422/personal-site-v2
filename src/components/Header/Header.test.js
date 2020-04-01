@@ -20,8 +20,10 @@ describe('Header', () => {
   it('Displays the NavLinks in the correct order', () => {
     const instance = getOutput().root
     const navLinks = instance.findAllByType(NavLink)
-    const getLinkAt = index => navLinks[index].props
     expect(navLinks).toHaveLength(4)
+
+    const getLinkAt = index => navLinks[index].props
+
     navLinks.forEach(link => {
       expect(link.props).toHaveProperty('to')
       expect(link.props).toHaveProperty('children')
