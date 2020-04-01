@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import Image from '../Image'
-import ResumeLink from '../Resume/ResumeLink'
+import ResumeLink from '../ResumeLink'
 import HeaderDropdown from './HeaderDropdown'
 import {
   Div,

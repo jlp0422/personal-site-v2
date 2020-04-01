@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { ThemeWrapper } from '../shared'
 import HeaderDropdown from './HeaderDropdown'
-import { NavLink, List } from './styles'
+import { List } from './styles'
 
 describe('HeaderDropdown', () => {
   const getOutput = (isDropdownOpen = true) =>
