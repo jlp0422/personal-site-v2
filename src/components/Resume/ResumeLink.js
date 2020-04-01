@@ -11,26 +11,33 @@ export const ResumeLinkDesktop = styled(OutboundLink)`
   }
 `
 
-const ResumeLink = ({ children, isDesktop }) => {
+export const PureResumeLink = ({ data, children, isDesktop }) => {
+  const Component = isDesktop ? ResumeLinkDesktop : OutboundLink
+
+  return (
+    <Component href={data.resume.edges[0].node.publicURL} target="_blank">
+      {children}
+    </Component>
+  )
+}
+
+const ResumeLink = ({ children, ...props }) => {
   const data = useStaticQuery(graphql`
-    {
-      allFile(filter: { name: { eq: "Philipson-Jeremy-Resume" } }) {
+    query {
+      resume: allFile(filter: { name: { eq: "Philipson-Jeremy-Resume" } }) {
         edges {
           node {
             publicURL
-            name
           }
         }
       }
     }
   `)
 
-  const Component = isDesktop ? ResumeLinkDesktop : OutboundLink
-
   return (
-    <Component href={data.allFile.edges[0].node.publicURL} target="_blank">
+    <PureResumeLink data={data} {...props}>
       {children}
-    </Component>
+    </PureResumeLink>
   )
 }
 

@@ -131,7 +131,7 @@ exports[`ProjectCard Renders correctly 1`] = `
       />
       <div>
         <a
-          className="css-e0yupj"
+          className="css-3wo2qn"
           href="/to/my/github"
           target="_blank"
         >
@@ -237,7 +237,7 @@ exports[`ProjectCard Renders correctly 1`] = `
       </div>
       <div>
         <a
-          className="css-e0yupj"
+          className="css-3wo2qn"
           href="/to/my/website"
           target="_blank"
         >

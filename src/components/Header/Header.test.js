@@ -29,6 +29,10 @@ describe('Header', () => {
     expect(getLinkAt(0)).toEqual({ to: '/about', children: 'About' })
     expect(getLinkAt(1)).toEqual({ to: '/experience', children: 'Experience' })
     expect(getLinkAt(2)).toEqual({ to: '/projects', children: 'Projects' })
-    expect(getLinkAt(3)).toEqual({ to: '/resume', children: 'Resume' })
+    expect(getLinkAt(3)).toEqual({
+      to: '/resume',
+      children: 'Resume',
+      element: 'span'
+    })
   })
 })

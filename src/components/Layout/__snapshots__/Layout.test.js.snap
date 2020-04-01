@@ -59,10 +59,16 @@ Array [
         Projects
       </a>
       <a
-        className="css-1fu3yhm"
-        href="/resume"
+        className="css-1pgmt5s"
+        href="/static/f1ac7cc7de0bcb8ba3e02cc0d5662ddc/Philipson-Jeremy-Resume.pdf"
+        target="_blank"
       >
-        Resume
+        <span
+          className="css-1fu3yhm"
+          to="/resume"
+        >
+          Resume
+        </span>
       </a>
     </div>
   </header>,

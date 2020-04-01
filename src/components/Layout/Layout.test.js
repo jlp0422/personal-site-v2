@@ -12,7 +12,7 @@ describe('Layout', () => {
       siteMetadata: {
         title: 'Gatsby Starter Blog'
       }
-    }
+    },
   }
   const getOutput = () => renderer.create(<Layout data={data} />)
 
