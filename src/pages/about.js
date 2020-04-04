@@ -1,6 +1,7 @@
 import { css } from '@emotion/core'
 import React, { useState } from 'react'
 import {
+  TitleButton,
   ContactList,
   ContentWrapper,
   Copy,
@@ -36,15 +37,9 @@ const About = () => {
   return (
     <Layout>
       <SEO title="About" />
-      <button
-        css={css`
-          padding: 0;
-          border: none;
-        `}
-        onClick={() => toggleEmojiOnly(!emojiOnly)}
-      >
+      <TitleButton onClick={() => toggleEmojiOnly(!emojiOnly)}>
         <h1>About Me</h1>
-      </button>
+      </TitleButton>
       <FadeSection>
         <ContentWrapper>
           <div>

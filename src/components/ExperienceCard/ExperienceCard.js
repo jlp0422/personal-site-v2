@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { DataItem } from '../../components/shared'
 import { upper } from '../../helpers'
 import {
@@ -13,11 +13,16 @@ import {
 const addPeriod = string => `<p>${string}.</p>`
 
 const ExperienceCard = ({ experience }) => {
+  const [rotation, setRotation] = useState(0)
   const { title, location, company, startDate, endDate, details } = experience
   const dataProps = { size: 'medium', align: 'center', background: 'dark' }
   return (
-    <Container>
-      <InnerContainer>
+    <Container onClick={() => setRotation(!rotation ? 180 : 0)}>
+      <InnerContainer
+        css={{
+          transform: `rotateY(${rotation}deg)`
+        }}
+      >
         <CardFront>
           <Title>{upper(title)}</Title>
           <Info>

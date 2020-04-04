@@ -140,9 +140,7 @@ export const CardFlipContainer = styled.div`
   perspective: 1000px;
   display: grid;
   margin: 0 auto 3rem;
-  :hover > div {
-    transform: rotateY(180deg);
-  }
+  cursor: pointer;
 `
 
 export const CardFlipInner = styled.div`
