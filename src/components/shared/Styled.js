@@ -141,6 +141,12 @@ export const CardFlipContainer = styled.div`
   display: grid;
   margin: 0 auto 3rem;
   cursor: pointer;
+  @media only screen and (max-width: 850px) {
+    height: 250px;
+  }
+  @media only screen and (max-width: 350px) {
+    height: 290px;
+  }
 `
 
 export const CardFlipInner = styled.div`

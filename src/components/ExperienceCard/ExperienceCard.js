@@ -1,28 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { DataItem } from '../../components/shared'
-import { upper } from '../../helpers'
+import { addPeriod, upper } from '../../helpers'
+import { useRotation } from '../../hooks/useRotation'
 import {
+  CardBack,
+  CardFront,
   Container,
   Info,
-  Title,
   InnerContainer,
-  CardFront,
-  CardBack
+  Title
 } from './styles'
 
-const addPeriod = string => `<p>${string}.</p>`
-
 const ExperienceCard = ({ experience }) => {
-  const [rotation, setRotation] = useState(0)
+  const [rotationStyles, rotate] = useRotation()
   const { title, location, company, startDate, endDate, details } = experience
   const dataProps = { size: 'medium', align: 'center', background: 'dark' }
   return (
-    <Container onClick={() => setRotation(!rotation ? 180 : 0)}>
-      <InnerContainer
-        css={{
-          transform: `rotateY(${rotation}deg)`
-        }}
-      >
+    <Container onClick={rotate}>
+      <InnerContainer css={rotationStyles}>
         <CardFront>
           <Title>{upper(title)}</Title>
           <Info>
@@ -36,6 +31,7 @@ const ExperienceCard = ({ experience }) => {
           </Info>
         </CardFront>
         <CardBack>
+          <Title background="light">{upper(title)}</Title>
           {details.map(detail => (
             <p
               key={detail}

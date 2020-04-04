@@ -1,5 +1,7 @@
 import React from 'react'
 import { DataItem } from '../../components/shared'
+import { upper } from '../../helpers'
+import { useRotation } from '../../hooks/useRotation'
 import {
   CardBack,
   CardFront,
@@ -8,14 +10,14 @@ import {
   InnerContainer,
   Title
 } from './styles'
-import { upper } from '../../helpers'
 
 const EducationCard = ({ education }) => {
+  const [rotationStyles, rotate] = useRotation()
   const { school, location, year, details } = education
   const dataProps = { size: 'medium', background: 'dark' }
   return (
-    <Container>
-      <InnerContainer>
+    <Container onClick={rotate}>
+      <InnerContainer css={rotationStyles}>
         <CardFront>
           <Title>{upper(school)}</Title>
           <Info>
@@ -30,7 +32,7 @@ const EducationCard = ({ education }) => {
         </CardFront>
         <CardBack>
           {details.map(detail => (
-            <p key={detail}>{detail}</p>
+            <p key={detail} dangerouslySetInnerHTML={{ __html: detail }} />
           ))}
         </CardBack>
       </InnerContainer>

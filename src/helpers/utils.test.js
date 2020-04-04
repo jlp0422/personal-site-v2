@@ -49,3 +49,9 @@ describe('isGif', () => {
     expect(utils.isGif('svg')).toBe(false)
   })
 })
+
+describe('addPeriod', () => {
+  it('wraps the text in a p tag and adds a period', () => {
+    expect(utils.upper('hi there')).toBe('<p>hi there.</p>')
+  })
+})
