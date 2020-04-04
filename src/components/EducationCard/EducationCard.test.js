@@ -54,7 +54,9 @@ describe('EducationCard', () => {
   it('Displays the array of details', () => {
     const instance = getOutput().root
     const children = instance.findByType(CardBack).props.children
-    const getChildAtIndex = index => children[index].props.children
+    const getChildAtIndex = index =>
+      children[index].props.dangerouslySetInnerHTML.__html
+
     expect(children).toHaveLength(2)
     expect(getChildAtIndex(0)).toBe('i went')
     expect(getChildAtIndex(1)).toBe('to college here')

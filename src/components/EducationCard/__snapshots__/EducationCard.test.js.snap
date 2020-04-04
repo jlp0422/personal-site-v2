@@ -2,7 +2,8 @@
 
 exports[`EducationCard Renders correctly 1`] = `
 <div
-  className="css-1j6k8sl"
+  className="css-1tufe8w"
+  onClick={[Function]}
 >
   <div
     className="css-fsocmv"
@@ -45,12 +46,20 @@ exports[`EducationCard Renders correctly 1`] = `
     <div
       className="css-1loivni"
     >
-      <p>
-        i went
-      </p>
-      <p>
-        to college here
-      </p>
+      <p
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "i went",
+          }
+        }
+      />
+      <p
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "to college here",
+          }
+        }
+      />
     </div>
   </div>
 </div>
