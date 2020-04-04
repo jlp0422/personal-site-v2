@@ -1,9 +1,8 @@
 import { css } from '@emotion/core'
-import React from 'react'
+import React, { Fragment } from 'react'
 import { ActiveLink } from '../../components/shared'
-import { List } from './styles'
 import ResumeLink from '../ResumeLink'
-import { Fragment } from 'react'
+import { List } from './styles'
 
 const mobileNavLinks = [
   { label: 'About', path: '/about' },

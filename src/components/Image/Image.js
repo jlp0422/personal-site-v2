@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import { isSvg, isGif } from '../../helpers'
 import React from 'react'
+import { isGif, isSvg } from '../../helpers'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
