@@ -10,3 +10,5 @@ export const joinAndLower = (str, splitOn = ' ') =>
 export const isSvg = extension => extension === 'svg'
 
 export const isGif = extension => extension === 'gif'
+
+export const addPeriod = string => `<p>${string}.</p>`

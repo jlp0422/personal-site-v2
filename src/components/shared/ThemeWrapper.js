@@ -1,5 +1,5 @@
-import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
+import React from 'react'
 import { theme } from '../../helpers'
 
 const ThemeWrapper = ({ children }) => (

@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import { isSvg, isGif } from '../../helpers'
 import React from 'react'
+import { isGif, isSvg } from '../../helpers'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -15,12 +15,23 @@ import React from 'react'
  */
 
 export const query = graphql`
+  fragment ScreenshotFragment on File {
+    publicURL
+    name
+    extension
+    childImageSharp {
+      fluid(maxWidth: 800, maxHeight: 500) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+
   fragment ImageFragment on File {
     publicURL
     name
     extension
     childImageSharp {
-      fluid(maxWidth: 800) {
+      fluid(maxWidth: 200) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
@@ -54,19 +65,19 @@ const Image = ({ queryKey, imgStyle, style }) => {
         ...ImageFragment
       }
       dearcarolynfine: file(relativePath: { eq: "dear-carolyn-fine.png" }) {
-        ...ImageFragment
+        ...ScreenshotFragment
       }
       hottub2019: file(relativePath: { eq: "hot-tub-2019.png" }) {
-        ...ImageFragment
+        ...ScreenshotFragment
       }
       stackjack: file(relativePath: { eq: "stackjack.png" }) {
-        ...ImageFragment
+        ...ScreenshotFragment
       }
       untappedtrivia: file(relativePath: { eq: "untapped-trivia.png" }) {
-        ...ImageFragment
+        ...ScreenshotFragment
       }
       winspool2019: file(relativePath: { eq: "wins-pool-2019.png" }) {
-        ...ImageFragment
+        ...ScreenshotFragment
       }
       logo: file(relativePath: { eq: "logo_black.svg" }) {
         ...SvgOrGif

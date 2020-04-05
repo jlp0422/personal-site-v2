@@ -1,18 +1,14 @@
 import styled from '@emotion/styled'
 import {
-  ExpInfo,
-  ExpTitle,
+  CardFlipBack,
   CardFlipContainer,
   CardFlipInner,
-  CardFlipBack,
-  CardShared
+  CardShared,
+  ExpInfo,
+  ExpTitle
 } from '../shared'
 
-export const Container = styled(CardFlipContainer)`
-  @media only screen and (max-width: 640px) {
-    height: 250px;
-  }
-`
+export const Container = CardFlipContainer
 
 export const InnerContainer = styled(CardFlipInner)`
   box-shadow: ${({ theme }) => theme.palette.boxShadow.light};
@@ -28,7 +24,12 @@ export const CardBack = styled(CardFlipBack)`
   text-align: left;
 `
 
-export const Title = ExpTitle
+export const Title = styled(ExpTitle)`
+  color: ${({ background, theme }) =>
+    background === 'light'
+      ? theme.palette.text.primary
+      : theme.palette.white.lightest};
+`
 
 export const Info = styled(ExpInfo)`
   width: 100%;

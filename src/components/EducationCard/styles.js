@@ -1,11 +1,11 @@
 import styled from '@emotion/styled'
 import {
-  ExpInfo,
-  ExpTitle,
+  CardFlipBack,
   CardFlipContainer,
   CardFlipInner,
-  CardFlipBack,
-  CardShared
+  CardShared,
+  ExpInfo,
+  ExpTitle
 } from '../shared'
 
 export const Container = styled(CardFlipContainer)`

@@ -7,7 +7,7 @@ export default [
     endDate: 'Present',
     details: [
       'Integral part of new <em>Upcoming</em> experience replatform, concluding in March 2020&nbsp;release',
-      'Expanded unit and integration test coverage with over 2,000 lines of additional testing using Jest, Enzyme and Cypress&nbsp;libraries',
+      'Expanded unit and integration test coverage with over 5,000 lines of additional testing using Jest, Enzyme and Cypress&nbsp;libraries',
       'Mentor new hires, including assisting with codebase&nbsp;acclimation'
     ]
   },

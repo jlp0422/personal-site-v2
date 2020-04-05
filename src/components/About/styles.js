@@ -1,5 +1,11 @@
 import styled from '@emotion/styled'
 
+export const TitleButton = styled.button`
+  padding: 0;
+  border: none;
+  background: none;
+`
+
 export const Copy = styled.p`
   font-size: 2rem;
   padding: 0.5rem 0;

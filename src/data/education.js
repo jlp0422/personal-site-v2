@@ -10,7 +10,7 @@ export default [
     location: 'Syracuse, NY',
     year: 'Class of 2014',
     details: [
-      'B.S., Sport Management',
+      'B.S., Sport Management, <em>magna cum laude</em>',
       'David B. Falk College of Sport and Human Dynamics'
     ]
   }
