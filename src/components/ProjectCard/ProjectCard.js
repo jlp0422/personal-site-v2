@@ -1,8 +1,8 @@
 import React from 'react'
-import { linkExists, upper, joinAndLower } from '../../helpers'
+import { joinAndLower, linkExists, upper } from '../../helpers'
+import Image from '../Image'
 import { GithubLink, LiveLink } from '../shared'
 import { Container, LinkContainer, Title } from './styles'
-import Image from '../Image'
 
 const isStackjack = imageKey => imageKey === 'stackjack'
 

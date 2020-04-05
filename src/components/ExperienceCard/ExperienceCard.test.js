@@ -28,7 +28,10 @@ describe('ExperienceCard', () => {
 
   it('Displays the title in all uppercase', () => {
     const instance = getOutput().root
-    expect(instance.findByType(Title).props.children).toBe('MY FIRST JOB')
+    const allTitles = instance.findAllByType(Title)
+    allTitles.forEach(title => {
+      expect(title.props.children).toBe('MY FIRST JOB')
+    })
   })
 
   it('Displays the Location value and label', () => {
@@ -68,9 +71,9 @@ describe('ExperienceCard', () => {
     const instance = getOutput().root
     const children = instance.findByType(CardBack).props.children
     const getChildAtIndex = index =>
-      children[index].props.dangerouslySetInnerHTML.__html
+      children[1][index].props.dangerouslySetInnerHTML.__html
 
-    expect(children).toHaveLength(3)
+    expect(children).toHaveLength(2)
     expect(getChildAtIndex(0)).toBe('<p>it was fun.</p>')
     expect(getChildAtIndex(1)).toBe('<p>it was great.</p>')
     expect(getChildAtIndex(2)).toBe('<p>it was awesome.</p>')

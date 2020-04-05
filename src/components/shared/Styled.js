@@ -140,8 +140,12 @@ export const CardFlipContainer = styled.div`
   perspective: 1000px;
   display: grid;
   margin: 0 auto 3rem;
-  :hover > div {
-    transform: rotateY(180deg);
+  cursor: pointer;
+  @media only screen and (max-width: 850px) {
+    height: 250px;
+  }
+  @media only screen and (max-width: 350px) {
+    height: 290px;
   }
 `
 

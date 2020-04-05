@@ -2,7 +2,8 @@
 
 exports[`ExperienceCard Renders correctly 1`] = `
 <div
-  className="css-1yyoknq"
+  className="css-1eyshu2"
+  onClick={[Function]}
 >
   <div
     className="css-1vqdcjn"
@@ -11,7 +12,7 @@ exports[`ExperienceCard Renders correctly 1`] = `
       className="css-h5v37p"
     >
       <h3
-        className="css-1b8m15i"
+        className="css-1s5vfix"
       >
         MY FIRST JOB
       </h3>
@@ -56,6 +57,11 @@ exports[`ExperienceCard Renders correctly 1`] = `
     <div
       className="css-gohb89"
     >
+      <h3
+        className="css-11vym1f"
+      >
+        MY FIRST JOB
+      </h3>
       <p
         dangerouslySetInnerHTML={
           Object {

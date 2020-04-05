@@ -24,5 +24,14 @@ export default [
     },
     display: '/in/jeremyphilipson',
     element: 'a'
+  },
+  {
+    type: 'github',
+    props: {
+      href: 'https://www.github.com/jlp0422',
+      target: '_blank'
+    },
+    display: '/jlp0422',
+    element: 'a'
   }
 ]
