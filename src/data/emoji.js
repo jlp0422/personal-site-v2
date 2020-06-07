@@ -5,6 +5,7 @@ const scotch = { label: 'Scotch', icon: '🥃' }
 const orange = { label: 'Orange', icon: '🍊' }
 const programming = { label: 'Programming', icon: '👨🏻‍💻' }
 const snowboarding = { label: 'Snowboarding', icon: '🏂' }
+const golfing = { label: 'Golfing', icon: '🏌🏼‍♂' }
 
 export const emojiArray = [
   cooking,
@@ -13,7 +14,8 @@ export const emojiArray = [
   scotch,
   orange,
   programming,
-  snowboarding
+  snowboarding,
+  golfing
 ]
 
 export const emojiObject = {
@@ -23,5 +25,6 @@ export const emojiObject = {
   scotch,
   orange,
   programming,
-  snowboarding
+  snowboarding,
+  golfing
 }

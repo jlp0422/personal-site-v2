@@ -1,49 +1,72 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Helmet from 'react-helmet'
+import { useLocation } from '@reach/router'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
+import defaultImage from '../../../static/image/jeremy_sitting.jpg'
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ lang, meta, title: pageTitle }) {
   const { site } = useSiteMetadata()
-  const metaDescription = description || site.siteMetadata.description
+  const { origin } = useLocation()
+  const { title, titleTemplate, author } = site.siteMetadata
+
+  const seo = {
+    title: pageTitle || title,
+    titleTemplate,
+    desc: `${pageTitle || title} | Jeremy Philipson`,
+    image: `${origin}${defaultImage}`,
+    author
+  }
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={seo.title}
+      titleTemplate={seo.titleTemplate}
       meta={[
         {
           name: `description`,
-          content: metaDescription
+          content: seo.desc
         },
         {
           property: `og:title`,
-          content: title
+          content: seo.title
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: seo.desc
         },
         {
           property: `og:type`,
           content: `website`
         },
         {
+          property: `og:image`,
+          content: seo.image
+        },
+        {
           name: `twitter:card`,
           content: `summary`
         },
         {
+          name: `twitter:site`,
+          content: seo.author
+        },
+        {
           name: `twitter:creator`,
-          content: site.siteMetadata.author
+          content: seo.author
         },
         {
           name: `twitter:title`,
-          content: title
+          content: seo.title
         },
         {
           name: `twitter:description`,
-          content: metaDescription
+          content: seo.desc
+        },
+        {
+          name: `twitter:image`,
+          content: seo.image
         }
       ].concat(meta)}
     />

@@ -44,7 +44,7 @@ const About = () => {
         <ContentWrapper>
           <div>
             <Copy>
-              I'm a 27-year-old Software Engineer working at FanDuel in New York
+              I'm a 28-year-old Software Engineer working at FanDuel in New York
               City. Originally from Utica, NY, I enjoy&nbsp;
               {switchEmoji(emj.cooking, 'cooking')}, playing&nbsp;
               {switchEmoji(emj.trumpet, 'trumpet')},
@@ -56,7 +56,7 @@ const About = () => {
               &nbsp;games, improving my&nbsp;
               {switchEmoji(emj.programming, 'programming')}
               &nbsp;skills, or&nbsp;
-              {switchEmoji(emj.snowboarding, 'hitting the slopes')}.
+              {switchEmoji(emj.golfing, 'hitting the links')}.
             </Copy>
             <Copy>Shoot me an email, slide into my DMs, or send a raven:</Copy>
             <ContactList>
