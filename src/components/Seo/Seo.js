@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useSiteMetadata()
+  const { site, image } = useSiteMetadata()
   const metaDescription = description || site.siteMetadata.description
 
   return (
@@ -30,8 +30,16 @@ function SEO({ description, lang, meta, title }) {
           content: `website`
         },
         {
+          property: `og:image`,
+          content: image
+        },
+        {
           name: `twitter:card`,
           content: `summary`
+        },
+        {
+          name: `twitter:site`,
+          content: `@jeremyphilipson`
         },
         {
           name: `twitter:creator`,

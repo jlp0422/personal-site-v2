@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <Layout>
       <SEO title="Projects" />
-      <h1>Things I've worked on</h1>
+      <h1>Things I've worked built</h1>
       <TwoColGrid>
         {projects.map(project => (
           <FadeSection key={project.title}>

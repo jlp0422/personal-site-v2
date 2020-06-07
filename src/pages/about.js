@@ -44,7 +44,7 @@ const About = () => {
         <ContentWrapper>
           <div>
             <Copy>
-              I'm a 27-year-old Software Engineer working at FanDuel in New York
+              I'm a 28-year-old Software Engineer working at FanDuel in New York
               City. Originally from Utica, NY, I enjoy&nbsp;
               {switchEmoji(emj.cooking, 'cooking')}, playing&nbsp;
               {switchEmoji(emj.trumpet, 'trumpet')},

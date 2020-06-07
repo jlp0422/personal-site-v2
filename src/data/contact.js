@@ -2,7 +2,7 @@ export default [
   {
     type: 'email',
     props: {
-      mailto: 'jeremyphilipson@gmail.com'
+      href: 'mailto:jeremyphilipson@gmail.com'
     },
     display: 'jeremyphilipson@gmail.com',
     element: 'a'

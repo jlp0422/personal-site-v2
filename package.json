@@ -2,7 +2,7 @@
   "name": "jeremy-philipson-website",
   "private": true,
   "description": "Personal website for Jeremy Philipson",
-  "version": "1.1.0",
+  "version": "2.1.0",
   "author": "Jeremy Philipson <jeremyphilipson@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -15,14 +15,16 @@
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "^2.4.3",
     "polished": "^3.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "typeface-bangers": "0.0.72",
+    "typeface-oswald": "^1.1.4",
+    "typeface-roboto-mono": "0.0.75"
   },
   "devDependencies": {
     "babel-jest": "^25.2.3",
