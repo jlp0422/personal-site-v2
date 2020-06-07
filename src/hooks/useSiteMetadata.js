@@ -7,10 +7,7 @@ const useSiteMetadata = () =>
         siteMetadata {
           title
           titleTemplate
-          description
           author
-          siteUrl: url
-          image
         }
       }
     }
