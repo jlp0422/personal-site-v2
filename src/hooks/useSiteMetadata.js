@@ -6,19 +6,11 @@ const useSiteMetadata = () =>
       site {
         siteMetadata {
           title
+          titleTemplate
           description
           author
-        }
-      }
-      image: file(relativePath: { eq: "jeremy_sitting.jpg" }) {
-        publicURL
-        name
-        extension
-        childImageSharp {
-          id
-          fluid(maxWidth: 800, grayscale: true) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          siteUrl: url
+          image
         }
       }
     }

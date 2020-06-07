@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `Jeremy Philipson`,
+    titleTemplate: `%s | Jeremy Philipson`,
     description: `Personal website for Jeremy Philipson`,
-    author: `@jeremyphilipson`
+    author: `@jeremyphilipson`,
+    url: 'https://www.jeremyphilipson.com',
+    image: '/images/jeremy_sitting.jpg'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

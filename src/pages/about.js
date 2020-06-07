@@ -56,7 +56,7 @@ const About = () => {
               &nbsp;games, improving my&nbsp;
               {switchEmoji(emj.programming, 'programming')}
               &nbsp;skills, or&nbsp;
-              {switchEmoji(emj.snowboarding, 'hitting the slopes')}.
+              {switchEmoji(emj.golfing, 'hitting the links')}.
             </Copy>
             <Copy>Shoot me an email, slide into my DMs, or send a raven:</Copy>
             <ContactList>

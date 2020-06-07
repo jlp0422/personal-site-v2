@@ -1,21 +1,29 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Helmet from 'react-helmet'
+// import { useLocation } from '@reach/router'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 
-function SEO({ description, lang, meta, title }) {
-  const { site, image } = useSiteMetadata()
-  const metaDescription = description || site.siteMetadata.description
+function SEO({ lang, meta, title: pageTitle }) {
+  const { site } = useSiteMetadata()
+  const {
+    title,
+    titleTemplate,
+    description,
+    author,
+    siteUrl,
+    image
+  } = site.siteMetadata
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={pageTitle || title}
+      titleTemplate={titleTemplate}
       meta={[
         {
           name: `description`,
-          content: metaDescription
+          content: description
         },
         {
           property: `og:title`,
@@ -23,7 +31,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: description
         },
         {
           property: `og:type`,
@@ -31,7 +39,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: image
+          content: `${siteUrl}${image}`
         },
         {
           name: `twitter:card`,
@@ -43,15 +51,15 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author
+          content: author
         },
         {
           name: `twitter:title`,
-          content: title
+          content: pageTitle || title
         },
         {
           name: `twitter:description`,
-          content: metaDescription
+          content: description
         }
       ].concat(meta)}
     />
