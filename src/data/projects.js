@@ -1,5 +1,37 @@
 export default [
   {
+    title: 'Sports Logo Alphabet Quiz',
+    details: [
+      'Sports logo guessing game inspired by a Twitter post',
+      'Ability to guess by league or in alphabetical order',
+      'Keep track of high scores for each category'
+    ],
+    github: {
+      link: 'https://github.com/jlp0422/sport-logo-alphabet-quiz',
+      text: 'Sports Logo Alphabet Quiz'
+    },
+    website: {
+      link: 'https://sport-logo-alphabet-quiz.vercel.app/',
+      text: 'Take the Quiz!'
+    }
+  },
+  {
+    title: 'Baby Philipson 2020',
+    details: [
+      'Created baby pool when my brother and sister-in-law were expecting',
+      'Family members could guess date, weight, and gender',
+      'Allowed me to get creative with the styling and make it fun!'
+    ],
+    github: {
+      link: 'https://github.com/jlp0422/baby-pool-2020',
+      text: 'Baby Philipson 2020'
+    },
+    website: {
+      link: 'https://babyphilipson2020.netlify.app/',
+      text: 'Live site'
+    }
+  },
+  {
     title: 'Hot Tub 2019',
     details: [
       'Kept track of all entries and standings for 60-person football pool',

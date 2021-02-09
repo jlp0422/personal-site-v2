@@ -16,7 +16,7 @@ describe('Footer', () => {
     expect(instance.props).toEqual({})
     expect(instance.children.map(str => str.trim())).toEqual([
       '©',
-      '2020',
+      '2021',
       'Jeremy L. Philipson'
     ])
   })
