@@ -45,12 +45,16 @@ function SEO({ lang, meta, title: pageTitle }) {
           content: seo.image
         },
         {
+          property: `og:url`,
+          content: seo.image
+        },
+        {
           property: `og:image:secure_url`,
           content: seo.image
         },
         {
           property: `og:image:type`,
-          content: 'image/jpg'
+          content: 'image/jpeg'
         },
         {
           property: `og:image:height`,
