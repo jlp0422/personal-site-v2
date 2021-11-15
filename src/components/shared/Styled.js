@@ -136,16 +136,19 @@ export const ExpInfo = styled.div`
 export const CardFlipContainer = styled.div`
   background-color: transparent;
   width: 100%;
-  height: 210px;
+  height: 230px;
   perspective: 1000px;
   display: grid;
   margin: 0 auto 3rem;
   cursor: pointer;
   @media only screen and (max-width: 850px) {
-    height: 250px;
+    height: 290px;
+  }
+  @media only screen and (max-width: 700px) {
+    height: 310px;
   }
   @media only screen and (max-width: 350px) {
-    height: 290px;
+    height: 330px;
   }
 `
 

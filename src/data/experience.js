@@ -1,10 +1,22 @@
 export default [
   {
+    title: 'Senior Software Engineer',
+    company: 'FanDuel',
+    location: 'New York, NY',
+    startDate: 'January 2021',
+    endDate: 'Present',
+    details: [
+      'Became trusted voice for other teams with less experienced engineers, offering support and guidance for new features and releases',
+      'Successfuly contributed to more backend code, including Python and Java repositories, leading to additional work as a full-stack engineer',
+      'Led Design audit to standardize web components and colors across multiple verticals'
+    ]
+  },
+  {
     title: 'Software Engineer',
     company: 'FanDuel',
     location: 'New York, NY',
     startDate: 'March 2020',
-    endDate: 'Present',
+    endDate: 'January 2021',
     details: [
       'Integral part of new <em>Upcoming</em> experience replatform, concluding in March 2020&nbsp;release',
       'Expanded unit and integration test coverage with over 5,000 lines of additional testing using Jest, Enzyme and Cypress&nbsp;libraries',

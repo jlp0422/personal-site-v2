@@ -1,6 +1,6 @@
 const cooking = { label: 'Cooking', icon: '👨🏻‍🍳' }
 const workOut = { label: 'Working out', icon: '💪🏻' }
-const trumpet = { label: 'Trumpet', icon: '🎺' }
+const reading = { label: 'Reading', icon: '📖' }
 const scotch = { label: 'Scotch', icon: '🥃' }
 const orange = { label: 'Orange', icon: '🍊' }
 const programming = { label: 'Programming', icon: '👨🏻‍💻' }
@@ -9,7 +9,7 @@ const golfing = { label: 'Golfing', icon: '🏌🏼‍♂' }
 
 export const emojiArray = [
   cooking,
-  trumpet,
+  reading,
   workOut,
   scotch,
   orange,
@@ -20,7 +20,7 @@ export const emojiArray = [
 
 export const emojiObject = {
   cooking,
-  trumpet,
+  reading,
   workOut,
   scotch,
   orange,
