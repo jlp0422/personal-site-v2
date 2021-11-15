@@ -50,19 +50,19 @@ function SEO({ lang, meta, title: pageTitle }) {
         },
         {
           property: `og:image:type`,
-          content: "image/jpg"
+          content: 'image/jpg'
         },
         {
           property: `og:image:height`,
-          content: "750"
+          content: '750'
         },
         {
           property: `og:image:width`,
-          content: "500"
+          content: '500'
         },
         {
           property: `og:image:alt`,
-          content: "Jeremy Philipson"
+          content: 'Jeremy Philipson'
         },
         {
           name: `twitter:card`,
