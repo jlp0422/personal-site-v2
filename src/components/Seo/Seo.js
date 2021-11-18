@@ -45,6 +45,30 @@ function SEO({ lang, meta, title: pageTitle }) {
           content: seo.image
         },
         {
+          property: `og:url`,
+          content: seo.image
+        },
+        {
+          property: `og:image:secure_url`,
+          content: seo.image
+        },
+        {
+          property: `og:image:type`,
+          content: 'image/jpeg'
+        },
+        {
+          property: `og:image:height`,
+          content: '750'
+        },
+        {
+          property: `og:image:width`,
+          content: '500'
+        },
+        {
+          property: `og:image:alt`,
+          content: 'Jeremy Philipson'
+        },
+        {
           name: `twitter:card`,
           content: `summary`
         },

@@ -1,14 +1,26 @@
 export default [
   {
+    title: 'Senior Software Engineer',
+    company: 'FanDuel',
+    location: 'New York, NY',
+    startDate: 'Mar 2021',
+    endDate: 'Present',
+    details: [
+      'Trusted voice for streams across divisions, managing high priority feature development for the Daily Fantasy Sports vertical',
+      'Successfully contribute to backend code, including Python and Java repositories, leading to additional work as a full-stack engineer',
+      'Lead design audit to standardize web components across multiple verticals'
+    ]
+  },
+  {
     title: 'Software Engineer',
     company: 'FanDuel',
     location: 'New York, NY',
-    startDate: 'March 2020',
-    endDate: 'Present',
+    startDate: 'Mar 2020',
+    endDate: 'Mar 2021',
     details: [
-      'Integral part of new <em>Upcoming</em> experience replatform, concluding in March 2020&nbsp;release',
-      'Expanded unit and integration test coverage with over 5,000 lines of additional testing using Jest, Enzyme and Cypress&nbsp;libraries',
-      'Mentor new hires, including assisting with codebase&nbsp;acclimation'
+      'Worked as sole web developer on feature to add videos to player cards over three months, culminating in successful feature launch with no production bugs',
+      'Integral part of <em>Upcoming</em> page replatform, concluding in March 2020 release',
+      'Mentor new hires, including assisting with codebase acclimation and onboarding'
     ]
   },
   {
@@ -16,11 +28,11 @@ export default [
     company: 'FanDuel',
     location: 'New York, NY',
     startDate: 'Oct 2018',
-    endDate: 'March 2020',
+    endDate: 'Mar 2020',
     details: [
-      'Create, develop, and test new front-end features for FanDuel&nbsp;website',
-      'Update and maintain two primary codebases in React and&nbsp;Angular',
-      'Majorly involved in complete revamp of Live Scoring experience, including building new components, testing new page, and&nbsp;release'
+      'Created, developed, and tested new front-end features as part of long term roadmap',
+      'Updated and maintained two primary codebases in React and Angular',
+      'Completed revamp of Live Scoring experience, including building new React components, testing new page in Cypress, and eventual production release'
     ]
   },
   {
