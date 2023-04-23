@@ -16,8 +16,8 @@ describe('Footer', () => {
     expect(instance.props).toEqual({})
     expect(instance.children.map(str => str.trim())).toEqual([
       '©',
-      '2021',
-      'Jeremy L. Philipson'
+      new Date().getFullYear().toString(),
+      'Jeremy Louis Philipson'
     ])
   })
 })
