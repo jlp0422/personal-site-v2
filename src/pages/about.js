@@ -44,9 +44,8 @@ const About = () => {
         <ContentWrapper>
           <div>
             <Copy>
-              I'm a 29-year-old Software Engineer working for FanDuel{' '}
-              <strike>in New York City</strike>&nbsp;remotely from Stamford, CT.
-              Originally from Upstate New York, I enjoy&nbsp;
+              I'm a 31-year-old Software Engineer working at FanDuel. Originally
+              from Upstate New York, I enjoy&nbsp;
               {switchEmoji(emj.cooking, 'cooking')},&nbsp;
               {switchEmoji(emj.reading, 'reading')},
               {switchEmoji(emj.workOut, ' working out')}, and&nbsp;

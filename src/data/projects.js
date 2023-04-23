@@ -1,5 +1,21 @@
 export default [
   {
+    title: 'Fate of the Eight',
+    details: [
+      'Formula 1 fantasy league',
+      'Eight participants each selecting two drivers',
+      'Automated scoring updated after each race'
+    ],
+    github: {
+      link: 'https://github.com/jlp0422/f1-fantasy-league',
+      text: 'Fate of the Eight'
+    },
+    website: {
+      link: 'https://fate-of-the-eight.vercel.app/',
+      text: 'Standings'
+    }
+  },
+  {
     title: 'Sports Logo Alphabet Quiz',
     details: [
       'Sports logo guessing game inspired by a Twitter post',
@@ -75,7 +91,7 @@ export default [
       text: 'Dear Carolyn Fine'
     },
     website: {
-      link: 'https://dearcarolynfine.com/',
+      link: 'https://mystifying-kirch-059b5f.netlify.app',
       text: 'Live site'
     }
   },

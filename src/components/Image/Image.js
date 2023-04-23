@@ -91,6 +91,9 @@ const Image = ({ queryKey, imgStyle, style }) => {
       babyphilipson2020: file(relativePath: { eq: "baby_philipson_2020.png" }) {
         ...ScreenshotFragment
       }
+      fateoftheeight: file(relativePath: { eq: "fate_of_the_eight.png" }) {
+        ...ScreenshotFragment
+      }
       sportslogoalphabetquiz: file(
         relativePath: { eq: "sport_logo_alphabet_quiz.png" }
       ) {

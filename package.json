@@ -2,7 +2,7 @@
   "name": "jeremy-philipson-website",
   "private": true,
   "description": "Personal website for Jeremy Philipson",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": "Jeremy Philipson <jeremyphilipson@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.28",
