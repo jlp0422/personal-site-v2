@@ -1,10 +1,18 @@
 export default [
   {
+    title: 'Lead Software Engineer',
+    company: 'FanDuel',
+    location: 'New York, NY',
+    startDate: 'July 2022',
+    endDate: 'Present',
+    details: []
+  },
+  {
     title: 'Senior Software Engineer',
     company: 'FanDuel',
     location: 'New York, NY',
     startDate: 'Mar 2021',
-    endDate: 'Present',
+    endDate: 'July 2022',
     details: [
       'Trusted voice for streams across divisions, managing high priority feature development for the Daily Fantasy Sports vertical',
       'Successfully contribute to backend code, including Python and Java repositories, leading to additional work as a full-stack engineer',
