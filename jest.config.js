@@ -1,16 +1,42 @@
-module.exports = {
-  transform: {
-    '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`
-  },
+const nextJest = require('next/jest');
+
+/** @type {import('jest').Config} */
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+});
+
+// Add any custom config to be passed to Jest
+const config = {
+  coverageProvider: 'v8',
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
-    '.+\\.(css|styl|less|sass|scss)$': `identity-obj-proxy`,
-    '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': `<rootDir>/__mocks__/file-mock.js`
+    '^@/(.*)$': '<rootDir>/$1',
   },
-  testPathIgnorePatterns: [`node_modules`, `\\.cache`, `<rootDir>.*/public`],
-  transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
-  globals: {
-    __PATH_PREFIX__: ``
-  },
-  testURL: `http://localhost`,
-  setupFiles: [`<rootDir>/loadershim.js`]
-}
+  collectCoverageFrom: [
+    'app/**/*.{js,jsx,ts,tsx}',
+    'components/**/*.{js,jsx,ts,tsx}',
+    'hooks/**/*.{js,jsx,ts,tsx}',
+    'lib/**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/node_modules/**',
+    '!**/.next/**',
+    '!**/coverage/**',
+  ],
+  testMatch: [
+    '**/__tests__/**/*.[jt]s?(x)',
+    '**/?(*.)+(spec|test).[jt]s?(x)',
+  ],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/.next/',
+    '/src/', // Ignore old Gatsby source files
+    '/static/',
+    '/.cache/',
+    '/public/',
+  ],
+};
+
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+module.exports = createJestConfig(config);
