@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ResumeLink Renders correctly 1`] = `
-<a
-  className="css-1pgmt5s"
-  href="/my/public/resume"
-  target="_blank"
-/>
-`;

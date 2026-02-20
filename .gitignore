@@ -57,11 +57,12 @@ next-env.d.ts
 # Vercel
 .vercel
 
-# Old Gatsby files (kept for reference during migration)
+# Old Gatsby files (renamed, kept for reference during migration)
 .cache/
 public/
-src/
+src-gatsby-old/
 static/
+pages-gatsby-old/
 gatsby-*.js
 netlify.toml
 loadershim.js

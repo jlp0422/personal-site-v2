@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   title: 'Jeremy Philipson | Software Engineer',
   description: 'Personal portfolio of Jeremy Philipson - Software Engineer specializing in full-stack development with a retro 80s arcade aesthetic.',
   keywords: ['Jeremy Philipson', 'Software Engineer', 'Full Stack Developer', 'Portfolio', 'Web Development'],
-  authors: [{ name: 'Jeremy Philipson', email: 'jeremyphilipson@gmail.com' }],
+  authors: [{ name: 'Jeremy Philipson' }],
   openGraph: {
     title: 'Jeremy Philipson | Software Engineer',
     description: 'Personal portfolio with retro 80s arcade theme',
