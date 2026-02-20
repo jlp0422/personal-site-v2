@@ -1,14 +1,15 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { FadeSection } from '@/components/animations';
 import { ArcadeButton } from '@/components/arcade';
 import { ProjectCard } from '@/components/cards';
 import { projects } from '@/data';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Projects | Jeremy Philipson',
   description: 'Portfolio of projects built by Jeremy Philipson - from F1 fantasy leagues to trivia apps.',
-};
+  path: '/projects',
+});
 
 export default function ProjectsPage() {
   const featuredProjects = projects.filter((p) => p.featured);

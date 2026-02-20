@@ -1,13 +1,14 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CRTEffect, PixelBorder, ArcadeButton } from '@/components/arcade';
 import { FadeSection } from '@/components/animations';
 import { contactInfo, socialLinks } from '@/data';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'About | Jeremy Philipson',
   description: 'Learn about Jeremy Philipson - Lead Software Engineer at FanDuel specializing in full-stack development.',
-};
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (
