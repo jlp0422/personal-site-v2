@@ -1,26 +1,79 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { FadeSection } from '@/components/animations';
+import { ArcadeButton } from '@/components/arcade';
+import { ExperienceCard, EducationCard } from '@/components/cards';
+import { experience, education } from '@/data';
 
 export const metadata: Metadata = {
   title: 'Experience | Jeremy Philipson',
-  description: 'Work experience and professional background of Jeremy Philipson.',
+  description: 'Work experience and professional background of Jeremy Philipson - Lead Software Engineer at FanDuel.',
 };
 
 export default function ExperiencePage() {
   return (
     <main className="min-h-screen p-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="font-pixel text-4xl text-neonYellow mb-8 neon-glow">
-          EXPERIENCE_
-        </h1>
+        <FadeSection>
+          <div className="mb-12">
+            <h1 className="font-pixel text-3xl md:text-4xl text-neonYellow mb-4 neon-glow">
+              EXPERIENCE_
+            </h1>
+            <p className="font-arcade text-xl text-screenGreen">
+              &gt; LEVEL UP YOUR CAREER
+            </p>
+          </div>
+        </FadeSection>
 
-        <div className="crt-effect p-8 border-4 border-arcadeOrange bg-deepBlack/80">
-          <p className="font-arcade text-2xl mb-4">
-            &gt; LEVEL UP YOUR CAREER
-          </p>
-          <p className="text-lg">
-            Experience cards coming soon...
-          </p>
+        {/* Work Experience */}
+        <div className="mb-16">
+          <FadeSection delay={100}>
+            <h2 className="font-pixel text-xl text-neonPink mb-6">
+              WORK HISTORY
+            </h2>
+          </FadeSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {experience.map((exp, idx) => (
+              <FadeSection key={exp.id} delay={150 + idx * 50}>
+                <ExperienceCard experience={exp} />
+              </FadeSection>
+            ))}
+          </div>
         </div>
+
+        {/* Education */}
+        <div className="mb-12">
+          <FadeSection delay={100}>
+            <h2 className="font-pixel text-xl text-neonCyan mb-6">
+              EDUCATION
+            </h2>
+          </FadeSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {education.map((edu, idx) => (
+              <FadeSection key={edu.id} delay={150 + idx * 50}>
+                <EducationCard education={edu} />
+              </FadeSection>
+            ))}
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <FadeSection delay={300}>
+          <div className="flex gap-4 justify-center">
+            <Link href="/about">
+              <ArcadeButton variant="pink" size="lg">
+                BACK TO ABOUT
+              </ArcadeButton>
+            </Link>
+            <Link href="/projects">
+              <ArcadeButton variant="yellow" size="lg">
+                VIEW PROJECTS
+              </ArcadeButton>
+            </Link>
+          </div>
+        </FadeSection>
       </div>
     </main>
   );

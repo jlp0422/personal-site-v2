@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Press_Start_2P, VT323, Orbitron } from 'next/font/google';
+import { Header, Footer } from '@/components/layout';
 import './globals.css';
 
 const pressStart2P = Press_Start_2P({
@@ -54,8 +55,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${pressStart2P.variable} ${vt323.variable} ${orbitron.variable}`}>
-      <body>
-        {children}
+      <body className="flex flex-col min-h-screen">
+        <Header />
+        <div className="flex-1">
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
