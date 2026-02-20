@@ -32,6 +32,7 @@ const config = {
     '/node_modules/',
     '/.next/',
     '/src/', // Ignore old Gatsby source files
+    '/src-gatsby-old/', // Ignore renamed Gatsby source files
     '/static/',
     '/.cache/',
     '/public/',
