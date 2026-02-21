@@ -7,7 +7,7 @@ export const projects: Project[] = [
     title: 'Fate of the Eight',
     description: 'Formula 1 fantasy league with automated scoring',
     longDescription: 'A Formula 1 fantasy league application where eight participants each select two drivers. Features automated scoring that updates after each race, real-time standings, and historical data tracking.',
-    tags: ['React', 'Next.js', 'TypeScript', 'F1 API', 'Vercel'],
+    tags: ['React', 'Next.js', 'TypeScript', 'Python', 'F1 API', 'Vercel'],
     year: 2023,
     featured: true,
     githubUrl: 'https://github.com/jlp0422/f1-fantasy-league',
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/jlp0422/baby-pool-2020',
     liveUrl: 'https://babyphilipson2020.netlify.app/',
     arcadeTheme: {
-      primaryColor: '#FFFF00', // neonYellow
+      primaryColor: '#FF8C42', // sbtbOrange (more readable than bright yellow)
       secondaryColor: '#FF10F0', // neonPink
       icon: '👶',
     },
@@ -62,7 +62,6 @@ export const projects: Project[] = [
     year: 2019,
     featured: false,
     githubUrl: 'https://github.com/jlp0422/hot_tub_2019',
-    liveUrl: 'https://hot-tub-2019.herokuapp.com/',
     arcadeTheme: {
       primaryColor: '#9D00FF', // arcadePurple
       secondaryColor: '#00FF41', // screenGreen
@@ -72,14 +71,14 @@ export const projects: Project[] = [
   {
     id: 'wins-pool-2019',
     slug: 'wins-pool-2019',
-    title: 'Wins Pool 2019',
+    title: 'Wins Pool',
     description: '10-person NFL wins pool aggregator',
     longDescription: 'Tracks aggregated wins for a 10-person pool during the NFL season. Features third-party API integration for real-time updates, overall standings, and weekly game breakdowns.',
-    tags: ['React', 'JavaScript', 'NFL API', 'Heroku'],
+    tags: ['React', 'JavaScript', 'NFL API', 'Vercel'],
     year: 2019,
     featured: false,
     githubUrl: 'https://github.com/jlp0422/wins_pool_2019/',
-    liveUrl: 'https://wins-pool-2019.herokuapp.com/',
+    liveUrl: 'https://nfl-wins-pool.vercel.app/',
     arcadeTheme: {
       primaryColor: '#FF6600', // arcadeOrange
       secondaryColor: '#00FFFF', // neonCyan
@@ -111,7 +110,7 @@ export const projects: Project[] = [
     longDescription: 'Senior capstone project at Fullstack Academy. Features a web dashboard built in React for bar owners and a mobile app built in React Native for players. Collaborated with 3 other developers.',
     tags: ['React', 'React Native', 'Node.js', 'PostgreSQL', 'Team Project'],
     year: 2018,
-    featured: true,
+    featured: false,
     githubUrl: 'https://github.com/jlp0422/capstone',
     liveUrl: 'https://www.youtube.com/watch?v=cvqqW-UEuMk',
     arcadeTheme: {

@@ -5,7 +5,7 @@ export const contactInfo: ContactInfo = {
   github: 'https://github.com/jlp0422',
   linkedin: 'https://www.linkedin.com/in/jeremyphilipson',
   twitter: 'https://twitter.com/jeremyphilipson',
-  location: 'New York, NY',
+  location: 'Fairfield, CT',
 };
 
 export const socialLinks: SocialLink[] = [
@@ -18,11 +18,6 @@ export const socialLinks: SocialLink[] = [
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/jeremyphilipson',
     icon: 'in',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/jeremyphilipson',
-    icon: '@',
   },
   {
     name: 'Email',

@@ -37,16 +37,24 @@ export function FlipCard({
     >
       <div
         className={cn(
-          'relative w-full h-full transition-transform duration-700 transform-style-3d',
+          'relative w-full h-full transition-transform duration-700',
           isFlipped && 'rotate-y-180'
         )}
+        style={{
+          transformStyle: 'preserve-3d',
+          WebkitTransformStyle: 'preserve-3d',
+        } as React.CSSProperties}
       >
         {/* Front */}
         <div
           className={cn(
-            'absolute inset-0 backface-hidden',
+            'absolute inset-0',
             frontClassName
           )}
+          style={{
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden',
+          } as React.CSSProperties}
         >
           {front}
         </div>
@@ -54,9 +62,15 @@ export function FlipCard({
         {/* Back */}
         <div
           className={cn(
-            'absolute inset-0 backface-hidden rotate-y-180',
+            'absolute inset-0',
             backClassName
           )}
+          style={{
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)',
+            WebkitTransform: 'rotateY(180deg)',
+          } as React.CSSProperties}
         >
           {back}
         </div>

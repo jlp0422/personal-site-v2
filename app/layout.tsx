@@ -1,27 +1,27 @@
 import type { Metadata } from 'next';
-import { Press_Start_2P, VT323, Orbitron } from 'next/font/google';
+import { Righteous, Poppins, Fredoka } from 'next/font/google';
 import { Header, Footer } from '@/components/layout';
 import { SkipToContent } from '@/components/shared/SkipToContent';
 import './globals.css';
 
-const pressStart2P = Press_Start_2P({
+const righteous = Righteous({
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-pixel',
+  variable: '--font-heading',
   display: 'swap',
 });
 
-const vt323 = VT323({
-  weight: '400',
+const poppins = Poppins({
+  weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-arcade',
+  variable: '--font-body',
   display: 'swap',
 });
 
-const orbitron = Orbitron({
-  weight: ['400', '500', '600', '700', '800', '900'],
+const fredoka = Fredoka({
+  weight: ['400', '700'],
   subsets: ['latin'],
-  variable: '--font-orbitron',
+  variable: '--font-accent',
   display: 'swap',
 });
 
@@ -55,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${pressStart2P.variable} ${vt323.variable} ${orbitron.variable}`}>
+    <html lang="en" className={`${righteous.variable} ${poppins.variable} ${fredoka.variable}`}>
       <body className="flex flex-col min-h-screen">
         <SkipToContent />
         <Header />

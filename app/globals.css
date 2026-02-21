@@ -2,129 +2,166 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+/* Import Google Fonts - 80s TV Show Style */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap');
 
 @layer base {
   :root {
-    --neon-pink: #FF10F0;
-    --neon-cyan: #00FFFF;
-    --neon-yellow: #FFFF00;
-    --arcade-orange: #FF6600;
-    --deep-black: #0D0208;
-    --screen-green: #00FF41;
-    --coin-gold: #FFD700;
+    --sbtb-purple: #9B59B6;
+    --sbtb-pink: #FF6B9D;
+    --sbtb-yellow: #FFD93D;
+    --sbtb-cyan: #00D9FF;
+    --sbtb-orange: #FF8C42;
+    --sbtb-green: #6BCF7F;
+    --sbtb-blue: #4E8EF7;
+    --sbtb-red: #FF5757;
+    --light-bg: #FFF5F7;
+    --dark-text: #2C3E50;
   }
 
   body {
-    @apply bg-deepBlack text-screenGreen font-orbitron;
+    @apply bg-lightBg text-darkText font-body;
+    /* Memphis design geometric pattern background */
     background-image:
-      linear-gradient(transparent 1px, rgba(255, 255, 255, 0.03) 1px),
-      linear-gradient(90deg, transparent 1px, rgba(255, 255, 255, 0.03) 1px);
-    background-size: 20px 20px;
+      radial-gradient(circle at 20% 50%, rgba(155, 89, 182, 0.05) 1px, transparent 1px),
+      radial-gradient(circle at 80% 80%, rgba(255, 107, 157, 0.05) 1px, transparent 1px),
+      radial-gradient(circle at 40% 20%, rgba(0, 217, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px, 60px 60px;
+    background-position: 0 0, 40px 60px, 130px 270px;
   }
 
   * {
     box-sizing: border-box;
   }
 
-  /* Focus visible styles for accessibility */
+  /* Enhanced focus visible for accessibility */
   *:focus-visible {
-    outline: 3px solid var(--neon-cyan);
-    outline-offset: 2px;
+    outline: 3px solid var(--sbtb-purple);
+    outline-offset: 3px;
   }
 
-  /* Better link focus */
   a:focus-visible {
-    outline: 3px solid var(--neon-pink);
-    outline-offset: 2px;
+    outline: 3px solid var(--sbtb-pink);
+    outline-offset: 3px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: var(--sbtb-yellow);
+    color: var(--dark-text);
   }
 }
 
 @layer components {
-  /* CRT Scanline Effect */
-  .crt-effect {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .crt-effect::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      transparent 0%,
-      rgba(0, 255, 65, 0.05) 50%,
-      transparent 100%
-    );
-    background-size: 100% 4px;
-    pointer-events: none;
-    z-index: 10;
-    animation: scanline 8s linear infinite;
-  }
-
-  /* Pixel Border */
-  .pixel-border {
+  /* Memphis Design Border - Fun geometric shapes */
+  .memphis-border {
     position: relative;
     border: 4px solid currentColor;
-    box-shadow:
-      0 0 0 8px var(--deep-black),
-      0 0 20px currentColor;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
   }
 
-  .pixel-border::before,
-  .pixel-border::after {
+  .memphis-border::before {
     content: '';
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background: currentColor;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid currentColor;
+    opacity: 0.3;
+    pointer-events: none;
   }
 
-  .pixel-border::before {
-    top: -4px;
-    left: -4px;
-  }
-
-  .pixel-border::after {
-    bottom: -4px;
-    right: -4px;
-  }
-
-  /* Arcade Button */
-  .arcade-button {
-    @apply font-pixel text-sm px-6 py-3 border-4 relative;
+  /* Fun 80s Button */
+  .sbtb-button {
+    @apply font-heading text-base px-8 py-4 border-4 relative;
     text-transform: uppercase;
-    transition: all 0.1s ease;
-    box-shadow:
-      0 6px 0 currentColor,
-      0 0 20px currentColor;
+    transition: all 0.2s ease;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
   }
 
-  .arcade-button:active {
-    transform: translateY(4px);
-    box-shadow:
-      0 2px 0 currentColor,
-      0 0 20px currentColor;
+  .sbtb-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
   }
 
-  .arcade-button:hover {
-    box-shadow:
-      0 6px 0 currentColor,
-      0 0 30px currentColor,
-      0 0 40px currentColor;
+  .sbtb-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
   }
 
-  /* Neon Glow Text */
-  .neon-glow {
-    animation: neonGlow 1.5s ease-in-out infinite alternate;
+  /* Squiggle decoration */
+  .squiggle-line {
+    position: relative;
+  }
+
+  .squiggle-line::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-image: repeating-linear-gradient(
+      90deg,
+      currentColor 0px,
+      currentColor 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+
+  /* Geometric shape accents */
+  .geometric-accent {
+    position: relative;
+  }
+
+  .geometric-accent::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: currentColor;
+    transform: rotate(45deg);
+  }
+
+  /* Card with fun shadow */
+  .fun-card {
+    @apply bg-white border-4;
+    box-shadow:
+      8px 8px 0px rgba(155, 89, 182, 0.3),
+      -8px -8px 0px rgba(255, 107, 157, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fun-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      12px 12px 0px rgba(155, 89, 182, 0.4),
+      -12px -12px 0px rgba(255, 107, 157, 0.4);
   }
 }
 
 @layer utilities {
+  /* 3D Flip Card Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
   /* Screen reader only */
   .sr-only {
     position: absolute;
@@ -138,7 +175,7 @@
     border-width: 0;
   }
 
-  /* Reduced motion - respects user preferences */
+  /* Reduced motion - respect user preferences */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -148,11 +185,6 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
-
-    /* Disable parallax and transform animations */
-    .crt-effect::before {
-      animation: none !important;
-    }
   }
 
   /* High contrast mode support */
@@ -161,8 +193,8 @@
       background-image: none;
     }
 
-    .pixel-border {
-      border-width: 2px;
+    .memphis-border {
+      border-width: 3px;
     }
   }
 
@@ -173,11 +205,11 @@
       color: black;
     }
 
-    .crt-effect::before,
+    .memphis-border::before,
     header,
     footer,
-    .arcade-button {
-      display: none;
+    .sbtb-button {
+      box-shadow: none;
     }
   }
 }

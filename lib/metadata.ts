@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SOCIAL } from './constants';
+import { SITE_URL, SITE_NAME, SOCIAL } from './constants';
+
+const SITE_DESCRIPTION = 'Personal portfolio of Jeremy Philipson - Staff Software Engineer at FanDuel specializing in full-stack development with a retro 80s Memphis design aesthetic.';
 
 export function createMetadata({
   title,

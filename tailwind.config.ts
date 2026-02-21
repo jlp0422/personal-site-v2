@@ -9,22 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // 80s Arcade Color Palette
-        neonPink: '#FF10F0',
-        neonCyan: '#00FFFF',
-        neonYellow: '#FFFF00',
-        arcadeOrange: '#FF6600',
-        deepBlack: '#0D0208',
-        screenGreen: '#00FF41',
-        coinGold: '#FFD700',
-        arcadePurple: '#9D00FF',
-        hotMagenta: '#FF006E',
-        electricBlue: '#0066FF',
+        // 80s "Saved by the Bell" Memphis Design Palette
+        sbtbPurple: '#9B59B6',    // Bright purple (Screech vibes)
+        sbtbPink: '#FF6B9D',      // Hot pink (Kelly's locker)
+        sbtbYellow: '#FFD93D',    // Bright yellow (Lisa's style)
+        sbtbCyan: '#00D9FF',      // Bright cyan (Zack's phone)
+        sbtbOrange: '#FF8C42',    // Tangerine orange
+        sbtbGreen: '#6BCF7F',     // Fresh mint green
+        sbtbBlue: '#4E8EF7',      // Electric blue
+        sbtbRed: '#FF5757',       // Bold red
+        lightBg: '#FFF5F7',       // Soft white background
+        darkText: '#2C3E50',      // Dark readable text
+        accentBg: '#F0F0F0',      // Light accent background
       },
       fontFamily: {
-        pixel: ['"Press Start 2P"', 'cursive'],
-        arcade: ['VT323', 'monospace'],
-        orbitron: ['Orbitron', 'sans-serif'],
+        heading: ['"Righteous"', 'cursive'],           // Bold 80s headings
+        body: ['"Poppins"', 'sans-serif'],             // Clean, readable body
+        accent: ['"Fredoka One"', 'cursive'],          // Fun accent font
       },
       animation: {
         blink: 'blink 1s step-end infinite',
@@ -73,16 +74,20 @@ const config: Config = {
     function({ addUtilities }: any) {
       const newUtilities = {
         '.backface-hidden': {
+          '-webkit-backface-visibility': 'hidden',
           'backface-visibility': 'hidden',
         },
         '.transform-style-3d': {
+          '-webkit-transform-style': 'preserve-3d',
           'transform-style': 'preserve-3d',
         },
         '.perspective-1000': {
-          perspective: '1000px',
+          '-webkit-perspective': '1000px',
+          'perspective': '1000px',
         },
         '.rotate-y-180': {
-          transform: 'rotateY(180deg)',
+          '-webkit-transform': 'rotateY(180deg)',
+          'transform': 'rotateY(180deg)',
         },
       };
       addUtilities(newUtilities);
