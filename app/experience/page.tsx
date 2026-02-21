@@ -82,28 +82,12 @@ export default function ExperiencePage() {
         <FadeSection delay={300}>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/">
-              <button className="sbtb-button text-white" style={{ background: 'var(--color-secondary)', borderColor: 'var(--color-secondary)' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'var(--color-primary)';
-                        e.currentTarget.style.borderColor = 'var(--color-primary)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'var(--color-secondary)';
-                        e.currentTarget.style.borderColor = 'var(--color-secondary)';
-                      }}>
+              <button className="sbtb-button text-white hover:!bg-[var(--color-primary)] hover:!border-[var(--color-primary)]" style={{ background: 'var(--color-secondary)', borderColor: 'var(--color-secondary)' }}>
                 Back to Home
               </button>
             </Link>
             <Link href="/projects">
-              <button className="sbtb-button" style={{ background: 'var(--color-accent2)', borderColor: 'var(--color-accent2)', color: 'var(--color-text)' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'var(--color-accent1)';
-                        e.currentTarget.style.borderColor = 'var(--color-accent1)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'var(--color-accent2)';
-                        e.currentTarget.style.borderColor = 'var(--color-accent2)';
-                      }}>
+              <button className="sbtb-button hover:!bg-[var(--color-accent1)] hover:!border-[var(--color-accent1)]" style={{ background: 'var(--color-accent2)', borderColor: 'var(--color-accent2)', color: 'var(--color-text)' }}>
                 Check Out Projects
               </button>
             </Link>

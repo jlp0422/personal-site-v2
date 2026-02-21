@@ -158,6 +158,15 @@
   .theme-button:active {
     transform: translate(1px, 1px);
   }
+
+  /* Project Card hover effect */
+  .project-card {
+    box-shadow: var(--shadow-default);
+  }
+
+  .project-card:hover {
+    box-shadow: var(--shadow-hover);
+  }
 }
 
 @layer utilities {

@@ -36,20 +36,16 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
     <div
       className={cn(
         'p-6 h-full flex flex-col transition-all duration-300 relative overflow-hidden',
-        'hover:-translate-y-2',
+        'hover:-translate-y-2 project-card',
         className
       )}
       style={{
         background: 'var(--color-foreground)',
         border: `4px solid ${arcadeTheme.primaryColor}`,
         boxShadow: `8px 8px 0px ${shadowColor}`,
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = `12px 12px 0px ${shadowColor}`;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = `8px 8px 0px ${shadowColor}`;
-      }}
+        ['--shadow-default' as string]: `8px 8px 0px ${shadowColor}`,
+        ['--shadow-hover' as string]: `12px 12px 0px ${shadowColor}`,
+      } as React.CSSProperties}
     >
       {/* Decorative shape in corner */}
       <div

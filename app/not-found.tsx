@@ -23,15 +23,7 @@ export default function NotFound() {
           </p>
 
           <Link href="/">
-            <button className="sbtb-button text-white" style={{ background: 'var(--color-accent3)', borderColor: 'var(--color-accent3)' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--color-primary)';
-                      e.currentTarget.style.borderColor = 'var(--color-primary)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'var(--color-accent3)';
-                      e.currentTarget.style.borderColor = 'var(--color-accent3)';
-                    }}>
+            <button className="sbtb-button text-white hover:!bg-[var(--color-primary)] hover:!border-[var(--color-primary)]" style={{ background: 'var(--color-accent3)', borderColor: 'var(--color-accent3)' }}>
               Take Me Home
             </button>
           </Link>

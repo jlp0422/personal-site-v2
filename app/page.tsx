@@ -68,10 +68,8 @@ export default function HomePage() {
                 <span className="text-2xl">📧</span>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="font-body font-medium transition-colors"
+                  className="font-body font-medium transition-colors hover:!text-[var(--color-secondary)]"
                   style={{ color: 'var(--color-accent4)' }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-secondary)'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-accent4)'}
                 >
                   {contactInfo.email}
                 </a>
@@ -92,19 +90,11 @@ export default function HomePage() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 border-3 text-white font-heading text-sm transition-all transform hover:scale-105"
+                  className="px-6 py-3 border-3 text-white font-heading text-sm transition-all transform hover:scale-105 hover:!bg-[var(--color-secondary)] hover:!border-[var(--color-secondary)]"
                   style={{
                     background: 'var(--color-primary)',
                     borderColor: 'var(--color-primary)',
                     boxShadow: '4px 4px 0px rgba(0, 0, 0, 0.2)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'var(--color-secondary)';
-                    e.currentTarget.style.borderColor = 'var(--color-secondary)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'var(--color-primary)';
-                    e.currentTarget.style.borderColor = 'var(--color-primary)';
                   }}
                 >
                   {link.name}
@@ -117,28 +107,12 @@ export default function HomePage() {
         <FadeSection delay={300}>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/experience">
-              <button className="sbtb-button text-white" style={{ background: 'var(--color-accent3)', borderColor: 'var(--color-accent3)' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'var(--color-accent4)';
-                        e.currentTarget.style.borderColor = 'var(--color-accent4)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'var(--color-accent3)';
-                        e.currentTarget.style.borderColor = 'var(--color-accent3)';
-                      }}>
+              <button className="sbtb-button text-white hover:!bg-[var(--color-accent4)] hover:!border-[var(--color-accent4)]" style={{ background: 'var(--color-accent3)', borderColor: 'var(--color-accent3)' }}>
                 View Experience
               </button>
             </Link>
             <Link href="/projects">
-              <button className="sbtb-button" style={{ background: 'var(--color-accent2)', borderColor: 'var(--color-accent2)', color: 'var(--color-text)' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'var(--color-accent1)';
-                        e.currentTarget.style.borderColor = 'var(--color-accent1)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'var(--color-accent2)';
-                        e.currentTarget.style.borderColor = 'var(--color-accent2)';
-                      }}>
+              <button className="sbtb-button hover:!bg-[var(--color-accent1)] hover:!border-[var(--color-accent1)]" style={{ background: 'var(--color-accent2)', borderColor: 'var(--color-accent2)', color: 'var(--color-text)' }}>
                 View Projects
               </button>
             </Link>

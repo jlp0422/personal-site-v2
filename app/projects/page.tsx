@@ -92,28 +92,12 @@ export default function ProjectsPage() {
         <FadeSection delay={300}>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/">
-              <button className="sbtb-button text-white" style={{ background: 'var(--color-primary)', borderColor: 'var(--color-primary)' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'var(--color-secondary)';
-                        e.currentTarget.style.borderColor = 'var(--color-secondary)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'var(--color-primary)';
-                        e.currentTarget.style.borderColor = 'var(--color-primary)';
-                      }}>
+              <button className="sbtb-button text-white hover:!bg-[var(--color-secondary)] hover:!border-[var(--color-secondary)]" style={{ background: 'var(--color-primary)', borderColor: 'var(--color-primary)' }}>
                 Back to Home
               </button>
             </Link>
             <Link href="/experience">
-              <button className="sbtb-button text-white" style={{ background: 'var(--color-accent3)', borderColor: 'var(--color-accent3)' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'var(--color-accent4)';
-                        e.currentTarget.style.borderColor = 'var(--color-accent4)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'var(--color-accent3)';
-                        e.currentTarget.style.borderColor = 'var(--color-accent3)';
-                      }}>
+              <button className="sbtb-button text-white hover:!bg-[var(--color-accent4)] hover:!border-[var(--color-accent4)]" style={{ background: 'var(--color-accent3)', borderColor: 'var(--color-accent3)' }}>
                 See My Experience
               </button>
             </Link>
