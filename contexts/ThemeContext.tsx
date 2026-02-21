@@ -46,8 +46,22 @@ export function useTheme() {
   return context;
 }
 
+// All possible CSS variable keys across all themes - used to clear stale values
+const ALL_SPECIAL_KEYS = ['backgroundPattern', 'scanlines', 'glitch', 'gradient', 'noise'];
+const ALL_EFFECT_KEYS = ['cardShadow', 'textShadow', 'glow', 'border', 'borderRadius', 'buttonShadow'];
+
 function applyThemeVariables(theme: Theme) {
   const root = document.documentElement;
+
+  // Clear all special variables first so no stale values bleed through
+  ALL_SPECIAL_KEYS.forEach((key) => {
+    root.style.removeProperty(`--special-${key}`);
+  });
+
+  // Clear all effect variables first
+  ALL_EFFECT_KEYS.forEach((key) => {
+    root.style.removeProperty(`--effect-${key}`);
+  });
 
   // Apply color variables
   Object.entries(theme.colors).forEach(([key, value]) => {
@@ -68,7 +82,7 @@ function applyThemeVariables(theme: Theme) {
     }
   });
 
-  // Apply special effect variables
+  // Apply special effect variables (only those defined by this theme)
   if (theme.special) {
     Object.entries(theme.special).forEach(([key, value]) => {
       if (typeof value === 'string') {
