@@ -1,62 +1,52 @@
 {
   "name": "jeremy-philipson-website",
+  "version": "2.0.0",
   "private": true,
-  "description": "Personal website for Jeremy Philipson",
-  "version": "2.2.0",
+  "description": "Personal website for Jeremy Philipson - Next.js 15 with 80s Arcade Theme",
   "author": "Jeremy Philipson <jeremyphilipson@gmail.com>",
-  "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "emotion-theming": "^10.0.27",
-    "gatsby": "^2.20.8",
-    "gatsby-image": "^2.3.1",
-    "gatsby-plugin-emotion": "^4.2.1",
-    "gatsby-plugin-manifest": "^2.3.3",
-    "gatsby-plugin-offline": "^3.1.2",
-    "gatsby-plugin-react-helmet": "^3.2.1",
-    "gatsby-plugin-sharp": "^2.5.3",
-    "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-transformer-sharp": "^2.4.3",
-    "polished": "^3.5.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1",
-    "typeface-bangers": "0.0.72",
-    "typeface-oswald": "^1.1.4",
-    "typeface-roboto-mono": "0.0.75"
-  },
-  "devDependencies": {
-    "babel-jest": "^25.2.3",
-    "babel-preset-gatsby": "^0.3.1",
-    "husky": "^4.2.3",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^25.2.3",
-    "prettier": "^1.19.1",
-    "react-test-renderer": "^16.13.1"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format"
-    }
-  },
-  "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "next": "^15.1.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.6",
+    "@types/react-dom": "^19.0.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "^15.1.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "postcss": "^8.4.49",
+    "prettier": "^2.8.8",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jlp0422/personal-site-v2"
-  }
+  },
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "portfolio",
+    "arcade",
+    "80s"
+  ]
 }
