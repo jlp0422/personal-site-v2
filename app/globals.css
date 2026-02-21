@@ -2,144 +2,161 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts - 80s TV Show Style */
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap');
-
 @layer base {
+  /* Default theme CSS variables - will be overridden by ThemeContext */
   :root {
-    --sbtb-purple: #9B59B6;
-    --sbtb-pink: #FF6B9D;
-    --sbtb-yellow: #FFD93D;
-    --sbtb-cyan: #00D9FF;
-    --sbtb-orange: #FF8C42;
-    --sbtb-green: #6BCF7F;
-    --sbtb-blue: #4E8EF7;
-    --sbtb-red: #FF5757;
-    --light-bg: #FFF5F7;
-    --dark-text: #2C3E50;
-  }
-
-  body {
-    @apply bg-lightBg text-darkText font-body;
-    /* Memphis design geometric pattern background */
-    background-image:
-      radial-gradient(circle at 20% 50%, rgba(155, 89, 182, 0.05) 1px, transparent 1px),
-      radial-gradient(circle at 80% 80%, rgba(255, 107, 157, 0.05) 1px, transparent 1px),
-      radial-gradient(circle at 40% 20%, rgba(0, 217, 255, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px, 80px 80px, 60px 60px;
-    background-position: 0 0, 40px 60px, 130px 270px;
+    --color-background: #FFF5F7;
+    --color-foreground: #FFFFFF;
+    --color-text: #2C3E50;
+    --color-textMuted: #64748B;
+    --color-primary: #9B59B6;
+    --color-secondary: #FF6B9D;
   }
 
   * {
     box-sizing: border-box;
   }
 
+  body {
+    font-family: var(--font-body);
+    background: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+  }
+
+  /* Apply background patterns based on theme special effects */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-size: 50px 50px, 80px 80px, 60px 60px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    background-image: var(--special-backgroundPattern, none);
+    opacity: 1;
+  }
+
+  /* Apply gradient overlays for certain themes */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background: var(--special-gradient, transparent);
+    opacity: 1;
+  }
+
+  /* Scanline effect for Terminal and Cyberpunk themes */
+  [data-theme="retroTerminal"] body::before,
+  [data-theme="cyberpunk"] body::before {
+    animation: scanlines 8s linear infinite;
+  }
+
+  @keyframes scanlines {
+    0% {
+      background-position-y: 0px;
+    }
+    100% {
+      background-position-y: 100px;
+    }
+  }
+
+  /* Glitch effect for Vaporwave */
+  [data-theme="vaporwave"] h1,
+  [data-theme="vaporwave"] h2 {
+    animation: glitch 3s infinite;
+  }
+
+  @keyframes glitch {
+    0%, 90%, 100% {
+      transform: translate(0);
+    }
+    91% {
+      transform: translate(-2px, 1px);
+    }
+    92% {
+      transform: translate(2px, -1px);
+    }
+    93% {
+      transform: translate(-1px, 2px);
+    }
+  }
+
   /* Enhanced focus visible for accessibility */
   *:focus-visible {
-    outline: 3px solid var(--sbtb-purple);
+    outline: 3px solid var(--color-primary);
     outline-offset: 3px;
   }
 
   a:focus-visible {
-    outline: 3px solid var(--sbtb-pink);
+    outline: 3px solid var(--color-secondary);
     outline-offset: 3px;
   }
 
   /* Selection color */
   ::selection {
-    background-color: var(--sbtb-yellow);
-    color: var(--dark-text);
+    background-color: var(--color-primary);
+    color: var(--color-background);
+  }
+
+  /* Font family mapping per theme */
+  [data-theme="savedByTheBell"] {
+    --font-heading: var(--font-sbtb-heading);
+    --font-body: var(--font-sbtb-body);
+    --font-accent: var(--font-sbtb-accent);
+  }
+
+  [data-theme="cyberpunk"] {
+    --font-heading: var(--font-cyber-heading);
+    --font-body: var(--font-cyber-body);
+    --font-accent: var(--font-cyber-accent);
+  }
+
+  [data-theme="retroTerminal"] {
+    --font-heading: var(--font-terminal-heading);
+    --font-body: var(--font-terminal-body);
+    --font-accent: var(--font-cyber-accent);
+  }
+
+  [data-theme="vaporwave"] {
+    --font-heading: var(--font-vapor-heading);
+    --font-body: var(--font-vapor-body);
+    --font-accent: var(--font-vapor-accent);
+  }
+
+  [data-theme="brutalist"] {
+    --font-heading: var(--font-brutal-heading);
+    --font-body: var(--font-brutal-body);
+    --font-accent: var(--font-brutal-accent);
   }
 }
 
 @layer components {
-  /* Memphis Design Border - Fun geometric shapes */
-  .memphis-border {
-    position: relative;
-    border: 4px solid currentColor;
-    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
-  }
-
-  .memphis-border::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
-    border: 2px solid currentColor;
-    opacity: 0.3;
-    pointer-events: none;
-  }
-
-  /* Fun 80s Button */
-  .sbtb-button {
-    @apply font-heading text-base px-8 py-4 border-4 relative;
-    text-transform: uppercase;
+  /* Theme-aware button */
+  .theme-button {
+    font-family: var(--font-heading);
+    padding: 1rem 2rem;
+    border: var(--effect-border);
+    border-color: var(--color-primary);
+    background: var(--color-buttonBg);
+    color: var(--color-buttonText);
+    border-radius: var(--effect-borderRadius);
+    box-shadow: var(--effect-buttonShadow);
     transition: all 0.2s ease;
-    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
     letter-spacing: 0.5px;
   }
 
-  .sbtb-button:hover {
+  .theme-button:hover {
+    background: var(--color-buttonHover);
     transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
   }
 
-  .sbtb-button:active {
-    transform: translate(2px, 2px);
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Squiggle decoration */
-  .squiggle-line {
-    position: relative;
-  }
-
-  .squiggle-line::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background-image: repeating-linear-gradient(
-      90deg,
-      currentColor 0px,
-      currentColor 10px,
-      transparent 10px,
-      transparent 20px
-    );
-  }
-
-  /* Geometric shape accents */
-  .geometric-accent {
-    position: relative;
-  }
-
-  .geometric-accent::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: currentColor;
-    transform: rotate(45deg);
-  }
-
-  /* Card with fun shadow */
-  .fun-card {
-    @apply bg-white border-4;
-    box-shadow:
-      8px 8px 0px rgba(155, 89, 182, 0.3),
-      -8px -8px 0px rgba(255, 107, 157, 0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .fun-card:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      12px 12px 0px rgba(155, 89, 182, 0.4),
-      -12px -12px 0px rgba(255, 107, 157, 0.4);
+  .theme-button:active {
+    transform: translate(1px, 1px);
   }
 }
 
@@ -189,12 +206,9 @@
 
   /* High contrast mode support */
   @media (prefers-contrast: high) {
-    body {
-      background-image: none;
-    }
-
-    .memphis-border {
-      border-width: 3px;
+    body::before,
+    body::after {
+      display: none;
     }
   }
 
@@ -205,10 +219,14 @@
       color: black;
     }
 
-    .memphis-border::before,
+    body::before,
+    body::after {
+      display: none;
+    }
+
     header,
     footer,
-    .sbtb-button {
+    .theme-button {
       box-shadow: none;
     }
   }
