@@ -14,23 +14,23 @@ export default function HomePage() {
     <main className="min-h-screen p-6 md:p-12">
       <div className="max-w-4xl mx-auto">
         <FadeSection>
-          <h1 className="font-heading text-5xl md:text-6xl text-sbtbPurple mb-4"
-              style={{ textShadow: '4px 4px 0px rgba(255, 107, 157, 0.3)' }}>
+          <h1 className="text-5xl md:text-6xl mb-4"
+              style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-primary)' }}>
             Hey there! 👋
           </h1>
-          <div className="w-24 h-2 bg-sbtbYellow mb-8" style={{ clipPath: 'polygon(0 0, 90% 0, 100% 100%, 10% 100%)' }}></div>
+          <div className="w-24 h-2 mb-8" style={{ background: 'var(--color-accent2)', clipPath: 'polygon(0 0, 90% 0, 100% 100%, 10% 100%)' }}></div>
         </FadeSection>
 
         <FadeSection delay={100}>
-          <div className="bg-white border-4 border-sbtbPink p-8 md:p-10 mb-8 memphis-border">
-            <p className="font-heading text-2xl md:text-3xl mb-6 text-sbtbCyan">
+          <div className="p-8 md:p-10 mb-8 memphis-border" style={{ background: 'var(--color-foreground)', border: '4px solid var(--color-secondary)' }}>
+            <p className="text-2xl md:text-3xl mb-6" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-accent3)' }}>
               I&apos;m Jeremy Philipson
             </p>
 
-            <div className="space-y-4 text-darkText text-lg leading-relaxed">
+            <div className="space-y-4 text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
               <p>
-                Hey! I&apos;m a <span className="font-bold text-sbtbPurple">Staff Software Engineer</span> at{' '}
-                <span className="font-bold text-sbtbBlue">FanDuel</span>, where I build features
+                Hey! I&apos;m a <span className="font-bold" style={{ color: 'var(--color-primary)' }}>Staff Software Engineer</span> at{' '}
+                <span className="font-bold" style={{ color: 'var(--color-accent4)' }}>FanDuel</span>, where I build features
                 for millions of daily fantasy sports and sportsbook users.
               </p>
 
@@ -41,10 +41,10 @@ export default function HomePage() {
               </p>
 
               <p>
-                I specialize in <span className="font-semibold text-sbtbCyan">React</span>,{' '}
-                <span className="font-semibold text-sbtbCyan">TypeScript</span>,{' '}
-                <span className="font-semibold text-sbtbCyan">Python</span>, and{' '}
-                <span className="font-semibold text-sbtbCyan">Java</span> - building full-stack applications
+                I specialize in <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>React</span>,{' '}
+                <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>TypeScript</span>,{' '}
+                <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>Python</span>, and{' '}
+                <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>Java</span> - building full-stack applications
                 that are clean, performant, and maintainable.
               </p>
 
@@ -57,9 +57,9 @@ export default function HomePage() {
         </FadeSection>
 
         <FadeSection delay={200}>
-          <div className="bg-white border-4 border-sbtbYellow p-8 mb-8"
-               style={{ boxShadow: '8px 8px 0px rgba(155, 89, 182, 0.3)' }}>
-            <h2 className="font-heading text-2xl text-sbtbOrange mb-6">
+          <div className="p-8 mb-8"
+               style={{ background: 'var(--color-foreground)', border: '4px solid var(--color-accent2)', boxShadow: '8px 8px 0px rgba(155, 89, 182, 0.3)' }}>
+            <h2 className="text-2xl mb-6" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-accent1)' }}>
               Let&apos;s Connect! 📬
             </h2>
 
@@ -68,7 +68,8 @@ export default function HomePage() {
                 <span className="text-2xl">📧</span>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="font-body text-sbtbBlue hover:text-sbtbPink transition-colors font-medium"
+                  className="font-medium transition-colors hover:!text-[var(--color-secondary)]"
+                  style={{ fontFamily: 'var(--font-body)', color: 'var(--color-accent4)' }}
                 >
                   {contactInfo.email}
                 </a>
@@ -76,7 +77,7 @@ export default function HomePage() {
 
               <div className="flex items-center gap-3">
                 <span className="text-2xl">📍</span>
-                <span className="font-body text-darkText font-medium">
+                <span className="font-medium" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
                   {contactInfo.location}
                 </span>
               </div>
@@ -89,8 +90,13 @@ export default function HomePage() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 border-3 border-sbtbPurple bg-sbtbPurple text-white font-heading text-sm hover:bg-sbtbPink hover:border-sbtbPink transition-all transform hover:scale-105"
-                  style={{ boxShadow: '4px 4px 0px rgba(0, 0, 0, 0.2)' }}
+                  className="px-6 py-3 border-3 text-white text-sm transition-all transform hover:scale-105 hover:!bg-[var(--color-secondary)] hover:!border-[var(--color-secondary)]"
+                  style={{
+                    fontFamily: 'var(--font-heading)',
+                    background: 'var(--color-primary)',
+                    borderColor: 'var(--color-primary)',
+                    boxShadow: '4px 4px 0px rgba(0, 0, 0, 0.2)'
+                  }}
                 >
                   {link.name}
                 </a>
@@ -102,12 +108,12 @@ export default function HomePage() {
         <FadeSection delay={300}>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/experience">
-              <button className="sbtb-button bg-sbtbCyan border-sbtbCyan text-white hover:bg-sbtbBlue hover:border-sbtbBlue">
+              <button className="sbtb-button text-white hover:!bg-[var(--color-accent4)] hover:!border-[var(--color-accent4)]" style={{ fontFamily: 'var(--font-heading)', background: 'var(--color-accent3)', borderColor: 'var(--color-accent3)' }}>
                 View Experience
               </button>
             </Link>
             <Link href="/projects">
-              <button className="sbtb-button bg-sbtbYellow border-sbtbYellow text-darkText hover:bg-sbtbOrange hover:border-sbtbOrange">
+              <button className="sbtb-button hover:!bg-[var(--color-accent1)] hover:!border-[var(--color-accent1)]" style={{ fontFamily: 'var(--font-heading)', background: 'var(--color-accent2)', borderColor: 'var(--color-accent2)', color: 'var(--color-text)' }}>
                 View Projects
               </button>
             </Link>
@@ -115,9 +121,9 @@ export default function HomePage() {
         </FadeSection>
 
         {/* Fun geometric decorations */}
-        <div className="absolute top-20 right-10 w-16 h-16 bg-sbtbPink opacity-20 rotate-45 hidden lg:block"></div>
-        <div className="absolute bottom-40 left-10 w-12 h-12 bg-sbtbYellow opacity-20 rounded-full hidden lg:block"></div>
-        <div className="absolute top-60 left-1/4 w-8 h-8 bg-sbtbCyan opacity-20 hidden lg:block" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
+        <div className="theme-decoration absolute top-20 right-10 w-16 h-16 opacity-20 rotate-45 hidden lg:block" style={{ background: 'var(--color-secondary)' }}></div>
+        <div className="theme-decoration absolute bottom-40 left-10 w-12 h-12 opacity-20 rounded-full hidden lg:block" style={{ background: 'var(--color-accent2)' }}></div>
+        <div className="theme-decoration absolute top-60 left-1/4 w-8 h-8 opacity-20 hidden lg:block" style={{ background: 'var(--color-accent3)', clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
       </div>
     </main>
   );

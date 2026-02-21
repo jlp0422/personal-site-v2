@@ -35,24 +35,21 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
   return (
     <div
       className={cn(
-        'bg-white p-6 h-full flex flex-col transition-all duration-300 border-4 relative overflow-hidden',
-        'hover:-translate-y-2',
+        'p-6 h-full flex flex-col transition-all duration-300 relative overflow-hidden',
+        'hover:-translate-y-2 project-card',
         className
       )}
       style={{
-        borderColor: arcadeTheme.primaryColor,
+        background: 'var(--color-foreground)',
+        border: `4px solid ${arcadeTheme.primaryColor}`,
         boxShadow: `8px 8px 0px ${shadowColor}`,
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = `12px 12px 0px ${shadowColor}`;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = `8px 8px 0px ${shadowColor}`;
-      }}
+        ['--shadow-default' as string]: `8px 8px 0px ${shadowColor}`,
+        ['--shadow-hover' as string]: `12px 12px 0px ${shadowColor}`,
+      } as React.CSSProperties}
     >
       {/* Decorative shape in corner */}
       <div
-        className="absolute top-0 right-0 w-16 h-16 opacity-10"
+        className="theme-decoration absolute top-0 right-0 w-16 h-16 opacity-10"
         style={{
           backgroundColor: arcadeTheme.secondaryColor,
           clipPath: featured
@@ -64,16 +61,16 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       {/* Header */}
       <div className="mb-4 relative z-10">
         {featured && (
-          <div className="inline-block px-3 py-1 mb-3 text-white text-xs font-heading"
-               style={{ backgroundColor: arcadeTheme.primaryColor }}>
+          <div className="inline-block px-3 py-1 mb-3 text-white text-xs"
+               style={{ fontFamily: 'var(--font-heading)', backgroundColor: arcadeTheme.primaryColor }}>
             ⭐ FEATURED
           </div>
         )}
 
         <div className="flex items-start justify-between gap-4 mb-2">
           <h3
-            className="font-heading text-xl leading-tight"
-            style={{ color: arcadeTheme.primaryColor }}
+            className="text-xl leading-tight"
+            style={{ fontFamily: 'var(--font-heading)', color: arcadeTheme.primaryColor }}
           >
             {title}
           </h3>
@@ -82,14 +79,14 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           </span>
         </div>
 
-        <div className="font-body text-sm text-darkText/70 font-semibold mb-3">
+        <div className="text-sm font-semibold mb-3" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-textMuted)' }}>
           {year}
         </div>
       </div>
 
       {/* Description */}
       <div className="flex-1 mb-4">
-        <p className="text-sm text-darkText leading-relaxed font-body">
+        <p className="text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
           {longDescription || description}
         </p>
       </div>
@@ -101,9 +98,10 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             {tags.slice(0, 4).map((tag, idx) => (
               <span
                 key={idx}
-                className="text-xs px-2 py-1 font-body border-2"
+                className="text-xs px-2 py-1"
                 style={{
-                  borderColor: arcadeTheme.secondaryColor,
+                  fontFamily: 'var(--font-body)',
+                  border: `2px solid ${arcadeTheme.secondaryColor}`,
                   color: arcadeTheme.secondaryColor,
                 }}
               >
@@ -115,20 +113,20 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       )}
 
       {/* Links */}
-      <div className="flex gap-3 pt-4 border-t-2 border-dashed border-darkText/10">
+      <div className="flex gap-3 pt-4 border-t-2 border-dashed" style={{ borderColor: 'rgba(0, 0, 0, 0.1)' }}>
         {githubUrl && (
           <GithubLink
             href={githubUrl}
-            className="text-xs font-body"
-            style={{ color: arcadeTheme.primaryColor }}
+            className="text-xs"
+            style={{ fontFamily: 'var(--font-body)', color: arcadeTheme.primaryColor }}
           />
         )}
         {liveUrl && (
           <LiveLink
             href={liveUrl}
             text={liveUrl.includes('youtube') ? 'Video' : 'Live'}
-            className="text-xs font-body"
-            style={{ color: arcadeTheme.secondaryColor }}
+            className="text-xs"
+            style={{ fontFamily: 'var(--font-body)', color: arcadeTheme.secondaryColor }}
           />
         )}
       </div>
