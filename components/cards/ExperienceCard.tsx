@@ -44,27 +44,27 @@ export function ExperienceCard({ experience, className }: ExperienceCardProps) {
       }}
     >
       {/* Single decorative geometric shape - safe without transforms */}
-      <div className="absolute top-0 right-0 w-24 h-24 opacity-10"
+      <div className="theme-decoration absolute top-0 right-0 w-24 h-24 opacity-10"
            style={{ background: colors.bgColor, clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }}></div>
 
       <div>
         {/* Date badge with shadow */}
-        <div className="inline-block px-3 py-1 mb-4 text-white text-xs font-heading"
-             style={{ background: colors.bgColor, boxShadow: '3px 3px 0px rgba(0, 0, 0, 0.2)' }}>
+        <div className="inline-block px-3 py-1 mb-4 text-white text-xs"
+             style={{ fontFamily: 'var(--font-heading)', background: colors.bgColor, boxShadow: '3px 3px 0px rgba(0, 0, 0, 0.2)' }}>
           {startDate} - {endDate}
         </div>
 
         {/* Bigger title with text shadow */}
-        <h3 className="font-heading text-2xl mb-3 leading-tight"
-            style={{ color: colors.textColor, textShadow: `3px 3px 0px ${colors.shadow}` }}>
+        <h3 className="text-2xl mb-3 leading-tight"
+            style={{ fontFamily: 'var(--font-heading)', color: colors.textColor, textShadow: `3px 3px 0px ${colors.shadow}` }}>
           {title}
         </h3>
 
         {/* Company and location with better styling */}
-        <div className="font-body text-xl font-bold mb-1" style={{ color: 'var(--color-text)' }}>
+        <div className="text-xl font-bold mb-1" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
           {company}
         </div>
-        <div className="font-body text-sm flex items-center gap-2 mb-4" style={{ color: 'var(--color-textMuted)' }}>
+        <div className="text-sm flex items-center gap-2 mb-4" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-textMuted)' }}>
           📍 {location}
         </div>
 
@@ -75,13 +75,14 @@ export function ExperienceCard({ experience, className }: ExperienceCardProps) {
         {/* Preview of top 3 skills */}
         {skills && skills.length > 0 && (
           <div>
-            <div className="text-xs font-heading mb-2" style={{ color: 'var(--color-textMuted)' }}>TOP SKILLS:</div>
+            <div className="text-xs mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-textMuted)' }}>TOP SKILLS:</div>
             <div className="flex flex-wrap gap-2">
               {skills.slice(0, 3).map((skill, idx) => (
                 <span
                   key={idx}
-                  className="text-xs px-2 py-1 font-body font-semibold"
+                  className="text-xs px-2 py-1 font-semibold"
                   style={{
+                    fontFamily: 'var(--font-body)',
                     border: `2px solid ${colors.borderColor}`,
                     color: colors.textColor,
                     boxShadow: '2px 2px 0px rgba(0, 0, 0, 0.15)'
@@ -96,7 +97,7 @@ export function ExperienceCard({ experience, className }: ExperienceCardProps) {
       </div>
 
       <div className="mt-4 text-center">
-        <span className="text-sm font-heading" style={{ color: colors.textColor }}>
+        <span className="text-sm" style={{ fontFamily: 'var(--font-heading)', color: colors.textColor }}>
           👆 Click for more!
         </span>
       </div>
@@ -113,7 +114,7 @@ export function ExperienceCard({ experience, className }: ExperienceCardProps) {
       }}
     >
       <div className="mb-4">
-        <p className="text-sm leading-relaxed font-body" style={{ color: 'var(--color-text)' }}>
+        <p className="text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
           {description}
         </p>
       </div>
@@ -121,7 +122,7 @@ export function ExperienceCard({ experience, className }: ExperienceCardProps) {
       {details.length > 0 && (
         <ul className="space-y-2 mb-4">
           {details.map((detail, idx) => (
-            <li key={idx} className="text-sm flex gap-2 font-body" style={{ color: 'var(--color-text)' }}>
+            <li key={idx} className="text-sm flex gap-2" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
               <span className="mt-1 flex-shrink-0" style={{ color: colors.textColor }}>▸</span>
               <span className="leading-relaxed">{detail}</span>
             </li>
@@ -131,13 +132,14 @@ export function ExperienceCard({ experience, className }: ExperienceCardProps) {
 
       {skills && skills.length > 0 && (
         <div className="mt-4 pt-4 border-t-2 border-dashed" style={{ borderColor: 'rgba(0, 0, 0, 0.2)' }}>
-          <div className="text-xs font-heading mb-2" style={{ color: colors.textColor }}>SKILLS:</div>
+          <div className="text-xs mb-2" style={{ fontFamily: 'var(--font-heading)', color: colors.textColor }}>SKILLS:</div>
           <div className="flex flex-wrap gap-2">
             {skills.slice(0, 6).map((skill, idx) => (
               <span
                 key={idx}
-                className="text-xs px-2 py-1 font-body"
+                className="text-xs px-2 py-1"
                 style={{
+                  fontFamily: 'var(--font-body)',
                   border: `2px solid ${colors.borderColor}`,
                   color: colors.textColor
                 }}
@@ -150,7 +152,7 @@ export function ExperienceCard({ experience, className }: ExperienceCardProps) {
       )}
 
       <div className="mt-4 text-center">
-        <span className="text-xs font-body" style={{ color: 'var(--color-textMuted)' }}>
+        <span className="text-xs" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-textMuted)' }}>
           👆 Click to flip back
         </span>
       </div>

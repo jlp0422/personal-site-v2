@@ -22,7 +22,7 @@ export function ThemeSwitcher() {
         aria-label="Change theme"
       >
         <span className="text-xl">{currentTheme.emoji}</span>
-        <span className="hidden md:inline font-heading text-sm">Theme</span>
+        <span className="hidden md:inline text-sm" style={{ fontFamily: 'var(--font-heading)' }}>Theme</span>
       </button>
 
       {/* Theme selector dropdown */}
@@ -43,7 +43,7 @@ export function ThemeSwitcher() {
               boxShadow: 'var(--effect-cardShadow)',
             }}
           >
-            <h3 className="font-heading text-lg mb-4" style={{ color: 'var(--color-primary)' }}>
+            <h3 className="text-lg mb-4" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-primary)' }}>
               Choose Your Vibe
             </h3>
 
@@ -69,7 +69,7 @@ export function ThemeSwitcher() {
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-2xl">{theme.emoji}</span>
                     <div className="flex-1">
-                      <div className="font-heading text-sm" style={{ color: theme.colors.text }}>
+                      <div className="text-sm" style={{ fontFamily: theme.fonts.heading, color: theme.colors.text }}>
                         {theme.name}
                       </div>
                       <div className="flex gap-1 mt-1">

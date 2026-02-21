@@ -49,7 +49,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
     >
       {/* Decorative shape in corner */}
       <div
-        className="absolute top-0 right-0 w-16 h-16 opacity-10"
+        className="theme-decoration absolute top-0 right-0 w-16 h-16 opacity-10"
         style={{
           backgroundColor: arcadeTheme.secondaryColor,
           clipPath: featured
@@ -61,16 +61,16 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       {/* Header */}
       <div className="mb-4 relative z-10">
         {featured && (
-          <div className="inline-block px-3 py-1 mb-3 text-white text-xs font-heading"
-               style={{ backgroundColor: arcadeTheme.primaryColor }}>
+          <div className="inline-block px-3 py-1 mb-3 text-white text-xs"
+               style={{ fontFamily: 'var(--font-heading)', backgroundColor: arcadeTheme.primaryColor }}>
             ⭐ FEATURED
           </div>
         )}
 
         <div className="flex items-start justify-between gap-4 mb-2">
           <h3
-            className="font-heading text-xl leading-tight"
-            style={{ color: arcadeTheme.primaryColor }}
+            className="text-xl leading-tight"
+            style={{ fontFamily: 'var(--font-heading)', color: arcadeTheme.primaryColor }}
           >
             {title}
           </h3>
@@ -79,14 +79,14 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           </span>
         </div>
 
-        <div className="font-body text-sm font-semibold mb-3" style={{ color: 'var(--color-textMuted)' }}>
+        <div className="text-sm font-semibold mb-3" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-textMuted)' }}>
           {year}
         </div>
       </div>
 
       {/* Description */}
       <div className="flex-1 mb-4">
-        <p className="text-sm leading-relaxed font-body" style={{ color: 'var(--color-text)' }}>
+        <p className="text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
           {longDescription || description}
         </p>
       </div>
@@ -98,8 +98,9 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             {tags.slice(0, 4).map((tag, idx) => (
               <span
                 key={idx}
-                className="text-xs px-2 py-1 font-body"
+                className="text-xs px-2 py-1"
                 style={{
+                  fontFamily: 'var(--font-body)',
                   border: `2px solid ${arcadeTheme.secondaryColor}`,
                   color: arcadeTheme.secondaryColor,
                 }}
@@ -116,16 +117,16 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         {githubUrl && (
           <GithubLink
             href={githubUrl}
-            className="text-xs font-body"
-            style={{ color: arcadeTheme.primaryColor }}
+            className="text-xs"
+            style={{ fontFamily: 'var(--font-body)', color: arcadeTheme.primaryColor }}
           />
         )}
         {liveUrl && (
           <LiveLink
             href={liveUrl}
             text={liveUrl.includes('youtube') ? 'Video' : 'Live'}
-            className="text-xs font-body"
-            style={{ color: arcadeTheme.secondaryColor }}
+            className="text-xs"
+            style={{ fontFamily: 'var(--font-body)', color: arcadeTheme.secondaryColor }}
           />
         )}
       </div>

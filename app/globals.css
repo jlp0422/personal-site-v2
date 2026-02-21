@@ -132,11 +132,53 @@
     --font-body: var(--font-brutal-body);
     --font-accent: var(--font-brutal-accent);
   }
+
+  /* Theme-specific effect overrides */
+
+  /* Brutalist - stark minimalism, no decorative effects */
+  [data-theme="brutalist"] h1,
+  [data-theme="brutalist"] h2,
+  [data-theme="brutalist"] h3 {
+    text-shadow: none !important;
+  }
+
+  [data-theme="brutalist"] .theme-decoration {
+    display: none;
+  }
+
+  /* Cyberpunk - glowing neon effects */
+  [data-theme="cyberpunk"] h1,
+  [data-theme="cyberpunk"] h2 {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+
+  /* Terminal - green glow effects */
+  [data-theme="retroTerminal"] h1,
+  [data-theme="retroTerminal"] h2 {
+    text-shadow: 0 0 8px #00FF41, 0 0 16px #00FF41;
+  }
+
+  [data-theme="retroTerminal"] .theme-decoration {
+    display: none;
+  }
+
+  /* Vaporwave - keep layered shadows from theme */
+  [data-theme="vaporwave"] h1,
+  [data-theme="vaporwave"] h2 {
+    text-shadow: 3px 3px 0px #00E0FF, 6px 6px 0px #FF6AD5;
+  }
+
+  /* Saved by the Bell - keep playful shadows */
+  [data-theme="savedByTheBell"] h1,
+  [data-theme="savedByTheBell"] h2 {
+    text-shadow: 3px 3px 0px rgba(255, 107, 157, 0.3);
+  }
 }
 
 @layer components {
   /* Theme-aware button */
-  .theme-button {
+  .theme-button,
+  .sbtb-button {
     font-family: var(--font-heading);
     padding: 1rem 2rem;
     border: var(--effect-border);
@@ -150,12 +192,14 @@
     letter-spacing: 0.5px;
   }
 
-  .theme-button:hover {
+  .theme-button:hover,
+  .sbtb-button:hover {
     background: var(--color-buttonHover);
     transform: translate(-2px, -2px);
   }
 
-  .theme-button:active {
+  .theme-button:active,
+  .sbtb-button:active {
     transform: translate(1px, 1px);
   }
 

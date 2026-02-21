@@ -14,17 +14,17 @@ export default function ExperiencePage() {
   return (
     <main className="min-h-screen p-6 md:p-12 relative overflow-hidden">
       {/* Fun geometric background decorations */}
-      <div className="absolute top-20 right-10 w-32 h-32 opacity-20 rotate-45 hidden lg:block" style={{ background: 'var(--color-accent2)' }}></div>
-      <div className="absolute top-60 left-20 w-24 h-24 opacity-20 rounded-full hidden lg:block" style={{ background: 'var(--color-secondary)' }}></div>
-      <div className="absolute bottom-40 right-40 w-20 h-20 opacity-20 hidden lg:block"
+      <div className="theme-decoration absolute top-20 right-10 w-32 h-32 opacity-20 rotate-45 hidden lg:block" style={{ background: 'var(--color-accent2)' }}></div>
+      <div className="theme-decoration absolute top-60 left-20 w-24 h-24 opacity-20 rounded-full hidden lg:block" style={{ background: 'var(--color-secondary)' }}></div>
+      <div className="theme-decoration absolute bottom-40 right-40 w-20 h-20 opacity-20 hidden lg:block"
            style={{ background: 'var(--color-accent3)', clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
-      <div className="absolute top-1/3 right-1/4 w-16 h-16 opacity-10 hidden lg:block" style={{ background: 'var(--color-primary)' }}></div>
+      <div className="theme-decoration absolute top-1/3 right-1/4 w-16 h-16 opacity-10 hidden lg:block" style={{ background: 'var(--color-primary)' }}></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <FadeSection>
           <div className="mb-12">
-            <h1 className="font-heading text-5xl md:text-6xl mb-4"
-                style={{ color: 'var(--color-primary)', textShadow: '5px 5px 0px rgba(255, 107, 157, 0.3)' }}>
+            <h1 className="text-5xl md:text-6xl mb-4"
+                style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-primary)' }}>
               My Journey 🚀
             </h1>
             <div className="flex gap-3 mb-4">
@@ -32,7 +32,7 @@ export default function ExperiencePage() {
               <div className="w-12 h-2" style={{ background: 'var(--color-secondary)' }}></div>
               <div className="w-8 h-2" style={{ background: 'var(--color-accent3)' }}></div>
             </div>
-            <p className="font-body text-xl max-w-2xl" style={{ color: 'var(--color-text)' }}>
+            <p className="text-xl max-w-2xl" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
               From sports marketing to software engineering - here&apos;s how I got here! ✨
             </p>
           </div>
@@ -42,7 +42,7 @@ export default function ExperiencePage() {
         <div className="mb-16">
           <FadeSection delay={100}>
             <div className="flex items-center gap-4 mb-8">
-              <h2 className="font-heading text-3xl" style={{ color: 'var(--color-accent1)' }}>
+              <h2 className="text-3xl" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-accent1)' }}>
                 Work Experience
               </h2>
               <div className="flex-1 h-1" style={{ background: 'linear-gradient(to right, var(--color-accent1), var(--color-secondary), transparent)' }}></div>
@@ -62,7 +62,7 @@ export default function ExperiencePage() {
         <div className="mb-12">
           <FadeSection delay={100}>
             <div className="flex items-center gap-4 mb-8">
-              <h2 className="font-heading text-3xl" style={{ color: 'var(--color-accent3)' }}>
+              <h2 className="text-3xl" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-accent3)' }}>
                 Education
               </h2>
               <div className="flex-1 h-1" style={{ background: 'linear-gradient(to right, var(--color-accent3), var(--color-accent4), transparent)' }}></div>
@@ -82,12 +82,12 @@ export default function ExperiencePage() {
         <FadeSection delay={300}>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/">
-              <button className="sbtb-button text-white hover:!bg-[var(--color-primary)] hover:!border-[var(--color-primary)]" style={{ background: 'var(--color-secondary)', borderColor: 'var(--color-secondary)' }}>
+              <button className="sbtb-button text-white hover:!bg-[var(--color-primary)] hover:!border-[var(--color-primary)]" style={{ fontFamily: 'var(--font-heading)', background: 'var(--color-secondary)', borderColor: 'var(--color-secondary)' }}>
                 Back to Home
               </button>
             </Link>
             <Link href="/projects">
-              <button className="sbtb-button hover:!bg-[var(--color-accent1)] hover:!border-[var(--color-accent1)]" style={{ background: 'var(--color-accent2)', borderColor: 'var(--color-accent2)', color: 'var(--color-text)' }}>
+              <button className="sbtb-button hover:!bg-[var(--color-accent1)] hover:!border-[var(--color-accent1)]" style={{ fontFamily: 'var(--font-heading)', background: 'var(--color-accent2)', borderColor: 'var(--color-accent2)', color: 'var(--color-text)' }}>
                 Check Out Projects
               </button>
             </Link>

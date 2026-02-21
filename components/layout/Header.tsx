@@ -17,10 +17,10 @@ export function Header() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="font-heading text-2xl md:text-3xl transition-all hover:scale-105"
+            className="text-2xl md:text-3xl transition-all hover:scale-105"
             style={{
+              fontFamily: 'var(--font-heading)',
               color: 'var(--color-primary)',
-              textShadow: 'var(--effect-textShadow)',
             }}
           >
             JP
@@ -49,10 +49,11 @@ function NavLink({ href, children, className }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        'font-heading text-base md:text-lg transition-all hover:scale-110',
+        'text-base md:text-lg transition-all hover:scale-110',
         className
       )}
       style={{
+        fontFamily: 'var(--font-heading)',
         color: 'var(--color-text)',
       }}
     >

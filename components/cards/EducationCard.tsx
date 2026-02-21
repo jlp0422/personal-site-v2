@@ -38,30 +38,30 @@ export function EducationCard({ education, className }: EducationCardProps) {
       }}
     >
       {/* Decorative geometric shape */}
-      <div className="absolute bottom-0 left-0 w-24 h-24 opacity-10"
+      <div className="theme-decoration absolute bottom-0 left-0 w-24 h-24 opacity-10"
            style={{ background: bgColor, clipPath: 'polygon(0 100%, 100% 100%, 0 0)' }}></div>
 
       <div>
-        <div className="inline-block px-3 py-1 mb-3 text-white text-xs font-heading"
-             style={{ background: bgColor }}>
+        <div className="inline-block px-3 py-1 mb-3 text-white text-xs"
+             style={{ fontFamily: 'var(--font-heading)', background: bgColor }}>
           {startDate} - {endDate}
         </div>
-        <h3 className="font-heading text-xl mb-2 leading-tight" style={{ color: textColor }}>
+        <h3 className="text-xl mb-2 leading-tight" style={{ fontFamily: 'var(--font-heading)', color: textColor }}>
           {school}
         </h3>
-        <div className="font-body text-lg font-semibold mb-1" style={{ color: 'var(--color-text)' }}>
+        <div className="text-lg font-semibold mb-1" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
           {degree}
         </div>
-        <div className="font-body text-base mb-2" style={{ color: 'var(--color-primary)' }}>
+        <div className="text-base mb-2" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-primary)' }}>
           {field}
         </div>
-        <div className="font-body text-sm" style={{ color: 'var(--color-textMuted)' }}>
+        <div className="text-sm" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-textMuted)' }}>
           {location}
         </div>
       </div>
 
       <div className="mt-4 text-center relative z-10">
-        <span className="text-xs font-body" style={{ color: 'var(--color-textMuted)' }}>
+        <span className="text-xs" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-textMuted)' }}>
           👆 Click for more info
         </span>
       </div>
@@ -79,7 +79,7 @@ export function EducationCard({ education, className }: EducationCardProps) {
     >
       {description && (
         <div className="mb-4 pb-4 border-b-2 border-dashed" style={{ borderColor: 'rgba(0, 0, 0, 0.2)' }}>
-          <p className="text-sm leading-relaxed font-body" style={{ color: 'var(--color-text)' }}>
+          <p className="text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
             {description}
           </p>
         </div>
@@ -87,12 +87,12 @@ export function EducationCard({ education, className }: EducationCardProps) {
 
       {achievements && achievements.length > 0 && (
         <div>
-          <div className="text-xs font-heading mb-3" style={{ color: textColor }}>
+          <div className="text-xs mb-3" style={{ fontFamily: 'var(--font-heading)', color: textColor }}>
             HIGHLIGHTS:
           </div>
           <ul className="space-y-2">
             {achievements.map((achievement, idx) => (
-              <li key={idx} className="text-sm flex gap-2 font-body" style={{ color: 'var(--color-text)' }}>
+              <li key={idx} className="text-sm flex gap-2" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
                 <span className="mt-1 flex-shrink-0" style={{ color: textColor }}>●</span>
                 <span className="leading-relaxed">{achievement}</span>
               </li>
@@ -102,7 +102,7 @@ export function EducationCard({ education, className }: EducationCardProps) {
       )}
 
       <div className="mt-4 text-center">
-        <span className="text-xs font-body" style={{ color: 'var(--color-textMuted)' }}>
+        <span className="text-xs" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-textMuted)' }}>
           👆 Click to flip back
         </span>
       </div>
