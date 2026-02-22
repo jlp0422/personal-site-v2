@@ -2,14 +2,18 @@
 
 import { useEffect, useRef, useCallback } from 'react';
 
+// 2026 F1 grid — all non-McLaren teams, real livery colors + driver numbers
 const TEAMS = [
-  { name: 'Red Bull',  color: '#1E3A5F', accent: '#FFB800', number: '1'  },
-  { name: 'Ferrari',   color: '#DC0000', accent: '#FFFFFF', number: '16' },
-  { name: 'Mercedes',  color: '#00D2BE', accent: '#000000', number: '63' },
-  { name: 'Alpine',    color: '#0090FF', accent: '#FF0000', number: '10' },
-  { name: 'Aston',     color: '#006F62', accent: '#FFFFFF', number: '14' },
-  { name: 'Williams',  color: '#005AFF', accent: '#FFFFFF', number: '23' },
-  { name: 'Haas',      color: '#B6BABD', accent: '#E8002D', number: '20' },
+  { name: 'Red Bull',      color: '#1E5BC6', accent: '#FFB800', numbers: ['3',  '6']  },
+  { name: 'Ferrari',       color: '#E8002D', accent: '#FFFFFF', numbers: ['16', '44'] },
+  { name: 'Mercedes',      color: '#00D2BE', accent: '#000000', numbers: ['63', '12'] },
+  { name: 'Williams',      color: '#005AFF', accent: '#FFFFFF', numbers: ['23', '55'] },
+  { name: 'Alpine',        color: '#0090FF', accent: '#FF87BC', numbers: ['10', '43'] },
+  { name: 'Aston Martin',  color: '#006F62', accent: '#CEDC00', numbers: ['14', '18'] },
+  { name: 'Haas',          color: '#1A1A1A', accent: '#E8002D', numbers: ['31', '87'] },
+  { name: 'Racing Bulls',  color: '#F0F0F0', accent: '#005AFF', numbers: ['30', '41'] },
+  { name: 'Audi',          color: '#BB0000', accent: '#FFFFFF', numbers: ['27', '5']  },
+  { name: 'Cadillac',      color: '#2A2A2A', accent: '#AAAAAD', numbers: ['11', '77'] },
 ];
 
 const QUIPS = [
@@ -32,6 +36,7 @@ interface Enemy {
   lane: 0 | 1 | 2;
   y: number;
   teamIndex: number;
+  driverNumber: string;
 }
 
 interface GameState {
@@ -222,7 +227,7 @@ export function McLarenDodgeGame() {
     for (const enemy of s.enemies) {
       const ex = lanes[enemy.lane];
       const team = TEAMS[enemy.teamIndex];
-      drawCar(ctx, ex, enemy.y, team.color, team.accent, team.number, false);
+      drawCar(ctx, ex, enemy.y, team.color, team.accent, enemy.driverNumber, false);
     }
 
     // Player
@@ -322,7 +327,7 @@ export function McLarenDodgeGame() {
         s.enemies.push({
           lane: (Math.floor(Math.random() * 3)) as 0 | 1 | 2,
           y: -90,
-          teamIndex: Math.floor(Math.random() * TEAMS.length),
+          ...(() => { const ti = Math.floor(Math.random() * TEAMS.length); const t = TEAMS[ti]; return { teamIndex: ti, driverNumber: t.numbers[Math.floor(Math.random() * t.numbers.length)] }; })(),
         });
       }
 
