@@ -42,7 +42,15 @@ export default function HomePage() {
               </p>
 
               <p>
-                Off the clock I&apos;m a McLaren fan, a golfer who&apos;s very optimistic about his handicap,
+                Off the clock I&apos;m a{' '}
+                <Link
+                  href="/game"
+                  className="underline decoration-dotted underline-offset-2 opacity-80 hover:opacity-100 transition-opacity"
+                  style={{ color: 'inherit' }}
+                >
+                  McLaren fan
+                </Link>
+                , a golfer who&apos;s very optimistic about his handicap,
                 and a reader of whatever book I can finish before the next one arrives. There are always two more on deck.
               </p>
             </div>
