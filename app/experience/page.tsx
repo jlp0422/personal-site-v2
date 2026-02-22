@@ -25,7 +25,7 @@ export default function ExperiencePage() {
           <div className="mb-12">
             <h1 className="text-5xl md:text-6xl mb-4"
                 style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-primary)' }}>
-              My Journey 🚀
+              The Resume, Visualized.
             </h1>
             <div className="flex gap-3 mb-4">
               <div className="w-16 h-2" style={{ background: 'var(--color-accent2)' }}></div>
@@ -33,7 +33,7 @@ export default function ExperiencePage() {
               <div className="w-8 h-2" style={{ background: 'var(--color-accent3)' }}></div>
             </div>
             <p className="text-xl max-w-2xl" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
-              From sports marketing to software engineering - here&apos;s how I got here! ✨
+              Sports marketing → coding bootcamp → Staff Engineer. It made sense at the time.
             </p>
           </div>
         </FadeSection>

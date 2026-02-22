@@ -16,41 +16,34 @@ export default function HomePage() {
         <FadeSection>
           <h1 className="text-5xl md:text-6xl mb-4"
               style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-primary)' }}>
-            Hey there! 👋
+            Hi, I&apos;m Jeremy.
           </h1>
           <div className="w-24 h-2 mb-8" style={{ background: 'var(--color-accent2)', clipPath: 'polygon(0 0, 90% 0, 100% 100%, 10% 100%)' }}></div>
         </FadeSection>
 
         <FadeSection delay={100}>
           <div className="p-8 md:p-10 mb-8 memphis-border" style={{ background: 'var(--color-foreground)', border: '4px solid var(--color-secondary)' }}>
-            <p className="text-2xl md:text-3xl mb-6" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-accent3)' }}>
-              I&apos;m Jeremy Philipson
-            </p>
-
             <div className="space-y-4 text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
               <p>
-                Hey! I&apos;m a <span className="font-bold" style={{ color: 'var(--color-primary)' }}>Staff Software Engineer</span> at{' '}
-                <span className="font-bold" style={{ color: 'var(--color-accent4)' }}>FanDuel</span>, where I build features
-                for millions of daily fantasy sports and sportsbook users.
+                I build software at <span className="font-bold" style={{ color: 'var(--color-accent4)' }}>FanDuel</span> as a{' '}
+                <span className="font-bold" style={{ color: 'var(--color-primary)' }}>Staff Software Engineer</span> and side projects that nobody asked for but I built anyway.
               </p>
 
               <p>
-                My journey into software engineering started in 2018 at Fullstack Academy, after
-                pivoting from a career in sports marketing. I fell in love with
-                building things people actually use, and I haven&apos;t looked back since!
+                Bootcamp grad turned Staff Engineer — proof that it&apos;s never too late to completely change what you&apos;re doing.
               </p>
 
               <p>
                 I specialize in <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>React</span>,{' '}
                 <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>TypeScript</span>,{' '}
                 <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>Python</span>, and{' '}
-                <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>Java</span> - building full-stack applications
+                <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>C#</span> — building full-stack applications
                 that are clean, performant, and maintainable.
               </p>
 
               <p>
-                When I&apos;m not coding, you&apos;ll find me watching Formula 1 🏎️, playing trivia 🧠,
-                or building fun side projects like this totally rad portfolio!
+                Off the clock I&apos;m a McLaren fan, a golfer who&apos;s very optimistic about his handicap,
+                and a reader of whatever book I can finish before the next one arrives. There are always two more on deck.
               </p>
             </div>
           </div>
@@ -60,7 +53,7 @@ export default function HomePage() {
           <div className="p-8 mb-8"
                style={{ background: 'var(--color-foreground)', border: '4px solid var(--color-accent2)', boxShadow: '8px 8px 0px rgba(155, 89, 182, 0.3)' }}>
             <h2 className="text-2xl mb-6" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-accent1)' }}>
-              Let&apos;s Connect! 📬
+              Get in Touch
             </h2>
 
             <div className="space-y-4 mb-6">
