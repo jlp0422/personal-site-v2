@@ -41,7 +41,7 @@ export default function HomePage() {
                 I specialize in <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>React</span>,{' '}
                 <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>TypeScript</span>,{' '}
                 <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>Python</span>, and{' '}
-                <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>Java</span> - building full-stack applications
+                <span className="font-semibold" style={{ color: 'var(--color-accent3)' }}>C#</span> — building full-stack applications
                 that are clean, performant, and maintainable.
               </p>
 
