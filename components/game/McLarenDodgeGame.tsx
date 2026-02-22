@@ -13,11 +13,11 @@ const TEAMS = [
   { name: 'Haas',          color: '#1A1A1A', accent: '#E8002D', numbers: ['31', '87'] },
   { name: 'Racing Bulls',  color: '#F0F0F0', accent: '#005AFF', numbers: ['30', '41'] },
   { name: 'Audi',          color: '#BB0000', accent: '#FFFFFF', numbers: ['27', '5']  },
-  { name: 'Cadillac',      color: '#2A2A2A', accent: '#AAAAAD', numbers: ['11', '77'] },
+  { name: 'Cadillac',      color: '#2A2A2A', accent: '#FFFFFF', numbers: ['11', '77'] },
 ];
 
 const QUIPS = [
-  "Lando would've dodged that.",
+  "Lando would've found the gap.",
   "Stewards are reviewing the incident.",
   "Your engineer is speechless.",
   "The undercut didn't save you.",
@@ -26,8 +26,6 @@ const QUIPS = [
 ];
 
 const CANVAS_HEIGHT = 600;
-const CAR_WIDTH = 40;
-const CAR_HEIGHT = 70;
 const COLLISION_THRESHOLD = 55;
 const PLAYER_Y_RATIO = 0.82;
 const BEST_TIME_KEY = 'mclaren-dodge-best';
@@ -52,7 +50,7 @@ interface GameState {
   animFrameId: number;
 }
 
-// Draw a car shape (rounded rect with number)
+// Top-down F1 car silhouette — all cars face UP (same direction of travel)
 function drawCar(
   ctx: CanvasRenderingContext2D,
   x: number,
@@ -62,57 +60,108 @@ function drawCar(
   number: string,
   isPlayer: boolean
 ) {
-  const w = CAR_WIDTH;
-  const h = CAR_HEIGHT;
-  const r = 8;
-
   ctx.save();
   ctx.translate(x, y);
+  const d = -1; // all cars face up (direction of travel)
 
-  // Shadow
-  ctx.shadowColor = 'rgba(0,0,0,0.4)';
-  ctx.shadowBlur = 8;
+  // Shadow beneath whole car
+  ctx.shadowColor = 'rgba(0,0,0,0.5)';
+  ctx.shadowBlur = 10;
   ctx.shadowOffsetY = 3;
 
-  // Body
-  ctx.beginPath();
-  ctx.moveTo(-w / 2 + r, -h / 2);
-  ctx.lineTo(w / 2 - r, -h / 2);
-  ctx.quadraticCurveTo(w / 2, -h / 2, w / 2, -h / 2 + r);
-  ctx.lineTo(w / 2, h / 2 - r);
-  ctx.quadraticCurveTo(w / 2, h / 2, w / 2 - r, h / 2);
-  ctx.lineTo(-w / 2 + r, h / 2);
-  ctx.quadraticCurveTo(-w / 2, h / 2, -w / 2, h / 2 - r);
-  ctx.lineTo(-w / 2, -h / 2 + r);
-  ctx.quadraticCurveTo(-w / 2, -h / 2, -w / 2 + r, -h / 2);
-  ctx.closePath();
+  // ── REAR WING ──────────────────────────────────────────────
+  // rear is opposite direction from nose: d * -26 (behind the car)
+  const rwY = d * -26;
+  ctx.fillStyle = accentColor;
+  ctx.fillRect(-19, rwY - 4, 38, 7);          // main plane
+  ctx.fillRect(-22, rwY - 6, 3, 11);          // left endplate
+  ctx.fillRect( 19, rwY - 6, 3, 11);          // right endplate
+
+  // ── MAIN BODY ──────────────────────────────────────────────
+  // Tapered nose + sidepods. All standard-y values are positive=toward nose,
+  // multiplied by d so player nose goes up, enemy nose goes down.
   ctx.fillStyle = bodyColor;
+  ctx.beginPath();
+  const body: [number, number][] = [
+    [ -9, -23], // rear left
+    [  9, -23], // rear right
+    [ 13,  -6], // right sidepod rear
+    [ 13,   6], // right sidepod front
+    [  7,  17], // right nose shoulder
+    [  3,  27], // right nose tip
+    [ -3,  27], // left nose tip
+    [ -7,  17], // left nose shoulder
+    [-13,   6], // left sidepod front
+    [-13,  -6], // left sidepod rear
+  ];
+  ctx.moveTo(body[0][0], body[0][1] * d);
+  for (let i = 1; i < body.length; i++) {
+    ctx.lineTo(body[i][0], body[i][1] * d);
+  }
+  ctx.closePath();
   ctx.fill();
 
   ctx.shadowColor = 'transparent';
 
-  // Cockpit
-  const cockpitH = h * 0.35;
-  const cockpitW = w * 0.55;
-  ctx.fillStyle = isPlayer ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.25)';
+  // ── FRONT WING ─────────────────────────────────────────────
+  const fwY = d * 31;
+  ctx.fillStyle = accentColor;
+  ctx.fillRect(-23, fwY - 3, 46, 5);          // main plane
+  ctx.fillRect(-23, fwY - 6, 3, 10);          // left endplate
+  ctx.fillRect( 20, fwY - 6, 3, 10);          // right endplate
+
+  // ── WHEELS (exposed, top-down ovals) ───────────────────────
+  // [x, standard_y] — standard_y positive = toward nose
+  const wheels: [number, number][] = [
+    [-17, -16], [ 17, -16],   // rear pair
+    [-14,  13], [ 14,  13],   // front pair
+  ];
+  for (const [wx, wy] of wheels) {
+    ctx.fillStyle = '#111111';
+    ctx.beginPath();
+    ctx.ellipse(wx, wy * d, 5, 7, 0, 0, Math.PI * 2);
+    ctx.fill();
+    // rim highlight
+    ctx.strokeStyle = '#555555';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.ellipse(wx, wy * d, 2.5, 3.5, 0, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+
+  // ── ENGINE COVER STRIPE ─────────────────────────────────────
+  ctx.fillStyle = accentColor;
+  ctx.globalAlpha = 0.35;
+  // stripe from rear toward cockpit along center spine
+  ctx.fillRect(-2, d * -21, 4, d * 13);
+  ctx.globalAlpha = 1;
+
+  // ── COCKPIT OPENING ─────────────────────────────────────────
+  const cockpitY = d * 7;
+  ctx.fillStyle = 'rgba(5,5,5,0.85)';
   ctx.beginPath();
-  ctx.ellipse(0, -h * 0.05, cockpitW / 2, cockpitH / 2, 0, 0, Math.PI * 2);
+  ctx.ellipse(0, cockpitY, 4.5, 8, 0, 0, Math.PI * 2);
   ctx.fill();
 
-  // Front wing
-  ctx.fillStyle = accentColor;
-  ctx.fillRect(-w / 2 - 4, isPlayer ? h / 2 - 10 : -h / 2 + 2, w + 8, 8);
+  // ── HALO (arch over cockpit, opening toward nose) ───────────
+  ctx.strokeStyle = isPlayer ? '#E0E0E0' : '#888888';
+  ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  // opening toward front: for player (d=-1) front=up → arc goes through bottom
+  // for enemy (d=+1) front=down → arc goes through top
+  if (d === -1) {
+    ctx.arc(0, cockpitY, 7, 0, Math.PI, false);
+  } else {
+    ctx.arc(0, cockpitY, 7, Math.PI, 0, false);
+  }
+  ctx.stroke();
 
-  // Rear wing
+  // ── DRIVER NUMBER (on engine cover) ────────────────────────
   ctx.fillStyle = accentColor;
-  ctx.fillRect(-w / 2 - 4, isPlayer ? -h / 2 + 2 : h / 2 - 10, w + 8, 8);
-
-  // Number
-  ctx.fillStyle = accentColor;
-  ctx.font = `bold ${isPlayer ? 14 : 12}px monospace`;
+  ctx.font = `bold ${number.length > 1 ? 10 : 12}px monospace`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(number, 0, 0);
+  ctx.fillText(number, 0, d * -12);
 
   ctx.restore();
 }
@@ -443,7 +492,7 @@ export function McLarenDodgeGame() {
         MCLAREN DODGE
       </h1>
       <p className="text-sm" style={{ color: 'var(--color-textMuted)', fontFamily: 'var(--font-body)' }}>
-        ← → or A/D to dodge · Survive as long as you can
+        ← → or A/D to overtake · Survive as long as you can
       </p>
       <canvas
         ref={canvasRef}
@@ -456,7 +505,7 @@ export function McLarenDodgeGame() {
         }}
       />
       <p className="text-xs" style={{ color: 'var(--color-textMuted)', fontFamily: 'var(--font-body)' }}>
-        Mobile: tap left/right half to dodge
+        Mobile: tap left/right half to overtake
       </p>
     </div>
   );
