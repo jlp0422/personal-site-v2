@@ -18,7 +18,7 @@ export function Footer() {
             © {currentYear} JEREMY PHILIPSON
           </p>
           <p className="text-xs mt-2" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-textMuted)' }}>
-            {currentTheme.emoji} {currentTheme.name} theme · Because the 80s never went out of style
+            {currentTheme.emoji} {currentTheme.name} theme
           </p>
           <Link
             href="/game"
