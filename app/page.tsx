@@ -23,13 +23,9 @@ export default function HomePage() {
 
         <FadeSection delay={100}>
           <div className="p-8 md:p-10 mb-8 memphis-border" style={{ background: 'var(--color-foreground)', border: '4px solid var(--color-secondary)' }}>
-            <p className="text-2xl md:text-3xl mb-6" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-accent3)' }}>
-              I&apos;m Jeremy Philipson
-            </p>
-
             <div className="space-y-4 text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
               <p>
-                I&apos;m Jeremy. I build software at <span className="font-bold" style={{ color: 'var(--color-accent4)' }}>FanDuel</span> as a{' '}
+                I build software at <span className="font-bold" style={{ color: 'var(--color-accent4)' }}>FanDuel</span> as a{' '}
                 <span className="font-bold" style={{ color: 'var(--color-primary)' }}>Staff Software Engineer</span> and side projects that nobody asked for but I built anyway.
               </p>
 
