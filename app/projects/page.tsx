@@ -30,7 +30,7 @@ export default function ProjectsPage() {
           <div className="mb-12">
             <h1 className="text-5xl md:text-6xl mb-4"
                 style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-accent4)' }}>
-              Cool Stuff I Built 💡
+              Things I Built.
             </h1>
             <div className="flex gap-3 mb-4">
               <div className="w-20 h-2" style={{ background: 'var(--color-accent4)' }}></div>
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
               <div className="w-10 h-2" style={{ background: 'var(--color-accent2)' }}></div>
             </div>
             <p className="text-xl max-w-2xl" style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text)' }}>
-              From sports apps to love letters - check out what I&apos;ve been working on! 🎨
+              I build things for fun — some useful, some not, and at least one that started as &quot;this&apos;ll only take an hour.&quot; Also how I explain to my wife why I need another domain name.
             </p>
           </div>
         </FadeSection>
