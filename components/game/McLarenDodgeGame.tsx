@@ -414,8 +414,11 @@ export function McLarenDodgeGame() {
     if (!canvas) return;
     const s = stateRef.current;
 
+    const isTouch = 'changedTouches' in e;
+    if (isTouch) e.preventDefault(); // prevent synthesized click from firing twice
+
     const rect = canvas.getBoundingClientRect();
-    const touch = 'changedTouches' in e ? (e as unknown as TouchEvent).changedTouches[0] : null;
+    const touch = isTouch ? (e as unknown as TouchEvent).changedTouches[0] : null;
     const clientX = touch ? touch.clientX : (e as MouseEvent).clientX;
     const x = clientX - rect.left;
     const W = canvas.width;
@@ -472,7 +475,7 @@ export function McLarenDodgeGame() {
 
     window.addEventListener('keydown', handleKey);
     canvas.addEventListener('click', handleClick as EventListener);
-    canvas.addEventListener('touchstart', handleClick as EventListener, { passive: true });
+    canvas.addEventListener('touchstart', handleClick as EventListener, { passive: false });
 
     return () => {
       cancelAnimationFrame(s.animFrameId);
